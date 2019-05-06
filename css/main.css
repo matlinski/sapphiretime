@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: var(--title-font);
 }
 h2{
-    font-size: 2rem;
+    font-size: 5vmin;
 }
 body{
     background-color: var(--main-bg-color);
@@ -36,7 +36,6 @@ ol{
     padding: 0;
 }
 p{
-    max-width: 90%;
     overflow-wrap: break-word;
     hyphens: manual;
 }
@@ -44,34 +43,39 @@ a{
     color: var(--main-color);
     text-decoration: none;
 }
-a:hover,
-a:focus{
-    text-decoration: underline;
-}
 a:visited{
     color: var(--main-color-dark)
 }
+a:hover,
+a:focus{
+    color: white;
+}
+
 /*GLOBAL ABOVE*/
 
 .margin-container{
-    width: calc(100vw - 3rem);
-    margin: 0 auto;
+    width: calc(100vw - 3em);
+    margin: auto;
 }
 .main-header{
-    height: 200px;
+	padding: 1.5em 0;
+    height: 15em;
     display: flex;
     justify-content: center;
 }
+
 .main-nav
 {
+	padding: 0.5em 0;
     display: flex;
     justify-content: space-around;
-    font-size: 3rem;
+    font-size: 4vmin;
     font-family: var(--title-font);
 }
 .intro{
     width: 100%;
-    height: 300px;
+    height: 25em;
+	margin-bottom: 1.5em;
 }
 .intro__photo{
     width: 100%;
@@ -85,17 +89,57 @@ a:visited{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--main-color-transp);
+    background-color: var(--main-color-dark-transp);
     height: auto;
+	margin-bottom: 1.5em;
 }
 .about-us__title{
-    margin-bottom: 1em;
+	text-align:center;
+	width: 100%;
+	padding: 0.5em 0;
+    margin-bottom: 0.5em;
+}
+.about-us__body{
+	padding: 0 1.5em;
+	padding-bottom: 1.5em;
+}
+.about-us__body::before{
+	content: "";
+	background-color: var(--main-bg-color);
+	display: block;
+	width: 100%;
+	height: 1em;
+	margin-bottom: 1.5em;
 }
 .services{
-    display: flex;
-    justify-content: center;
-    height: 150px;
+	position: relative;
+	background-color: var(--main-bg-color-dark);
+    height: 15em;
+	padding: 1.5em 0;
+	color: white;
 }
-
+.services__photo{
+	position:absolute;
+	left: 50%;
+	height: 12em;
+	transform: translateX(-50%);
+}
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	padding: 1.5em;
+	background-color: var(--main-color-dark-transp);
+}
+.gallery__frame{
+	width: 100%;
+	height: auto;
+	padding: .5em;
+}
+.gallery__frame__photo{
+	cursor: pointer;
+	width: 100%;
+}
 /*STRUCTURE ABOVE*/
 
