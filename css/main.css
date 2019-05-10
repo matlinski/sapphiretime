@@ -164,24 +164,24 @@ a:focus{
 /*STRUCTURE ABOVE*/
 @media (min-width: 600px){
 	.gallery__frame{
-	width: 50%;
-}
+		width: 50%;
+	}
 }
 @media (min-width: 900px){
 	.gallery__frame{
-	width: 33.33%;
-}
-.about-us{
-	padding: 1.5em;
-	flex-direction: row;
-}
-.about-us__body::before{
-	display:none;
-}
+		width: 33.33%;
+	}
+	.about-us{
+		padding: 1.5em;
+		flex-direction: row;
+	}
+	.about-us__body::before{
+		display:none;
+	}
 }
 @media (orientation: portrait){
 	.about-us{
-	flex-direction: column;
+		flex-direction: column;
 	}
 	.about-us__length-control,
 	.about-us__title,

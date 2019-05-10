@@ -1,0 +1,73 @@
+:root {
+    --main-color: #32d0ea;
+    --main-color-dark: #27a9b7;
+    --main-bg-color: #194b50;
+    --main-bg-color-dark: #00191c;
+	--main-section-color: rgba(255, 255, 255, 0.5);
+	--section-color-special: rgba(0, 0, 0, 0.5);
+    --main-color-transp: rgba(57, 210, 235, 0.5);
+    --main-color-dark-transp: rgba(39, 169, 183, 0.5);
+    --main-font: 'Roboto Mono', monospace;
+    --title-font: 'Kaushan Script', cursive;
+}
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+/*ROOT ABOVE*/
+html{ 
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--title-font);
+}
+h2{
+    font-size: 5vmin;
+}
+body{
+	background-image: url(https://sapphiretime.000webhostapp.com/content/PL/RES/dark_wood.png);
+	background-blend-mode: multiply;
+    background-color: var(--main-color);
+}
+ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+p{
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+a:visited{
+    color: var(--main-color-dark)
+}
+a:hover,
+a:focus{
+    color: white;
+}
+
+/*GLOBAL ABOVE*/
+
+.main-nav li{
+	background-color: var(--main-bg-color-dark);
+	padding:0.5em;
+	text-align: center;
+	border-bottom: 0.25em solid whide;
+	margin-bottom: 0.5em;
+}
+.about-us{
+	background-color: var(--main-section-color);
+	padding:0.5em;
+}
+.services{
+	background-color: var(--main-color-dark-transp);
+}
