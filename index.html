@@ -2,59 +2,91 @@
 <html lang="pl">
     <head>
         <title>Witaj na stronie Sapphire Time</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css"/>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</head>
     <body>
 		<div class="main-grid">
 
 			<header class="main-header">
 				<h1 class="main-header__frame">
-					<img src="res/sapphiretime.png" alt="" class="main-header__frame__logo">
+					<img height="100%" class="main-header__frame__logo" src="res/sapphiretime.png" alt="Logo Sapphire Time">
 				</h1>
-				<nav class="main-nav"></nav>
-			</header>
+				<nav class="main-nav">
+					
+					<ol class="main-nav__menu-list d-none d-sm-flex">
+						<li class="main-nav__menu-list__list-item"><a href="">Strona glowna</a></li>
+						<li class="main-nav__menu-list__list-item"><a href="">Lokalizacja</a></li>
+						<li class="main-nav__menu-list__list-item"><a href="">Rezerwacja</a></li>
+						<li class="main-nav__menu-list__list-item"><a href="">Kontakt</a></li>
+					</ol>
 
+					<div class="dropdown d-sm-none">
+							<a style="background-color: #27a9b7; border-color: #194b50" class="btn btn-secondary dropdown-toggle main-nav__icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							  <a class="dropdown-item" href="#">Strona glowna</a>
+							  <a class="dropdown-item" href="#">Lokalizacja</a>
+							  <a class="dropdown-item" href="#">Rezerwacja</a>
+							  <a class="dropdown-item" href="#">Kontakt</a>
+							</div>
+						  </div>
+
+				</nav>
+			</header>
+			<div class="margin"></div>
 			<section class="intro">
 				<h2 class="intro__title"></h2>
 			</section>
 
 			<article class="about-us">
-				<h3 class="about-us__title"></h3>
-				<p class="about-us__body"></p>
+				<h3 class="about-us__title">Najlepsze apar&shy;tamenty w Lodzi!</h3>
+				<p class="about-us__body">
+					Na&shy;sze komfortowe apartamenty znajdują się w niez&shy;wyk&shy;łej,
+					zie&shy;lo&shy;nej okolicy Bałut. W pobliżu są: ma&shy;low&shy;ni&shy;czy park
+					i zielone skwery. Miejsce to jest bardzo dob&shy;rze skomu&shy;
+					nikowane z centrum Łodzi. Blisko znaj&shy;duje się Wo&shy;je&shy;wódz&shy;
+					ki Specjalistyczny Szpital im. dr. Wł. Bie&shy;gań&shy;skie&shy;go
+					i Instytut Medycyny Pracy imienia prof. dra med. 
+					Jerzego Nofera. Bardzo blisko są skle&shy;py spo&shy;żyw&shy;cze,
+					i pizzeria PRESTO. Zapraszamy!</p>
 			</article>
 
 			<aside class="our-services">
 				<div class="our-services__before"></div>
 				<div class="our-services__frame">
-					<img src="" alt="" class="our-services__frame__logo">
+					<img width="100%" src="res/sapphiretime-mono.png" alt="" class="our-services__frame__logo">
 				</div>
 				<div class="our-services__next"></div>
 			</aside>
 
 			<aside class="main-gallery">
-				<div class="main-gallery__frame"><img src="res/img/single/1.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/2.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/3.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/4.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/5.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/6.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/7.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/8.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/9.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/10.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/11.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/12.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/13.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/14.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
-				<div class="main-gallery__frame"><img src="res/img/single/15.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/1.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/2.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/3.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/4.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/5.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/6.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/7.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/8.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/9.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/10.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/11.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/12.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/13.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/14.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
+				<div class="main-gallery__frame"><img width="100%" src="res/img/single/15.jpg" alt="Zdjęcie z apartamentu Sapphire Time" class="main-gallery__frame__thumbnail"></div>
 			</aside>
 
 			<footer class="main-footer">
-				<span class="main-footer__body"></span>
+				<span class="main-footer__body">Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.</span>
 			</footer>
 
 		</div>
