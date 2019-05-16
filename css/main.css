@@ -1,4 +1,3 @@
-@import url("explorer.css");
 *,
 *::before,
 *::after {
@@ -72,6 +71,48 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
       grid-template-rows: repeat(6, minmax(16.66667vh, -webkit-min-content));
       grid-template-rows: repeat(6, minmax(16.66667vh, min-content));
       grid-template-areas: "header header header header header header header header header header header header" "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+@media (min-width: 576px) {
+  .main-grid {
+        grid-template-areas: ". . header header header header header header header header header header" "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+  .main-grid > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 10;
+    grid-area: header;
+  }
+  .main-grid > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: about;
+  }
+  .main-grid > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: services;
+  }
+  .main-grid > .main-gallery {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: gallery;
+  }
+  .main-grid > .main-footer {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: footer;
+  }
 }
 
 .main-header {
