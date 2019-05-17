@@ -68,19 +68,19 @@ a:focus {
   color: white;
 }
 
+/*GLOBAL ABOVE*/
 .main-grid.index {
   display: -ms-grid;
   display: grid;
-  margin-top: 10vh;
   width: 100%;
   min-height: 100vh;
   /*grid-template-columns: repeat($cols, calc(100vw/12));
-grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   -ms-grid-columns: (8.33333%)[12];
       grid-template-columns: repeat(12, 8.33333%);
-  -ms-grid-rows: (minmax(20vh))[5];
-      grid-template-rows: repeat(5, minmax(20vh));
-      grid-template-areas: ". . . . . header . . . . . ." "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+  -ms-grid-rows: (minmax(16.66667vh))[6];
+      grid-template-rows: repeat(6, minmax(16.66667vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .main-grid.index > * {
@@ -89,7 +89,7 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
 
 @media (min-width: 576px) {
   .main-grid.index {
-        grid-template-areas: ". . . . . header . . . . . ."  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
   }
   .main-grid.index > .intro {
     height: 200px;
@@ -124,9 +124,9 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px), (orientation: landscape) {
   .main-grid.index {
-        grid-template-areas: ". . . . . header . . . . . ."  ". . intro intro intro intro intro intro intro intro . ." ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". . intro intro intro intro intro intro intro intro . ." ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
   }
   .main-grid.index > .intro {
     height: 350px;
@@ -162,11 +162,15 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
 }
 
 .main-header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: header;
   top: 0;
-  position: fixed;
+  position: relative;
   background-color: aliceblue;
   min-height: 120px;
-  height: 10vh;
+  height: 8.33333vh;
   width: 100%;
   padding: 15px 20px;
   display: -webkit-box;
@@ -264,13 +268,13 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
 }
 
 @media (orientation: landscape) {
-  .main-header > .main-nav .dropdown {
+  .main-header > .main-nav .btn-group {
     display: none !important;
   }
 }
 
 @media (orientation: portrait) {
-  .main-header > .main-nav .dropdown {
+  .main-header > .main-nav .btn-group {
     display: block !important;
   }
 }
@@ -300,9 +304,9 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   cursor: pointer;
   display: block;
   padding-top: 4%;
-  width: calc(100vw - 1rem);
+  width: calc(100vw - 30px);
   height: 12.5vh;
-  font-size: 3rem;
+  font-size: calc(2.5vmin + 9px);
   text-align: center;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
@@ -311,13 +315,6 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
 .main-header > .main-nav .dropdown-item:hover {
   color: aliceblue;
   background-color: #194b50;
-}
-
-.margin {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-area: intro;
 }
 
 .intro {
@@ -385,7 +382,7 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
 }
 
 .our-services {
-  height: 20vh;
+  height: 16.66667vh;
   padding: 2rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -454,6 +451,13 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   }
 }
 
+@media (orientation: portrait) {
+  .main-gallery > .main-gallery__frame {
+    float: left;
+    width: 100%;
+  }
+}
+
 .main-footer {
   height: 75px;
   padding: 0 20px;
@@ -473,4 +477,6 @@ grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   grid-area: footer;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/*INDEX LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */

@@ -6,19 +6,26 @@ $main-bg-color-dark: rgba(0%, 0%, 0%, 0.5);
 $main-font: 'Roboto Mono', monospace;
 $title-font: 'Kaushan Script', cursive;
 $cols: 12;
-$rows: 5;
+$rows: 6;
 $sm: ( min-width: 576px );
+
+
 *,
 *::before,
 *::after {
-padding: 0;
-margin: 0;
-box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
 }
+
+
 /*ROOT ABOVE*/
+
+
 html{ 
     font-size: 14px;
     box-sizing: border-box;
+
     @media (min-width: 576px){
         font-size: 13px;
     }
@@ -26,98 +33,109 @@ html{
         font-size: 12px;
     }
 }
-h1, h2, h3, h4, h5, h6{
-font-family: $title-font;
-}
-h2{
-font-size: 5vmin;
-}
-body{
-background-image: url(https://sapphiretime.000webhostapp.com/content/PL/RES/dark_wood.png);
-color: white;
-font-family: $main-font;
-}
-ol{
-list-style-type: none;
-margin: 0;
-padding: 0;
-}
-p{
-overflow-wrap: break-word;
-hyphens: manual;
-}
-a{
-color: $main-color;
-text-decoration: none;
 
+h1, h2, h3, h4, h5, h6{
+    font-family: $title-font;
 }
+
+h2{
+    font-size: 5vmin;
+}
+
+body{
+    background-image: url(https://sapphiretime.000webhostapp.com/content/PL/RES/dark_wood.png);
+    color: white;
+    font-family: $main-font;
+}
+
+ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+
+a{
+    color: $main-color;
+    text-decoration: none;
+}
+
 a:visited{
-color: $main-color-dark;
+    color: $main-color-dark;
 }
+
 a:hover,
 a:focus{
-text-decoration: none;
-color: white;
+    text-decoration: none;
+    color: white;
 }
+/*GLOBAL ABOVE*/
 
 .main-grid.index{
-display: grid;
-margin-top: 100vh / $rows / 2;
-width: 100%;
-min-height: 100vh;
-/*grid-template-columns: repeat($cols, calc(100vw/12));
-grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
-grid-template-columns: repeat($cols, (100% / $cols));
-grid-template-rows: repeat($rows, minmax((100vh / $rows) ));
-grid-template-areas:
-". . . . . header . . . . . ."
-"intro intro intro intro intro intro intro intro intro intro intro intro"
-"about about about about about about about about about about about about"
-"services services services services services services services services services services services services"
-"gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
-"footer footer footer footer footer footer footer footer footer footer footer footer";
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+    grid-template-columns: repeat($cols, (100% / $cols));
+    grid-template-rows: repeat($rows, minmax((100vh / $rows) ));
 
-    &>*{
-        margin-bottom: 10px;
-    }
-@media (min-width: 576px){
     grid-template-areas:
-    ". . . . . header . . . . . ." 
-    ". intro intro intro intro intro intro intro intro intro intro ."
-    ". about about about about about about about about about about ."
-    ". services services services services services services services services services services ."
-    ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
-    ". footer footer footer footer footer footer footer footer footer footer .";
-    &>.intro{ 
-        height: 200px;
-        grid-area: intro
-    }
-    &>.about-us{ grid-area: about}
-    &>.our-services{ grid-area: services}
-    &>.main-gallery{ grid-area: gallery}
-    &>.main-footer{ grid-area: footer}
-}
-@media (min-width: 768px){
-    grid-template-areas:
-    ". . . . . header . . . . . ." 
-    ". . intro intro intro intro intro intro intro intro . ."
-    ". . about about about about about about about about . ."
-    ". . services services services services services services services services . ."
-    ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
-    ". . footer footer footer footer footer footer footer footer . .";
-    &>.intro{
-        height: 350px; 
-        grid-area: intro
-    }
-    &>.about-us{ grid-area: about}
-    &>.our-services{ grid-area: services}
-    &>.main-gallery{ grid-area: gallery}
-    &>.main-footer{ grid-area: footer}
-}
+    "header header header header header header header header header header header header" 
+    "intro intro intro intro intro intro intro intro intro intro intro intro"
+    "about about about about about about about about about about about about"
+    "services services services services services services services services services services services services"
+    "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+
+        &>*{
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 576px){
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            ". intro intro intro intro intro intro intro intro intro intro ."
+            ". about about about about about about about about about about ."
+            ". services services services services services services services services services services ."
+            ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
+            ". footer footer footer footer footer footer footer footer footer footer .";
+            &>.intro{ 
+                height: 200px;
+                grid-area: intro
+            }
+            &>.about-us{ grid-area: about}
+            &>.our-services{ grid-area: services}
+            &>.main-gallery{ grid-area: gallery}
+            &>.main-footer{ grid-area: footer}
+        }
+
+        @media (min-width: 768px), (orientation: landscape) {
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            ". . intro intro intro intro intro intro intro intro . ."
+            ". . about about about about about about about about . ."
+            ". . services services services services services services services services . ."
+            ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
+            ". . footer footer footer footer footer footer footer footer . .";
+            &>.intro{
+                height: 350px; 
+                grid-area: intro
+            }
+            &>.about-us{ grid-area: about}
+            &>.our-services{ grid-area: services}
+            &>.main-gallery{ grid-area: gallery}
+            &>.main-footer{ grid-area: footer}
+        }
 }
 .main-header{
+    grid-area: header;
     top: 0;
-    position: fixed;
+    position: relative;
     background-color: aliceblue;
     min-height:  120px;
     height:  100vh / $rows / 2;
@@ -126,6 +144,7 @@ grid-template-areas:
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     & .main-header__frame{
         display: flex;
         align-items: center;
@@ -133,10 +152,12 @@ grid-template-areas:
         min-height: 100px;
         width: auto;
         padding: 10% 0;
+
         & .main-header__frame__logo{
             min-height: 8vh;
             max-height: 6vw;
         }
+
     }
     &>.main-nav{
         display: flex;
@@ -152,9 +173,11 @@ grid-template-areas:
             justify-content: flex-end;
             align-items: center;
             &>.main-nav__menu-list__list-item{
+
                 &>a.first{
                     border-radius: 2em 0 0 2em;
                 }
+
                 &>a{
                     background: $main-gradient;
                     opacity: 0.4;
@@ -163,6 +186,7 @@ grid-template-areas:
                     font-size:  calc(0.8vmin + 9px);
                     margin-right: 0.2em;
                     transition: 0.4s ease-in-out;
+
                     &:hover{
                         opacity: 1;
                     }
@@ -174,14 +198,16 @@ grid-template-areas:
             @media (orientation: landscape) {
                 display: flex !important;
             }
+
             @media (orientation: portrait) {
                 display: none !important;
             }
         }
-        & .dropdown{
+        & .btn-group{
             @media (orientation: landscape) {
                 display: none !important;
             }
+
             @media (orientation: portrait) {
                 display: block !important;
             }
@@ -208,20 +234,18 @@ grid-template-areas:
             cursor: pointer;
             display: block;
             padding-top: 4%;
-            width: (100vw - 1rem);
+            width: calc(100vw - 30px);
             height: 12.5vh;
-            font-size: 3rem;
+            font-size: calc(2.5vmin + 9px);
             text-align: center;
             transition: 0.2s ease-in-out;
+
             &:hover{
                 color: aliceblue;
                 background-color: #194b50;
             }
         }
     }
-}
-.margin{
-    grid-area: intro;
 }
 .intro{
     height: 150px;
@@ -238,15 +262,18 @@ grid-template-areas:
     grid-area: about;
     background-color: $main-bg-color-dark;
     padding: 1.5em 2em;
+
     &>.about-us__title{
         hyphens: manual;
         word-wrap: wrap;
         margin-bottom: 0.5em;
         font-size: 2rem;
     }
+
     &>.about-us__body{
         max-width: 50ch;
     }
+
     @media (min-width: 768px){
         align-items: center;
         flex-direction: row;
@@ -265,6 +292,7 @@ grid-template-areas:
     justify-content: space-around;
     grid-area: services;
     background-color: $main-bg-color;
+
     &>.our-services__frame{
         display: flex;
         align-items: center;
@@ -274,6 +302,7 @@ grid-template-areas:
             max-height: 6vw;
         }
     }
+
     & .fas{
         font-size: 10vmin;
     }
@@ -283,6 +312,7 @@ display: block;
 padding: 1em 0 0 1em;
 grid-area: gallery;
 background-color: $main-bg-color-dark;
+
     &>.main-gallery__frame{
         padding: 0 1em 1em 0;
         width: 100%;
@@ -290,16 +320,25 @@ background-color: $main-bg-color-dark;
             cursor: pointer;
         }
     }
+
     @media (min-width: 576px){
         &>.main-gallery__frame{
             float: left;
             width: 50%;
         }
     }
+
     @media (min-width: 768px){
         &>.main-gallery__frame{
             float: left;
             width: 33.33%;
+        }
+    }
+
+    @media (orientation: portrait){
+        &>.main-gallery__frame{
+            float: left;
+            width: 100%;
         }
     }
 }
@@ -313,3 +352,4 @@ background-color: $main-bg-color-dark;
     grid-area: footer;
     background-color: $main-bg-color-dark;
 }
+/*INDEX LAYOUT ABOVE*/
