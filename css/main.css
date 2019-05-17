@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,400,400i,700i,900&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap&subset=latin-ext");
 *,
 *::before,
 *::after {
@@ -35,9 +37,9 @@ h2 {
 }
 
 body {
-  background-image: url(https://sapphiretime.000webhostapp.com/content/PL/RES/dark_wood.png);
+  background: linear-gradient(135deg, #29414b 0%, #2e4854 8%, #34515e 18%, #273d47 32%, #273d47 38%, #1c2b32 41%, #090f11 43%, #101a1e 56%, #1b2a31 71%, #152025 87%, #111a1f 100%);
   color: white;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Nunito", sans-serif;
 }
 
 ol {
@@ -68,6 +70,18 @@ a:focus {
   color: white;
 }
 
+.bg {
+  background-image: url(../res/united-squares-negative.png);
+  opacity: 0.2;
+  z-index: -2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
 /*GLOBAL ABOVE*/
 .main-grid.index {
   display: -ms-grid;
@@ -91,8 +105,14 @@ a:focus {
   .main-grid.index {
         grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
   }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
   .main-grid.index > .intro {
-    height: 200px;
+    height: 150px;
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
@@ -126,13 +146,19 @@ a:focus {
 
 @media (min-width: 768px), (orientation: landscape) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  ". . intro intro intro intro intro intro intro intro . ." ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
+  }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
   }
   .main-grid.index > .intro {
-    height: 350px;
+    height: 50vmin;
     -ms-grid-row: 2;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: intro;
   }
   .main-grid.index > .about-us {
@@ -229,28 +255,37 @@ a:focus {
           align-items: center;
 }
 
-.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a.first {
-  border-radius: 2em 0 0 2em;
-}
-
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a {
-  background: -webkit-gradient(linear, left top, left bottom, from(#33d1eb), to(#1a4a4f));
-  background: linear-gradient(#33d1eb, #1a4a4f);
-  opacity: 0.4;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: #194b50;
+  opacity: 0.6;
   color: aliceblue;
-  padding: 1.29em 1em;
-  font-size: calc(0.8vmin + 9px);
-  margin-right: 0.2em;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
+  padding: 1.1em 1.1em;
+  font-size: calc(0.7vmin + 9px);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-right: 0.1em;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
-.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:hover {
+@media (min-width: 1100px) {
+  .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a {
+    font-weight: 200;
+    padding: 0.8em 1.6em;
+    font-size: calc(1.5vmin + 9px);
+    letter-spacing: 3px;
+  }
+}
+
+.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:hover, .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:focus {
   opacity: 1;
 }
 
-.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:focus {
-  opacity: 1;
+.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:active {
+  top: 2px;
 }
 
 @media (orientation: landscape) {
@@ -396,7 +431,7 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services;
-  background-color: #194b50;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .our-services > .our-services__frame {
@@ -416,6 +451,11 @@ a:focus {
 
 .our-services .fas {
   font-size: 10vmin;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.our-services .fas:hover, .our-services .fas:focus {
+  color: black;
 }
 
 .main-gallery {

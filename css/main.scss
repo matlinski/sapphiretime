@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,400i,700i,900&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap&subset=latin-ext');
+
 $main-color: #32d0ea;
 $main-color-dark: #27a9b7;
 $main-bg-color: #194b50;
-$main-gradient: linear-gradient(rgb(20%, 82%, 92%), rgb(10%, 29%, 31%));
 $main-bg-color-dark: rgba(0%, 0%, 0%, 0.5);
-$main-font: 'Roboto Mono', monospace;
+$main-bg-color-bright: rgba(100%, 100%, 100%, 0.5);
+$main-font: 'Nunito', sans-serif;
 $title-font: 'Kaushan Script', cursive;
 $cols: 12;
 $rows: 6;
@@ -43,7 +46,7 @@ h2{
 }
 
 body{
-    background-image: url(https://sapphiretime.000webhostapp.com/content/PL/RES/dark_wood.png);
+    background: linear-gradient(135deg, #29414b 0%,#2e4854 8%,#34515e 18%,#273d47 32%,#273d47 38%,#1c2b32 41%,#090f11 43%,#101a1e 56%,#1b2a31 71%,#152025 87%,#111a1f 100%);
     color: white;
     font-family: $main-font;
 }
@@ -73,9 +76,21 @@ a:focus{
     text-decoration: none;
     color: white;
 }
+.bg{
+    background-image: url(../res/united-squares-negative.png);
+    opacity: 0.2;
+    z-index: -2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
 /*GLOBAL ABOVE*/
 
 .main-grid.index{
+
     display: grid;
     width: 100%;
     min-height: 100vh;
@@ -104,8 +119,10 @@ a:focus{
             ". services services services services services services services services services services ."
             ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
             ". footer footer footer footer footer footer footer footer footer footer .";
+
+            &>.main-header{ grid-area: header;}
             &>.intro{ 
-                height: 200px;
+                height: 150px;
                 grid-area: intro
             }
             &>.about-us{ grid-area: about}
@@ -117,13 +134,15 @@ a:focus{
         @media (min-width: 768px), (orientation: landscape) {
             grid-template-areas:
             "header header header header header header header header header header header header" 
-            ". . intro intro intro intro intro intro intro intro . ."
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
             ". . about about about about about about about about . ."
             ". . services services services services services services services services . ."
             ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
             ". . footer footer footer footer footer footer footer footer . .";
+
+            &>.main-header{ grid-area: header;}
             &>.intro{
-                height: 350px; 
+                height: 50vmin; 
                 grid-area: intro
             }
             &>.about-us{ grid-area: about}
@@ -174,24 +193,32 @@ a:focus{
             align-items: center;
             &>.main-nav__menu-list__list-item{
 
-                &>a.first{
-                    border-radius: 2em 0 0 2em;
-                }
-
                 &>a{
-                    background: $main-gradient;
-                    opacity: 0.4;
+                    position: relative;
+                    border: 2px solid $main-bg-color-dark;
+                    background-color: $main-bg-color;
+                    opacity: 0.6;
                     color: aliceblue;
-                    padding: 1.29em 1em;
-                    font-size:  calc(0.8vmin + 9px);
-                    margin-right: 0.2em;
-                    transition: 0.4s ease-in-out;
+                    padding: 1.1em 1.1em;
+                    font-size:  calc(0.7vmin + 9px);
+                    font-weight: 400;
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+                    margin-right: 0.1em;
+                    transition: opacity 0.4s ease-in-out;
 
-                    &:hover{
-                        opacity: 1;
+                    @media (min-width: 1100px) {
+                        font-weight: 200;
+                        padding: 0.8em 1.6em;
+                        font-size:  calc(1.5vmin + 9px);
+                        letter-spacing: 3px;
                     }
+                    &:hover,
                     &:focus{
                         opacity: 1;
+                    }
+                    &:active{
+                        top: 2px;
                     }
                 }
             }
@@ -291,7 +318,7 @@ a:focus{
     align-items: center;
     justify-content: space-around;
     grid-area: services;
-    background-color: $main-bg-color;
+    background-color: $main-bg-color-bright;
 
     &>.our-services__frame{
         display: flex;
@@ -305,6 +332,11 @@ a:focus{
 
     & .fas{
         font-size: 10vmin;
+        color: $main-bg-color-dark;
+        &:hover,
+        &:focus{
+            color: black;
+        }
     }
 }   
 .main-gallery{
