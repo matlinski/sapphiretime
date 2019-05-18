@@ -15,9 +15,10 @@ function start(){
         if(doubleGallery.style.display !== 'none'){
             doubleGallery.style.display = 'none';
             singleGallery.style.display = 'block';
-            i.style.transform = "scale(0.9)";
-            i.style.filter = "blur(10px)";
         }
+        (i.style.transform !== "scale(0.9)") ?i.style.transform = "scale(0.9)" :console.log(i);
+        (i.style.filter !== "blur(10px)") ?i.style.filter = "blur(10px)" :console.log(i);
+        
         setTimeout(()=>{
             i.style.transform = "scale(1)";
             i.style.filter = "blur(0)";
@@ -29,9 +30,10 @@ function start(){
         if(singleGallery.style.display !== 'none'){
             singleGallery.style.display = 'none';
             doubleGallery.style.display = 'block';
-            i.style.transform = "scale(0.9)";
-            i.style.filter = "blur(10px)";
         }
+        (i.style.transform !== "scale(0.9)") ?i.style.transform = "scale(0.9)" :console.log(i);
+        (i.style.filter !== "blur(10px)") ?i.style.filter = "blur(10px)" :console.log(i);
+
         setTimeout(()=>{
             i.style.transform = "scale(1)";
             i.style.filter = "blur(0)";
