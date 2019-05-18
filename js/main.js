@@ -1,45 +1,63 @@
 'use strict'
-
-window.onload = start;
-function start(){
-    const singleLogo = document.querySelector('#single-logo');
-    const singleGallery = document.querySelector('.single');
-    const singlePhotos = singleGallery.querySelectorAll('img');
-
-    const doubleLogo = document.querySelector('#double-logo');
-    const doubleGallery = document.querySelector('.double');
-    const doublePhotos = doubleGallery.querySelectorAll('img');
-
-    const revealS = () => singlePhotos.forEach((i)=>{
-        debugger
-        if(doubleGallery.style.display !== 'none'){
-            doubleGallery.style.display = 'none';
-            singleGallery.style.display = 'block';
+    var currentTab = document.querySelector('#current-tab')
+    var singleLogo = document.querySelector('#single-logo');
+    var singleGallery = document.querySelector('.single');
+    var singlePhotos = singleGallery.querySelectorAll('img');
+    var doubleLogo = document.querySelector('#double-logo');
+    var doubleGallery = document.querySelector('.double');
+    var doublePhotos = doubleGallery.querySelectorAll('img')
+    var revealS = function() {
+        for(var i = 0; i < singlePhotos.length; i++){
+            if (doubleGallery.style.display !== 'none') {
+                doubleGallery.style.display = 'none';
+                singleGallery.style.display = 'block';
+            }
+        (singlePhotos[i].style.transform !== "scale(0.9)") ? singlePhotos[i].style.transform = "scale(0.9)" : console.log(singlePhotos[i]);
+        (singlePhotos[i].style.filter !== "blur(10px)") ? singlePhotos[i].style.filter = "blur(10px)" : console.log(singlePhotos[i]);
+        (singlePhotos[i].style.opacity !== "0.4") ? singlePhotos[i].style.opacity = "0.4" : console.log(singlePhotos[i]);
         }
-        (i.style.transform !== "scale(0.9)") ?i.style.transform = "scale(0.9)" :console.log(i);
-        (i.style.filter !== "blur(10px)") ?i.style.filter = "blur(10px)" :console.log(i);
+        setTimeout(function(){
+        for(var i = 0; i < singlePhotos.length; i++){
+            singlePhotos[i].style.transform = "scale(1)";
+            singlePhotos[i].style.filter = "blur(0)";
+            singlePhotos[i].style.opacity = "1";
+        }
+        }, 250)
+    }
+
+        var revealD = function() {
+            for(var i = 0; i < doublePhotos.length; i++){
+                if (singleGallery.style.display !== 'none') {
+                    singleGallery.style.display = 'none';
+                    doubleGallery.style.display = 'block';
+                }
+            (doublePhotos[i].style.transform !== "scale(0.9)") ? doublePhotos[i].style.transform = "scale(0.9)" : console.log(doublePhotos[i]);
+            (doublePhotos[i].style.filter !== "blur(10px)") ? doublePhotos[i].style.filter = "blur(10px)" : console.log(doublePhotos[i]);
+            (doublePhotos[i].style.opacity !== "0.4") ? doublePhotos[i].style.opacity = "0.4" : console.log(doublePhotos[i]);
+        }
+            setTimeout(function(){
+            for(var i = 0; i < doublePhotos.length; i++){
+                doublePhotos[i].style.transform = "scale(1)";
+                doublePhotos[i].style.filter = "blur(0)";
+                doublePhotos[i].style.opacity = "1";
+            }
+            }, 250)
+        }
+
+        singleLogo.addEventListener('click', revealS);
+        doubleLogo.addEventListener('click', revealD);
         
-        setTimeout(()=>{
-            i.style.transform = "scale(1)";
-            i.style.filter = "blur(0)";
-        },500)
-    })
+        
+        singleLogo.addEventListener('keypress', function(e){
+            var key = e.which || e.keyCode;
+            if (key === 13) {
+                revealS()
+              }
+        });
 
-    const revealD = () => doublePhotos.forEach((i)=>{
-        debugger
-        if(singleGallery.style.display !== 'none'){
-            singleGallery.style.display = 'none';
-            doubleGallery.style.display = 'block';
-        }
-        (i.style.transform !== "scale(0.9)") ?i.style.transform = "scale(0.9)" :console.log(i);
-        (i.style.filter !== "blur(10px)") ?i.style.filter = "blur(10px)" :console.log(i);
-
-        setTimeout(()=>{
-            i.style.transform = "scale(1)";
-            i.style.filter = "blur(0)";
-        },500)
-    })
-
-    singleLogo.addEventListener('click', revealS);
-    doubleLogo.addEventListener('click', revealD);
-}
+        doubleLogo.addEventListener('keypress', function(e){
+            var key = e.which || e.keyCode;
+            if (key === 13) {
+                revealD()
+              }
+        });

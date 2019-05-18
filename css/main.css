@@ -65,7 +65,6 @@ p {
 a {
   color: #32d0ea;
   text-decoration: none;
-  cursor: pointer !important;
 }
 
 a:visited {
@@ -102,12 +101,7 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
       grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header" 
- "intro intro intro intro intro intro intro intro intro intro intro intro"
- "about about about about about about about about about about about about"
- "services services services services services services services services services services services services"
- "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
- "footer footer footer footer footer footer footer footer footer footer footer footer";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .main-grid.index > * {
@@ -120,12 +114,7 @@ a:focus {
 
 @media (min-width: 576px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header" 
- ". intro intro intro intro intro intro intro intro intro intro ."
- ". about about about about about about about about about about ."
- ". services services services services services services services services services services ."
- ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
- ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -168,12 +157,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header" 
- "intro intro intro intro intro intro intro intro intro intro intro intro"
- ". . about about about about about about about about . ."
- ". . services services services services services services services services . ."
- ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
- ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -216,12 +200,7 @@ a:focus {
 
 @media (orientation: portrait) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header" 
- "intro intro intro intro intro intro intro intro intro intro intro intro"
- "about about about about about about about about about about about about"
- "services services services services services services services services services services services services"
- "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
- "footer footer footer footer footer footer footer footer footer footer footer footer";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -360,6 +339,11 @@ a:focus {
   }
 }
 
+.main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a.current-tab {
+  background-color: rgba(255, 184, 143, 0.75);
+  color: #333;
+}
+
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:hover, .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:focus {
   color: #333;
   background-color: rgba(255, 184, 143, 0.75);
@@ -398,6 +382,7 @@ a:focus {
 
 .main-header > .main-nav .main-nav__icon {
   opacity: 0.5;
+  cursor: pointer;
   line-height: 8vh;
   font-size: 8vh;
   min-height: 8vh;
@@ -479,24 +464,37 @@ a:focus {
 }
 
 .about-us > .about-us__body {
-  max-width: 50ch;
+  max-width: 60ch;
 }
 
-@media (min-width: 768px) {
-  .about-us {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .about-us > .about-us__title {
+.about-us > .about-us__body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.1em;
+  margin: 1.5em 0;
+  background: white;
+}
+
+@media (orientation: landscape) {
+  .about-us > .about-us__body {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: auto;
     padding-right: 1em;
-    text-align: right;
+    text-align: left;
+  }
+  .about-us > .about-us__body::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2.5em;
+    content: "";
+    display: block;
+    width: 0.1em;
+    margin: 0 1.5em;
+    background: white;
   }
 }
 
@@ -571,7 +569,7 @@ a:focus {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: rgba(255, 184, 143, 0.75);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: auto;
 }
@@ -604,6 +602,7 @@ a:focus {
           filter: blur(10px);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  opacity: 0.4;
 }
 
 @media (min-width: 576px) {

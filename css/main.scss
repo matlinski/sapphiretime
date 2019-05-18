@@ -248,6 +248,10 @@ a:focus{
                         font-size:  calc(1.5vmin + 9px);
                         letter-spacing: 3px;
                     }
+                    &.current-tab{
+                        background-color: $title-color-trans;
+                        color: #333;
+                    }
                     &:hover,
                     &:focus{
                         color: #333;
@@ -331,6 +335,7 @@ a:focus{
     padding: 1.5em 2em;
 
     &>.about-us__title{
+
         hyphens: manual;
         word-wrap: wrap;
         margin-bottom: 0.5em;
@@ -338,17 +343,39 @@ a:focus{
     }
 
     &>.about-us__body{
-        max-width: 50ch;
+        max-width: 60ch;
+        &::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0.1em;
+            margin: 1.5em 0;
+            background: white;
+        }
     }
 
-    @media (min-width: 768px){
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        &>.about-us__title{
+
+    @media (orientation: landscape){        
+        &>.about-us__body{
+            position: relative;
+            display: block;
+            height: 100%;
+            width: auto;
             padding-right: 1em;
-            text-align: right;
+            text-align: left;
+            &::after{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -2.5em;
+                content: "";
+                display: block;
+                width: 0.1em;
+                margin: 0 1.5em;
+                background: white;
+            }
         }
+        
     }
 }
 .our-services{
@@ -397,7 +424,7 @@ a:focus{
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: $title-color-trans;
+        background-color: $main-bg-color-bright;
         width: 100%;
         height: auto;
         &>strong{
@@ -419,6 +446,7 @@ a:focus{
                 transform: scale(0.9);
                 filter: blur(10px);
                 transition: 0.3s ease-in-out;
+                opacity: 0.4;
             }
         }
 
