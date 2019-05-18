@@ -11,25 +11,32 @@
 
 /*ROOT ABOVE*/
 html {
-  font-size: 14px;
+  font-size: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 @media (min-width: 576px) {
   html {
-    font-size: 13px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (orientation: portrait) {
+  html {
+    font-size: 24px;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Kaushan Script", cursive;
+  color: #ffb88f;
 }
 
 h2 {
@@ -37,7 +44,7 @@ h2 {
 }
 
 body {
-  background: linear-gradient(135deg, #29414b 0%, #2e4854 8%, #34515e 18%, #273d47 32%, #273d47 38%, #1c2b32 41%, #090f11 43%, #101a1e 56%, #1b2a31 71%, #152025 87%, #111a1f 100%);
+  background: linear-gradient(135deg, #21233d 0%, #262948 7%, #2c2f52 16%, #1f2139 29%, #131423 37%, #000000 45%, #08080e 52%, #131423 67%, #0c0d16 86%, #080910 100%);
   color: white;
   font-family: "Nunito", sans-serif;
 }
@@ -58,10 +65,11 @@ p {
 a {
   color: #32d0ea;
   text-decoration: none;
+  cursor: pointer !important;
 }
 
 a:visited {
-  color: #27a9b7;
+  color: #0D6A78;
 }
 
 a:hover,
@@ -94,16 +102,30 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
       grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+      grid-template-areas: "header header header header header header header header header header header header" 
+ "intro intro intro intro intro intro intro intro intro intro intro intro"
+ "about about about about about about about about about about about about"
+ "services services services services services services services services services services services services"
+ "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
+ "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .main-grid.index > * {
+  border-right: 2px solid #aaa;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #444;
   margin-bottom: 10px;
 }
 
 @media (min-width: 576px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header" 
+ ". intro intro intro intro intro intro intro intro intro intro ."
+ ". about about about about about about about about about about ."
+ ". services services services services services services services services services services ."
+ ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
+ ". footer footer footer footer footer footer footer footer footer footer .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -112,7 +134,7 @@ a:focus {
     grid-area: header;
   }
   .main-grid.index > .intro {
-    height: 150px;
+    height: 250px;
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
@@ -144,9 +166,14 @@ a:focus {
   }
 }
 
-@media (min-width: 768px), (orientation: landscape) {
+@media (min-width: 768px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header" 
+ "intro intro intro intro intro intro intro intro intro intro intro intro"
+ ". . about about about about about about about about . ."
+ ". . services services services services services services services services . ."
+ ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
+ ". . footer footer footer footer footer footer footer footer . .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -155,7 +182,7 @@ a:focus {
     grid-area: header;
   }
   .main-grid.index > .intro {
-    height: 50vmin;
+    height: 60vmin;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
@@ -183,20 +210,68 @@ a:focus {
     -ms-grid-row: 6;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
+    grid-area: footer;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.index {
+        grid-template-areas: "header header header header header header header header header header header header" 
+ "intro intro intro intro intro intro intro intro intro intro intro intro"
+ "about about about about about about about about about about about about"
+ "services services services services services services services services services services services services"
+ "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
+ "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.index > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.index > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: about;
+  }
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: services;
+  }
+  .main-grid.index > .main-gallery {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: gallery;
+  }
+  .main-grid.index > .main-footer {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
 
 .main-header {
+  visibility: hidden;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: header;
   top: 0;
   position: relative;
-  background-color: aliceblue;
+  background-color: white;
   min-height: 120px;
-  height: 8.33333vh;
+  height: 11.11111vh;
   width: 100%;
   padding: 15px 20px;
   display: -webkit-box;
@@ -208,6 +283,12 @@ a:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.main-header.fixed {
+  position: fixed;
+  visibility: visible;
+  z-index: 100;
 }
 
 .main-header .main-header__frame {
@@ -257,9 +338,8 @@ a:focus {
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a {
   position: relative;
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  background-color: #194b50;
-  opacity: 0.6;
+  background-color: rgba(56, 71, 107, 0.7);
+  opacity: 0.8;
   color: aliceblue;
   padding: 1.1em 1.1em;
   font-size: calc(0.7vmin + 9px);
@@ -281,10 +361,12 @@ a:focus {
 }
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:hover, .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:focus {
-  opacity: 1;
+  color: #333;
+  background-color: rgba(255, 184, 143, 0.75);
 }
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:active {
+  opacity: 1;
   top: 2px;
 }
 
@@ -316,7 +398,6 @@ a:focus {
 
 .main-header > .main-nav .main-nav__icon {
   opacity: 0.5;
-  cursor: pointer;
   line-height: 8vh;
   font-size: 8vh;
   min-height: 8vh;
@@ -336,20 +417,23 @@ a:focus {
 }
 
 .main-header > .main-nav .dropdown-item {
+  color: rgba(56, 71, 107, 0.7);
   cursor: pointer;
   display: block;
-  padding-top: 4%;
   width: calc(100vw - 30px);
   height: 12.5vh;
   font-size: calc(2.5vmin + 9px);
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 900;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
 .main-header > .main-nav .dropdown-item:hover {
   color: aliceblue;
-  background-color: #194b50;
+  background-color: rgba(56, 71, 107, 0.7);
 }
 
 .intro {
@@ -381,7 +465,7 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(56, 71, 107, 0.7);
   padding: 1.5em 2em;
 }
 
@@ -417,89 +501,141 @@ a:focus {
 }
 
 .our-services {
-  height: 16.66667vh;
-  padding: 2rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  height: auto;
+  padding: 2% 5%;
+  padding-top: 5%;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #1f2e52;
 }
 
-.our-services > .our-services__frame {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
+.our-services .our-services__frame {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 13vh;
+  margin-bottom: 5%;
 }
 
-.our-services > .our-services__frame > .our-services__frame__logo {
+.our-services .our-services__frame > .our-services__frame__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   min-height: 8vh;
   max-height: 6vw;
 }
 
-.our-services .fas {
-  font-size: 10vmin;
-  color: rgba(0, 0, 0, 0.5);
+@media (orientation: portrait) {
+  .our-services .our-services__frame > .our-services__frame__logo {
+    min-height: 13vh;
+    max-height: 9vw;
+  }
 }
 
-.our-services .fas:hover, .our-services .fas:focus {
-  color: black;
+@media (orientation: landscape) {
+  .our-services .our-services__frame {
+    width: 50%;
+    height: 100%;
+    margin-bottom: 0;
+    float: left;
+  }
+}
+
+@media (orientation: landscape) {
+  .our-services {
+    height: 16.66667vh;
+    padding-top: 2.5%;
+    margin-bottom: 0;
+    float: left;
+  }
 }
 
 .main-gallery {
-  display: block;
-  padding: 1em 0 0 1em;
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: gallery;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(56, 71, 107, 0.7);
 }
 
-.main-gallery > .main-gallery__frame {
+.main-gallery > .main-gallery__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: rgba(255, 184, 143, 0.75);
+  width: 100%;
+  height: auto;
+}
+
+.main-gallery > .main-gallery__info > strong {
+  padding: 1em;
+  color: #333;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.main-gallery > .single,
+.main-gallery > .double {
+  padding: 1em 0 0 1em;
+  display: none;
+}
+
+.main-gallery > .single .main-gallery__frame,
+.main-gallery > .double .main-gallery__frame {
   padding: 0 1em 1em 0;
   width: 100%;
 }
 
-.main-gallery > .main-gallery__frame > .main-gallery__frame__thumbnail {
+.main-gallery > .single .main-gallery__frame > .main-gallery__frame__thumbnail,
+.main-gallery > .double .main-gallery__frame > .main-gallery__frame__thumbnail {
   cursor: pointer;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 @media (min-width: 576px) {
-  .main-gallery > .main-gallery__frame {
+  .main-gallery > .single > .main-gallery__frame,
+  .main-gallery > .double > .main-gallery__frame {
     float: left;
     width: 50%;
   }
 }
 
 @media (min-width: 768px) {
-  .main-gallery > .main-gallery__frame {
+  .main-gallery > .single > .main-gallery__frame,
+  .main-gallery > .double > .main-gallery__frame {
     float: left;
     width: 33.33%;
   }
 }
 
 @media (orientation: portrait) {
-  .main-gallery > .main-gallery__frame {
+  .main-gallery > .single > .main-gallery__frame,
+  .main-gallery > .double > .main-gallery__frame {
     float: left;
     width: 100%;
   }
 }
 
+.main-gallery > .single {
+  display: block;
+}
+
 .main-footer {
-  height: 75px;
+  height: 8.33333vh;
   padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -515,7 +651,8 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: footer;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #1f2e52;
+  border-top: 2px solid #aaa;
 }
 
 /*INDEX LAYOUT ABOVE*/
