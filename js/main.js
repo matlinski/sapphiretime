@@ -11,10 +11,13 @@ function start(){
     const doublePhotos = doubleGallery.querySelectorAll('img');
 
     const revealS = () => singlePhotos.forEach((i)=>{
-        doubleGallery.style.display = 'none';
-        singleGallery.style.display = 'block';
-        i.style.transform = "scale(0.9)";
-        i.style.filter = "blur(10px)";
+        debugger
+        if(doubleGallery.style.display !== 'none'){
+            doubleGallery.style.display = 'none';
+            singleGallery.style.display = 'block';
+            i.style.transform = "scale(0.9)";
+            i.style.filter = "blur(10px)";
+        }
         setTimeout(()=>{
             i.style.transform = "scale(1)";
             i.style.filter = "blur(0)";
@@ -22,10 +25,13 @@ function start(){
     })
 
     const revealD = () => doublePhotos.forEach((i)=>{
-        singleGallery.style.display = 'none';
-        doubleGallery.style.display = 'block';
-        i.style.transform = "scale(0.9)";
-        i.style.filter = "blur(10px)";
+        debugger
+        if(singleGallery.style.display !== 'none'){
+            singleGallery.style.display = 'none';
+            doubleGallery.style.display = 'block';
+            i.style.transform = "scale(0.9)";
+            i.style.filter = "blur(10px)";
+        }
         setTimeout(()=>{
             i.style.transform = "scale(1)";
             i.style.filter = "blur(0)";
