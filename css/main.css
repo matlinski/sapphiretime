@@ -11,6 +11,7 @@
 
 /*ROOT ABOVE*/
 html {
+  scroll-behavior: smooth;
   font-size: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -515,7 +516,7 @@ a:focus {
 }
 
 .our-services {
-  padding: 1% 1%;
+  padding: .5% .5%;
   position: relative;
   height: 32vh;
   -ms-grid-row: 4;
@@ -529,7 +530,7 @@ a:focus {
   width: 100%;
   height: 50%;
   position: relative;
-  padding: 1% 1%;
+  padding: .5% .5%;
   cursor: pointer;
 }
 

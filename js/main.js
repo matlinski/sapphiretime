@@ -7,6 +7,8 @@
     var doubleGallery = document.querySelector('.double');
     var doublePhotos = doubleGallery.querySelectorAll('img')
     var revealS = function() {
+        doubleLogo.style.backgroundColor = "rgba(22%, 28%, 42%, 0.7)";
+        singleLogo.style.backgroundColor = "rgba(2%, 8%, 22%, .75)";
         for(var i = 0; i < singlePhotos.length; i++){
             if (doubleGallery.style.display !== 'none') {
                 doubleGallery.style.display = 'none';
@@ -26,6 +28,8 @@
     }
 
         var revealD = function() {
+            singleLogo.style.backgroundColor = "rgba(22%, 28%, 42%, 0.7)";
+            doubleLogo.style.backgroundColor = "rgba(2%, 8%, 22%, .75)";
             for(var i = 0; i < doublePhotos.length; i++){
                 if (singleGallery.style.display !== 'none') {
                     singleGallery.style.display = 'none';
