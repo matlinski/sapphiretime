@@ -383,7 +383,7 @@ a:focus {
 .main-header > .main-nav .main-nav__icon {
   opacity: 0.5;
   cursor: pointer;
-  line-height: 8vh;
+  line-height: 10vh;
   font-size: 8vh;
   min-height: 8vh;
   max-height: 6vw;
@@ -391,6 +391,7 @@ a:focus {
   max-width: 6vw;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  padding: 0;
 }
 
 .main-header > .main-nav .main-nav__icon:hover {
@@ -464,19 +465,30 @@ a:focus {
 }
 
 .about-us > .about-us__body {
-  max-width: 60ch;
+  max-width: 50ch;
 }
 
 .about-us > .about-us__body::before {
   content: "";
   display: block;
   width: 100%;
-  height: 0.1em;
+  height: 0.2rem;
   margin: 1.5em 0;
   background: white;
 }
 
 @media (orientation: landscape) {
+  .about-us {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .about-us > .about-us__title {
+    margin-bottom: 0;
+    margin-right: 2rem;
+    text-align: right;
+  }
   .about-us > .about-us__body {
     position: relative;
     display: block;
@@ -485,11 +497,15 @@ a:focus {
     padding-right: 1em;
     text-align: left;
   }
+  .about-us > .about-us__body::before {
+    display: none;
+  }
   .about-us > .about-us__body::after {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -2.5em;
+    left: -2em;
+    width: 0.2rem;
     content: "";
     display: block;
     width: 0.1em;
@@ -499,9 +515,9 @@ a:focus {
 }
 
 .our-services {
-  height: auto;
-  padding: 2% 5%;
-  padding-top: 5%;
+  padding: 1% 1%;
+  position: relative;
+  height: 32vh;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
@@ -509,15 +525,28 @@ a:focus {
   background-color: #1f2e52;
 }
 
-.our-services .our-services__frame {
-  cursor: pointer;
-  position: relative;
+.our-services > .our-services__frame {
   width: 100%;
-  height: 13vh;
-  margin-bottom: 5%;
+  height: 50%;
+  position: relative;
+  padding: 1% 1%;
+  cursor: pointer;
 }
 
-.our-services .our-services__frame > .our-services__frame__logo {
+.our-services > .our-services__frame > .service {
+  background-color: rgba(56, 71, 107, 0.7);
+  opacity: 0.8;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.our-services > .our-services__frame > .service:hover, .our-services > .our-services__frame > .service:focus {
+  background-color: rgba(5, 20, 56, 0.75);
+  opacity: 1;
+}
+
+.our-services > .our-services__frame .our-services__frame__logo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -528,14 +557,14 @@ a:focus {
 }
 
 @media (orientation: portrait) {
-  .our-services .our-services__frame > .our-services__frame__logo {
+  .our-services > .our-services__frame .our-services__frame__logo {
     min-height: 13vh;
     max-height: 9vw;
   }
 }
 
 @media (orientation: landscape) {
-  .our-services .our-services__frame {
+  .our-services > .our-services__frame {
     width: 50%;
     height: 100%;
     margin-bottom: 0;
@@ -546,7 +575,6 @@ a:focus {
 @media (orientation: landscape) {
   .our-services {
     height: 16.66667vh;
-    padding-top: 2.5%;
     margin-bottom: 0;
     float: left;
   }
