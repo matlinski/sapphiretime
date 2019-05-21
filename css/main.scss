@@ -467,7 +467,7 @@ a:focus{
             padding: 0 1em 1em 0;
             width: 100%;
             &>.main-gallery__frame__thumbnail{
-                cursor: pointer;
+                cursor: not-allowed;
                 transform: scale(0.9);
                 filter: blur(10px);
                 transition: 0.3s ease-in-out;
