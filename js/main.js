@@ -1,11 +1,12 @@
 'use strict'
+    var page = document.querySelector("body");
     var currentTab = document.querySelector('#current-tab')
     var singleLogo = document.querySelector('#single-logo');
     var singleGallery = document.querySelector('.single');
     var singlePhotos = singleGallery.querySelectorAll('img');
     var doubleLogo = document.querySelector('#double-logo');
     var doubleGallery = document.querySelector('.double');
-    var doublePhotos = doubleGallery.querySelectorAll('img')
+    var doublePhotos = doubleGallery.querySelectorAll('img');
     var revealS = function() {
         doubleLogo.style.backgroundColor = "rgba(22%, 28%, 42%, 0.7)";
         singleLogo.style.backgroundColor = "rgba(2%, 8%, 22%, .75)";
@@ -65,3 +66,4 @@
                 revealD()
               }
         });
+
