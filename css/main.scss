@@ -445,6 +445,19 @@ a:focus{
 .main-gallery{
     grid-area: gallery;
     background-color: $main-bg-color-dark;
+
+    @supports not (-ms-high-contrast: none) {
+        & a:hover,
+        & a:focus{
+            opacity: 1 !important;
+        }
+
+        & a:hover img,
+        & a:focus img{
+            box-shadow: 0 0 0 2.5px white;
+        }
+    }
+
     &>.main-gallery__info{
         display: flex;
         justify-content: center;
@@ -466,12 +479,12 @@ a:focus{
         & .main-gallery__frame{
             padding: 0 1em 1em 0;
             width: 100%;
+            opacity: 0.4;
             &>.main-gallery__frame__thumbnail{
                 cursor: not-allowed;
                 transform: scale(0.9);
                 filter: blur(10px);
                 transition: 0.3s ease-in-out;
-                opacity: 0.4;
             }
         }
 

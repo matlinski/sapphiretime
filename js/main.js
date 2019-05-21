@@ -40,13 +40,13 @@
             
             (singlePhotos[i].style.transform !== "scale(0.9)") ? singlePhotos[i].style.transform = "scale(0.9)" : console.log(singlePhotos[i]);
             (singlePhotos[i].style.filter !== "blur(10px)") ? singlePhotos[i].style.filter = "blur(10px)" : console.log(singlePhotos[i]);
-            (singlePhotos[i].style.opacity !== "0.4") ? singlePhotos[i].style.opacity = "0.4" : console.log(singlePhotos[i]);
+            (singleFrames[i].style.opacity !== "0.4") ? singleFrames[i].style.opacity = "0.4" : console.log(singleFrames[i]);
         }
         setTimeout(function(){
         for(var i = 0; i < singlePhotos.length; i++){
             singlePhotos[i].style.transform = "scale(1)";
             singlePhotos[i].style.filter = "blur(0)";
-            singlePhotos[i].style.opacity = "1";
+            singleFrames[i].style.opacity = "0.85";
         }
         }, 250)
     }
@@ -62,13 +62,13 @@
                 }
                 (doublePhotos[i].style.transform !== "scale(0.9)") ? doublePhotos[i].style.transform = "scale(0.9)" : console.log(doublePhotos[i]);
                 (doublePhotos[i].style.filter !== "blur(10px)") ? doublePhotos[i].style.filter = "blur(10px)" : console.log(doublePhotos[i]);
-                (doublePhotos[i].style.opacity !== "0.4") ? doublePhotos[i].style.opacity = "0.4" : console.log(doublePhotos[i]);
+                (doubleFrames[i].style.opacity !== "0.4") ? doubleFrames[i].style.opacity = "0.4" : console.log(doubleFrames[i]);
         }
             setTimeout(function(){
             for(var i = 0; i < doublePhotos.length; i++){
                 doublePhotos[i].style.transform = "scale(1)";
                 doublePhotos[i].style.filter = "blur(0)";
-                doublePhotos[i].style.opacity = "1";
+                doubleFrames[i].style.opacity = "0.85";
             }
             }, 250)
         }

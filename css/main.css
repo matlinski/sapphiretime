@@ -589,6 +589,18 @@ a:focus {
   background-color: rgba(56, 71, 107, 0.7);
 }
 
+@supports not (-ms-high-contrast: none) {
+  .main-gallery a:hover,
+  .main-gallery a:focus {
+    opacity: 1 !important;
+  }
+  .main-gallery a:hover img,
+  .main-gallery a:focus img {
+    -webkit-box-shadow: 0 0 0 2.5px white;
+            box-shadow: 0 0 0 2.5px white;
+  }
+}
+
 .main-gallery > .main-gallery__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -620,6 +632,7 @@ a:focus {
 .main-gallery > .double .main-gallery__frame {
   padding: 0 1em 1em 0;
   width: 100%;
+  opacity: 0.4;
 }
 
 .main-gallery > .single .main-gallery__frame > .main-gallery__frame__thumbnail,
@@ -631,7 +644,6 @@ a:focus {
           filter: blur(10px);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  opacity: 0.4;
 }
 
 @media (min-width: 576px) {
