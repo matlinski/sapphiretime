@@ -28,7 +28,7 @@ var gps;
 window.onload = start;
 
 function start(){
-    fetch('http://api.ipstack.com/37.139.127.240?access_key=4d6e65113ea6aabbfe03da3daa5859f0')
+    fetch('https://api.ipstack.com/37.139.127.240?access_key=4d6e65113ea6aabbfe03da3daa5859f0')
     .then(function(response){
         return response.json();
     })
