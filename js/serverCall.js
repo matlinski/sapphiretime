@@ -27,7 +27,7 @@ var myIp;
 window.onload = start;
 
 var langChange = function(){
-    if(localStorage.gps === "Poland"){
+    if(localStorage.getItem("gps") === "Poland"){
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "STRONA GŁÓWNA";
             gpsMenu[i].innerHTML = "LOKALIZACJA";
@@ -41,7 +41,7 @@ var langChange = function(){
         infoGallery.innerHTML = "Możesz zobaczyć galerię zdjęć z naszego apartamentu klikając na jeden z logotypów powyżej.";
         footerText.innerHTML = "Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.";
     }
-    else if(localStorage.gps === "Spain"){
+    else if(localStorage.getItem("gps") === "Spain"){
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "HOME";
             gpsMenu[i].innerHTML = "LOCATION";
@@ -58,9 +58,10 @@ var langChange = function(){
 }
 
 function start(){
-    if(localStorage.gps !== "0"){
+    debugger
+    if(localStorage.getItem("gps") !== "0"){
         langChange();
-        return console.log(localStorage.gps)    
+        return console.log(localStorage.getItem("gps"))    
     }
     else{
         fetch('https://api6.ipify.org?format=json')
