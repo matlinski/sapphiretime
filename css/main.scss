@@ -313,6 +313,10 @@ a:focus{
             letter-spacing: 0.2em;
             font-weight: 900;
             transition: 0.2s ease-in-out;
+            &.current-tab{
+                color: aliceblue;
+                background-color: $main-bg-color-dark;                
+            }
 
             &:hover{
                 color: aliceblue;

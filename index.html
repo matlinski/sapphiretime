@@ -35,10 +35,10 @@
 		<nav class="main-nav">
 
 			<ol class="main-nav__menu-list d-none d-md-flex">
-				<li class="main-nav__menu-list__list-item"><a class="current-tab" href="index.html">Strona główna</a></li>
-				<li class="main-nav__menu-list__list-item"><a href="">Lokalizacja</a></li>
-				<li class="main-nav__menu-list__list-item"><a href="">Rezerwacja</a></li>
-				<li class="main-nav__menu-list__list-item"><a class="last" href="">Kontakt</a></li>
+				<li class="main-nav__menu-list__list-item"><a class="current-tab menu1" href="index.html">Strona główna</a></li>
+				<li class="main-nav__menu-list__list-item"><a class="menu2" href="">Lokalizacja</a></li>
+				<li class="main-nav__menu-list__list-item"><a class="menu3" href="">Rezerwacja</a></li>
+				<li class="main-nav__menu-list__list-item"><a class="menu4" class="last" href="">Kontakt</a></li>
 			</ol>
 
 			<div style="display: flex; justify-content: flex-end; align-items: center;"
@@ -47,14 +47,14 @@
 					class="btn btn-secondary dropdown-toggle main-nav__icon" id="dropdownMenuButton"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 				<div class="dropdown-menu-right dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a style="display: flex; align-items: center; justify-content: center;" class="dropdown-item current-tab"
+						href="index.html"><span class="menu1" >Strona główna</span></a>
 					<a style="display: flex; align-items: center; justify-content: center;" class="dropdown-item"
-						href="index.html"><span>Strona główna</span></a>
+						href="#"><span class="menu2" >Lokalizacja</span></a>
 					<a style="display: flex; align-items: center; justify-content: center;" class="dropdown-item"
-						href="#"><span>Lokalizacja</span></a>
+						href="#"><span class="menu3" >Rezerwacja</span></a>
 					<a style="display: flex; align-items: center; justify-content: center;" class="dropdown-item"
-						href="#"><span>Rezerwacja</span></a>
-					<a style="display: flex; align-items: center; justify-content: center;" class="dropdown-item"
-						href="#"><span>Kontakt</span></a>
+						href="#"><span class="menu4" >Kontakt</span></a>
 				</div>
 			</div>
 		</nav>
@@ -103,7 +103,7 @@
 
 		<aside class="main-gallery">
 			<div id="target" class="main-gallery__info">
-				<strong>Możesz zobaczyć galerię zdjęć z naszego apartamentu klikając na jeden z logotypów powyżej.</strong>
+				<strong id="info">Możesz zobaczyć galerię zdjęć z naszego apartamentu klikając na jeden z logotypów powyżej.</strong>
 			</div>
 			<section class="single">
 				<a href="res/img/single/1.jpg" class="main-gallery__frame">
@@ -239,6 +239,7 @@
 		<span class="main-footer__body">Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.</span>
 	</footer>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/lang.js"></script>
 </body>
 
 </html>
