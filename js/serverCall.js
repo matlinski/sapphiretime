@@ -41,7 +41,7 @@ var langChange = function(){
         infoGallery.innerHTML = "Możesz zobaczyć galerię zdjęć z naszego apartamentu klikając na jeden z logotypów powyżej.";
         footerText.innerHTML = "Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.";
     }
-    else if(localStorage.getItem("gps") === "Spain"){
+    else if(localStorage.getItem("gps") !== "Poland"){
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "HOME";
             gpsMenu[i].innerHTML = "LOCATION";
@@ -63,7 +63,7 @@ function start(){
         langChange();
         console.log(localStorage.getItem("gps"));
     }
-    else if(localStorage.getItem("gps") === true){
+    else{
         fetch('https://api6.ipify.org?format=json')
         .then(function(response){
             console.log("error")
