@@ -23,12 +23,14 @@ var contMenu = document.querySelectorAll(".menu4");
 var aboutUsTitle = document.querySelector(".about-us__title");
 var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
-var footerText = document.querySelector(".main-footer__body")
+var footerText = document.querySelector(".main-footer__body");
 var gps;
+var ip = '201.144.237.145';
+var access_key = '4d6e65113ea6aabbfe03da3daa5859f0';
 window.onload = start;
 
 function start(){
-    fetch('https://api.ipstack.com/37.139.127.240?access_key=4d6e65113ea6aabbfe03da3daa5859f0')
+    fetch('http://api.ipstack.com/check?access_key='+access_key)
     .then(function(response){
         return response.json();
     })
