@@ -63,7 +63,7 @@ function start(){
         langChange();
         return console.log(localStorage.getItem("gps"))    
     }
-    else{
+    else if(localStorage.getItem("gps") === "0"){
         fetch('https://api6.ipify.org?format=json')
         .then(function(response){
             console.log("error")
