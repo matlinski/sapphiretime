@@ -22,7 +22,7 @@ var aboutUsTitle = document.querySelector(".about-us__title");
 var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
-localStorage.setItem("gps", null);
+localStorage.setItem("gps", "0");
 var myIp;
 window.onload = start;
 
@@ -58,7 +58,7 @@ var langChange = function(){
 }
 
 function start(){
-    if(localStorage.gps !== null){
+    if(localStorage.gps !== "0"){
         langChange();
         return console.log(localStorage.gps)    
     }
