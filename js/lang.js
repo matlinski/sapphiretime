@@ -28,7 +28,7 @@ window.onload = start;
 
 function start(){
     $.ajax({
-        url: 'http://api.ipstack.com/check?access_key=' + access_key,
+        url: '//api.ipstack.com/check?access_key=' + access_key,
         dataType: 'json',
         success: function (json) {
 
