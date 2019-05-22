@@ -12,8 +12,6 @@ function onPositionReceived(position){
 function locationNotReceived(positionError){
     console.log(positionError)
 }
-
-
     ? access_key = ;*/
 
 var indexMenu = document.querySelectorAll(".menu1");
@@ -25,20 +23,22 @@ var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
 var gps;
-var ip = '201.144.237.145';
 var access_key = '4d6e65113ea6aabbfe03da3daa5859f0';
 window.onload = start;
 
 function start(){
-    fetch('http://api.ipstack.com/check?access_key='+access_key)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(response){
-        gps = response;
-        console.log(gps.country_name);
+    $.ajax({
+        url: 'http://api.ipstack.com/check?access_key=' + access_key,
+        dataType: 'json',
+        success: function (json) {
+
+                // output the "capital" object inside "location"
+                $("span").text(json.location);
+                gps = json.country_name;
+        }
     }).then(function(){
-        if(gps.country_name === "Poland"){
+        console.log(gps);
+        if(gps === "Poland"){
             for(var i = 0; i < indexMenu.length; i++){
                 indexMenu[i].innerHTML = "STRONA GŁÓWNA";
                 gpsMenu[i].innerHTML = "LOKALIZACJA";
@@ -52,7 +52,7 @@ function start(){
             infoGallery.innerHTML = "Możesz zobaczyć galerię zdjęć z naszego apartamentu klikając na jeden z logotypów powyżej.";
             footerText.innerHTML = "Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.";
         }
-        else if(gps.country_name === "Spain"){
+        else if(gps === "Spain"){
             for(var i = 0; i < indexMenu.length; i++){
                 indexMenu[i].innerHTML = "HOME";
                 gpsMenu[i].innerHTML = "LOCATION";
@@ -67,5 +67,4 @@ function start(){
             footerText.innerHTML = "All rights reserved. © 2019 website author Mateusz Matliński.";
         }
     })
-    
 }
