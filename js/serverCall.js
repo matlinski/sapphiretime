@@ -22,7 +22,13 @@ var aboutUsTitle = document.querySelector(".about-us__title");
 var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
-localStorage.setItem("gps");
+if(localStorage.getItem("gps") !== false){
+    console.log(localStorage.getItem("gps"))
+}
+else{
+    localStorage.setItem("gps", false);
+}
+
 var myIp;
 window.onload = start;
 
