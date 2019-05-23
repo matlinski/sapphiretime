@@ -72,7 +72,7 @@ function start(){
             return response.json();
         })
         .then(function(geo){
-            return geo.country})
+            return geo.country_name})
         .then(function(country){
             localStorage.setItem('gps', country)})
         .then(langChange);
