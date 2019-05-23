@@ -75,19 +75,3 @@
 
         singleLogo.addEventListener('click', revealS);
         doubleLogo.addEventListener('click', revealD);
-        
-        
-        singleLogo.addEventListener('keypress', function(e){
-            var key = e.which || e.keyCode;
-            if (key === 13) {
-                revealS()
-              }
-        });
-
-        doubleLogo.addEventListener('keypress', function(e){
-            var key = e.which || e.keyCode;
-            if (key === 13) {
-                revealD()
-              }
-        });
-

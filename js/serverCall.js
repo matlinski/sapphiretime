@@ -22,13 +22,24 @@ var aboutUsTitle = document.querySelector(".about-us__title");
 var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
-console.log(localStorage.getItem("gps"))
+var flags = document.querySelectorAll(".flag");
+var PL = flags[0];
+var UK = flags[1];
+var chooseLang = function(e){
+    localStorage.clear();
+    localStorage.setItem('gps', e.target.alt);
+    flags.forEach(function(i){
+        i.classList.remove('current')
+    })
+    langChange();
+}
 
 document.addEventListener('DOMContentLoaded', function(){
     start() 
 })
 
 var langChange = function(){
+    (localStorage.getItem("gps") === "PL") ?flags[0].classList.add('current') :flags[1].classList.add('current');
     if(localStorage.getItem("gps") === "PL"){
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "STRONA GŁÓWNA";
@@ -60,6 +71,10 @@ var langChange = function(){
 }
 
 function start(){
+
+    PL.addEventListener("click", chooseLang);
+    UK.addEventListener("click", chooseLang);
+
     if(typeof localStorage.getItem("gps") === 'string' || localStorage.getItem("gps") instanceof String){
         langChange();
         console.log(localStorage.getItem("gps"));
@@ -73,7 +88,8 @@ function start(){
         .then(function(geo){
             return geo.country})
         .then(function(country){
-            localStorage.setItem('gps', country)})
+            localStorage.setItem('gps', country);
+        })
         .then(langChange);
     }
 }

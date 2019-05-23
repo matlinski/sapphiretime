@@ -136,7 +136,7 @@ a:focus{
             &>.main-header{ grid-area: header;}
             &>.intro{ 
                 height: 250px;
-                grid-area: intro
+                grid-area: intro;
             }
             &>.about-us{ grid-area: about}
             &>.our-services{ grid-area: services}
@@ -330,7 +330,56 @@ a:focus{
     grid-area: intro;
     background-image: url("../res/img/double/1.jpg");
     background-size: cover;
-    background-position-y: center; 
+    background-position-y: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (orientation: landscape) {
+        justify-content: flex-end;
+    }
+    &>.intro__title{
+        width: 60%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        &>a{
+            border-radius: 50%;
+            opacity: 0.5;
+            margin-right: 2vh;
+            &:hover,
+            &:focus{
+                opacity: 0.8;
+                box-shadow: inset 0 0 0 1.5vh $main-color-dark;
+            }
+            &:active{
+                opacity: 1;
+                box-shadow: inset 0 0 0 1.5vh $main-color;
+            }
+            &>img{
+                min-height: 13vh;
+                max-height: 8vw;
+            }
+            &.current{
+                opacity: 0.8;
+                box-shadow: inset 0 0 0 1.5vh $main-color-dark;
+            }
+        }
+        
+        @media (orientation: landscape) {
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: flex-end;
+            &>a{
+                margin-right: 2vh;
+                margin-bottom: 1vh;
+                &>img{
+                    min-height: 13vh;
+                    max-height: 8vw;
+                }
+            }
+        }
+    }
 }
 .about-us{
     display: flex;

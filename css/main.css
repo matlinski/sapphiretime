@@ -437,6 +437,91 @@ a:focus {
   background-image: url("../res/img/double/1.jpg");
   background-size: cover;
   background-position-y: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (orientation: landscape) {
+  .intro {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.intro > .intro__title {
+  width: 60%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.intro > .intro__title > a {
+  border-radius: 50%;
+  opacity: 0.5;
+  margin-right: 2vh;
+}
+
+.intro > .intro__title > a:hover, .intro > .intro__title > a:focus {
+  opacity: 0.8;
+  -webkit-box-shadow: inset 0 0 0 1.5vh #0D6A78;
+          box-shadow: inset 0 0 0 1.5vh #0D6A78;
+}
+
+.intro > .intro__title > a:active {
+  opacity: 1;
+  -webkit-box-shadow: inset 0 0 0 1.5vh #32d0ea;
+          box-shadow: inset 0 0 0 1.5vh #32d0ea;
+}
+
+.intro > .intro__title > a > img {
+  min-height: 13vh;
+  max-height: 8vw;
+}
+
+.intro > .intro__title > a.current {
+  opacity: 0.8;
+  -webkit-box-shadow: inset 0 0 0 1.5vh #0D6A78;
+          box-shadow: inset 0 0 0 1.5vh #0D6A78;
+}
+
+@media (orientation: landscape) {
+  .intro > .intro__title {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .intro > .intro__title > a {
+    margin-right: 2vh;
+    margin-bottom: 1vh;
+  }
+  .intro > .intro__title > a > img {
+    min-height: 13vh;
+    max-height: 8vw;
+  }
 }
 
 .about-us {
