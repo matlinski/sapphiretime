@@ -24,7 +24,6 @@ var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
 console.log(localStorage.getItem("gps"))
 
-var myIp;
 document.addEventListener('DOMContentLoaded', function(){
     start() 
 })
