@@ -22,12 +22,7 @@ var aboutUsTitle = document.querySelector(".about-us__title");
 var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
-if(localStorage.getItem("gps") !== false){
-    console.log(localStorage.getItem("gps"))
-}
-else{
-    localStorage.setItem("gps", false);
-}
+console.log(localStorage.getItem("gps"))
 
 var myIp;
 window.onload = start;
@@ -65,14 +60,15 @@ var langChange = function(){
 
 function start(){
     debugger
-    if(localStorage.getItem("gps") !== false){
+    if(typeof localStorage.getItem("gps") === 'string' || localStorage.getItem("gps") instanceof String){
         langChange();
         console.log(localStorage.getItem("gps"));
+        return;
     }
     else{
         fetch('https://api6.ipify.org?format=json')
         .then(function(response){
-            console.log("error")
+            console.log(localStorage.getItem("gps"))
             return response.json();
         })
         .then(function(response){
