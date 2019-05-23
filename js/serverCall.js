@@ -13,7 +13,6 @@ function locationNotReceived(positionError){
     console.log(positionError)
 }
     ? access_key = ;*/
-
 var indexMenu = document.querySelectorAll(".menu1");
 var gpsMenu = document.querySelectorAll(".menu2");
 var resMenu = document.querySelectorAll(".menu3");
@@ -23,6 +22,13 @@ var aboutUsBody = document.querySelectorAll(".about-us__body");
 var infoGallery = document.querySelector("#info");
 var footerText = document.querySelector(".main-footer__body");
 var flags = document.querySelectorAll(".flag");
+var singleGallery = document.querySelector('.single');
+var doubleGallery = document.querySelector('.double');
+var mainLogo = document.querySelector(".main-header__frame__logo")
+var serviceLogo = document.querySelector(".single-alt")
+var serviceLogoDouble = document.querySelector(".double-alt")
+var singlePhotos = singleGallery.querySelectorAll('img')
+var doublePhotos = doubleGallery.querySelectorAll('img')
 var PL = flags[0];
 var UK = flags[1];
 var chooseLang = function(e){
@@ -41,6 +47,16 @@ document.addEventListener('DOMContentLoaded', function(){
 var langChange = function(){
     (localStorage.getItem("gps") === "PL") ?flags[0].classList.add('current') :flags[1].classList.add('current');
     if(localStorage.getItem("gps") === "PL"){
+        document.title = "Witaj na stronie Sapphire Time";
+        mainLogo.alt = "Logo Sapphire Time";
+        serviceLogo.alt = "Logo Sapphire Time";
+        serviceLogoDouble.alt = "Logo Double Sapphire Time";
+        singlePhotos.forEach(function(i){
+            i.alt = "Zdjęcie z apartamentu Sapphire Time";
+        });
+        doublePhotos.forEach(function(i){
+            i.alt = "Zdjęcie z apartamentu Double Sapphire Time";
+        });
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "STRONA GŁÓWNA";
             gpsMenu[i].innerHTML = "LOKALIZACJA";
@@ -55,6 +71,16 @@ var langChange = function(){
         footerText.innerHTML = "Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.";
     }
     else if(localStorage.getItem("gps") !== "PL"){
+        document.title = "Welcome to the Sapphire Time website";
+        mainLogo.alt = "Sapphire Time logo";
+        serviceLogo.alt = "Sapphire Time logo";
+        serviceLogoDouble.alt = "Double Sapphire Time logo";
+        singlePhotos.forEach(function(i){
+            i.alt = "Photo from the Sapphire Time apartment";
+        });
+        doublePhotos.forEach(function(i){
+            i.alt = "Photo from the Double Sapphire Time apartment";
+        });
         for(var i = 0; i < indexMenu.length; i++){
             indexMenu[i].innerHTML = "HOME";
             gpsMenu[i].innerHTML = "LOCATION";
