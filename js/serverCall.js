@@ -25,7 +25,9 @@ var footerText = document.querySelector(".main-footer__body");
 console.log(localStorage.getItem("gps"))
 
 var myIp;
-window.onload = start;
+document.addEventListener('DOMContentLoaded', function(){
+    start().then(langChange); 
+})
 
 var langChange = function(){
     if(localStorage.getItem("gps") === "Poland"){
@@ -59,30 +61,19 @@ var langChange = function(){
 }
 
 function start(){
-    debugger
     if(typeof localStorage.getItem("gps") === 'string' || localStorage.getItem("gps") instanceof String){
         langChange();
         console.log(localStorage.getItem("gps"));
         return;
     }
     else{
-        fetch('https://api6.ipify.org?format=json')
+        fetch('https://trgwii-geoip-server.glitch.me/')
         .then(function(response){
-            console.log(localStorage.getItem("gps"))
             return response.json();
         })
-        .then(function(response){
-            myIp = response.ip;
-
-            $.ajax({
-                url: 'https://ipapi.co/'+myIp+'/json/',
-                success: function (json) {
-        
-                        // output the "capital" object inside "location"
-                        $("span").text(json.location);
-                        localStorage.setItem("gps", json.country_name);
-                }
-            }).then(langChange)
-    })
+        .then(function(geo){
+            return geo.country})
+        .then(function(geo){
+            localStorage.setItem('gps', country)})
     }
 }
