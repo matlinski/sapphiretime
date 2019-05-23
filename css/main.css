@@ -477,6 +477,10 @@ a:focus {
   border-radius: 50%;
   opacity: 0.5;
   margin-right: 2vh;
+  -webkit-transition: opacity 0.4s ease-in-out, -webkit-box-shadow 0.6s 0.2s ease-in-out;
+  transition: opacity 0.4s ease-in-out, -webkit-box-shadow 0.6s 0.2s ease-in-out;
+  transition: opacity 0.4s ease-in-out, box-shadow 0.6s 0.2s ease-in-out;
+  transition: opacity 0.4s ease-in-out, box-shadow 0.6s 0.2s ease-in-out, -webkit-box-shadow 0.6s 0.2s ease-in-out;
 }
 
 .intro > .intro__title > a:hover, .intro > .intro__title > a:focus {
