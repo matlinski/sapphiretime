@@ -26,7 +26,7 @@ console.log(localStorage.getItem("gps"))
 
 var myIp;
 document.addEventListener('DOMContentLoaded', function(){
-    start().then(langChange); 
+    start() 
 })
 
 var langChange = function(){
@@ -73,7 +73,8 @@ function start(){
         })
         .then(function(geo){
             return geo.country})
-        .then(function(geo){
+        .then(function(country){
             localStorage.setItem('gps', country)})
+        .then(langChange);
     }
 }
