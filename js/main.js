@@ -71,6 +71,5 @@ function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, double
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    debugger;
     mainStart(document.querySelector('#single-logo'), document.querySelector('.single'), document.querySelectorAll('.single>a'), document.querySelectorAll('.single>a>img'), document.querySelector('#double-logo'), document.querySelector('.double'), document.querySelectorAll('.double>a'), document.querySelectorAll('.double>a>img'));
 })

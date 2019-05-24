@@ -2,15 +2,12 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function () {
-    serverStart();
+serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'), document.querySelector('.about-us__body'), document.querySelector('#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'), document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
 })
 
-function serverStart() {
-    var flags = document.querySelectorAll('.flag');
-    var PL = flags[0];
-    var UK = flags[1];
-    PL.addEventListener('click', chooseLang);
-    UK.addEventListener('click', chooseLang);
+                                    function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {
+    flags[0].addEventListener('click', chooseLang);
+    flags[1].addEventListener('click', chooseLang);
 
     if (typeof localStorage.getItem('gps') === 'string' || localStorage.getItem('gps') instanceof String) {
         if (localStorage.getItem('gps') !== 'PL') localStorage.setItem('gps', 'UK');
@@ -49,25 +46,9 @@ function serverStart() {
                     })
             })
     }
-}
 
 function langChange(init) {
-    var flags = document.querySelectorAll('.flag');
-    var indexMenu = document.querySelectorAll('.menu1');
-    var gpsMenu = document.querySelectorAll('.menu2');
-    var resMenu = document.querySelectorAll('.menu3');
-    var contMenu = document.querySelectorAll('.menu4');
-    var aboutUsTitle = document.querySelector('.about-us__title');
-    var aboutUsBody = document.querySelector('.about-us__body');
-    var infoGallery = document.querySelector('#info');
-    var footerText = document.querySelector('.main-footer__body');
-    var singleGallery = document.querySelector('.single');
-    var doubleGallery = document.querySelector('.double');
-    var singlePhotos = singleGallery.querySelectorAll('img');
-    var doublePhotos = doubleGallery.querySelectorAll('img');
-    var mainLogo = document.querySelector('.main-header__frame__logo');
-    var serviceLogo = document.querySelector('.single-alt');
-    var serviceLogoDouble = document.querySelector('.double-alt');
+
     (localStorage.getItem('gps') === 'PL') ? flags[0].classList.add('current') : flags[1].classList.add('current');
     document.title = init.title;
     mainLogo.alt = init.mainLogo;
@@ -92,7 +73,6 @@ function langChange(init) {
 }
 
 function chooseLang(e) {
-    var flags = document.querySelectorAll('.flag');
     localStorage.clear();
     localStorage.setItem('gps', e.target.alt);
     flags.forEach(function (i) {
@@ -107,4 +87,5 @@ function chooseLang(e) {
         .then(function (set) {
             langChange(set);
         })
+}
 }
