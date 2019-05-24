@@ -1,14 +1,18 @@
 'use strict'
-    var page = document.querySelector("body");
-    var currentTab = document.querySelector('#current-tab')
-    var singleLogo = document.querySelector('#single-logo');
-    var singleGallery = document.querySelector('.single');
-    var singleFrames = singleGallery.querySelectorAll('a');
-    var singlePhotos = singleGallery.querySelectorAll('img');
-    var doubleLogo = document.querySelector('#double-logo');
-    var doubleGallery = document.querySelector('.double');
-    var doubleFrames = doubleGallery.querySelectorAll('a');
-    var doublePhotos = doubleGallery.querySelectorAll('img');
+document.addEventListener('DOMContentLoaded', function () {
+    
+    
+    
+    
+    
+    
+    
+    
+    singleLogo.addEventListener('click', revealS);
+    doubleLogo.addEventListener('click', revealD);
+    start(singleLogo, singleFrames, singlePhotos, doubleLogo, doubleFrames, doublePhotos);
+})
+start(document.querySelector('#single-logo'), document.querySelector('.single'), singleGallery.querySelectorAll('a'), singleGallery.querySelectorAll('img'), document.querySelector('#double-logo'), document.querySelector('.double'), doubleGallery.querySelectorAll('a'), doubleGallery.querySelectorAll('img')){
     var prevent = function(e) {
         e.preventDefault()
     }
@@ -71,7 +75,6 @@
                 doubleFrames[i].style.opacity = "0.85";
             }
             }, 250)
-        }
-
-        singleLogo.addEventListener('click', revealS);
-        doubleLogo.addEventListener('click', revealD);
+        } 
+}
+   
