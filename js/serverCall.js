@@ -2,10 +2,13 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function () {
-serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'), document.querySelector('.about-us__body'), document.querySelector('#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'), document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
+serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'),
+ document.querySelector('.about-us__body'), document.querySelector('#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'),
+  document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
 })
 
-                                    function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {
+function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {
+
     flags[0].addEventListener('click', chooseLang);
     flags[1].addEventListener('click', chooseLang);
 
