@@ -2,10 +2,10 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function () {
-    start();
+    serverStart();
 })
 
-function start() {
+function serverStart() {
     var flags = document.querySelectorAll('.flag');
     var PL = flags[0];
     var UK = flags[1];

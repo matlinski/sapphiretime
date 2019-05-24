@@ -1,6 +1,6 @@
 'use strict'
 
-function start(singleLogo, singleGallery, singleFrames, singlePhotos, doubleLogo, doubleGallery, doubleFrames, doublePhotos){
+function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, doubleLogo, doubleGallery, doubleFrames, doublePhotos){
     var prevent = function(e) {
         e.preventDefault()
     }
@@ -61,12 +61,16 @@ function start(singleLogo, singleGallery, singleFrames, singlePhotos, doubleLogo
             doublePhotos[i].style.filter = 'blur(0)';
             doubleFrames[i].style.opacity = '0.85';
         }
-        }, 250)
-        singleLogo.addEventListener('click', revealS);
-        doubleLogo.addEventListener('click', revealD);
+        }, 250);
+
+        
     }
+
+    singleLogo.addEventListener('click', revealS);
+    doubleLogo.addEventListener('click', revealD);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    start(document.querySelector('#single-logo'), document.querySelector('.single'), document.querySelectorAll('.single>a'), document.querySelectorAll('.single>a>img'), document.querySelector('#double-logo'), document.querySelector('.double'), document.querySelectorAll('.double>a'), document.querySelectorAll('.double>a>img'));
+    debugger;
+    mainStart(document.querySelector('#single-logo'), document.querySelector('.single'), document.querySelectorAll('.single>a'), document.querySelectorAll('.single>a>img'), document.querySelector('#double-logo'), document.querySelector('.double'), document.querySelectorAll('.double>a'), document.querySelectorAll('.double>a>img'));
 })
