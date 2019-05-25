@@ -15,7 +15,7 @@ function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutU
 
     if (typeof localStorage.getItem('gps') === 'string' || localStorage.getItem('gps') instanceof String) {
         if (localStorage.getItem('gps') !== 'PL') localStorage.setItem('gps', 'UK');
-        fetch('../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
+        fetch('./../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
             return response.json();
         })
             .then(function (set) {
@@ -37,7 +37,7 @@ function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutU
             .then(function (country) {
                 localStorage.setItem('gps', country);
                 if (country !== 'PL') country = 'UK';
-                fetch('../json/' + country + '.json')
+                fetch('./../json/' + country + '.json')
                     .then(function (response) {
                         console.log(response);
                         return response.json();
@@ -81,7 +81,7 @@ function chooseLang(e) {
     flags.forEach(function (i) {
         i.classList.remove('current');
     })
-    fetch('../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
+    fetch('./../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
         return response.json();
     })
         .then(function (set) {
