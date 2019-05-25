@@ -667,6 +667,7 @@ a:focus{
 }
 .gps__map-container{ 
     grid-area: map;
+    position: relative;
     height: 440px;
     overflow: hidden;
     padding-bottom: 0 !important;
@@ -674,9 +675,11 @@ a:focus{
         width: 100%;
     }
     &>.gps__map-container__cover{
+        width: 100%;
+        position: absolute;
+        top: 0; bottom: 0;
         cursor: not-allowed;
         filter: blur(5px);
-        opacity: 0.4;
         transition: 0.3s ease-in-out;
     }
 }
