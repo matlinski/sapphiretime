@@ -22,8 +22,9 @@ function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, double
     }
     var revealS = function() {
         resetRemove()
-        doubleLogo.style.backgroundColor = 'rgba(22%, 28%, 42%, 0.7)';
-        singleLogo.style.backgroundColor = 'rgba(2%, 8%, 22%, .75)';
+        doubleLogo.classList.remove('current');
+        singleLogo.classList.add('current');
+        
         for(var i = 0; i < singlePhotos.length; i++){
             if (doubleGallery.style.display !== 'none') {
                 doubleGallery.style.display = 'none';
@@ -44,8 +45,8 @@ function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, double
     }
     var revealD = function() {
         resetRemove()
-        singleLogo.style.backgroundColor = 'rgba(22%, 28%, 42%, 0.7)';
-        doubleLogo.style.backgroundColor = 'rgba(2%, 8%, 22%, .75)';
+        singleLogo.classList.remove('current');
+        doubleLogo.classList.add('current');
         for(var i = 0; i < doublePhotos.length; i++){
             if (singleGallery.style.display !== 'none') {
                 singleGallery.style.display = 'none';

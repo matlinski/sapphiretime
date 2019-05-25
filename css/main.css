@@ -91,13 +91,13 @@ a:focus {
 }
 
 /*GLOBAL ABOVE*/
-.main-grid.index {
+.main-grid {
   display: -ms-grid;
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   /*grid-template-columns: repeat($cols, calc(100vw/12));
-    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+    grid-template-rows: repeat($index-rows, minmax(calc(100vw/$index-rows), auto));*/
   -ms-grid-columns: (8.33333%)[12];
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
@@ -105,7 +105,7 @@ a:focus {
       grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
-.main-grid.index > * {
+.main-grid > * {
   border-right: 2px solid #aaa;
   border-top: 2px solid #aaa;
   border-left: 2px solid #444;
@@ -114,127 +114,127 @@ a:focus {
 }
 
 @media (min-width: 576px) {
-  .main-grid.index {
+  .main-grid {
         grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
   }
-  .main-grid.index > .main-header {
+  .main-grid > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid.index > .intro {
+  .main-grid > .intro {
     height: 250px;
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.index > .about-us {
+  .main-grid > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: about;
   }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+  .main-grid > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: services;
   }
-  .main-grid.index > .main-gallery {
+  .main-grid > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: gallery;
   }
-  .main-grid.index > .main-footer {
-    -ms-grid-row: 6;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+  .main-grid > .main-footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
 
 @media (min-width: 768px) {
-  .main-grid.index {
+  .main-grid {
         grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
   }
-  .main-grid.index > .main-header {
+  .main-grid > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid.index > .intro {
+  .main-grid > .intro {
     height: 60vmin;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.index > .about-us {
+  .main-grid > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: about;
   }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+  .main-grid > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: services;
   }
-  .main-grid.index > .main-gallery {
+  .main-grid > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: gallery;
   }
-  .main-grid.index > .main-footer {
-    -ms-grid-row: 6;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+  .main-grid > .main-footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
 
 @media (orientation: portrait) {
-  .main-grid.index {
+  .main-grid {
         grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
-  .main-grid.index > .main-header {
+  .main-grid > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid.index > .intro {
+  .main-grid > .intro {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.index > .about-us {
+  .main-grid > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
   }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
+  .main-grid > .our-services {
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: services;
   }
-  .main-grid.index > .main-gallery {
+  .main-grid > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: gallery;
   }
-  .main-grid.index > .main-footer {
-    -ms-grid-row: 6;
+  .main-grid > .main-footer {
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: footer;
@@ -434,7 +434,7 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: intro;
-  background-image: url("../res/img/double/1.jpg");
+  background-image: url("../res/img/single/1.jpg");
   background-size: cover;
   background-position-y: center;
   display: -webkit-box;
@@ -613,7 +613,7 @@ a:focus {
   padding: .5% .5%;
   position: relative;
   height: 32vh;
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services;
@@ -634,6 +634,11 @@ a:focus {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.our-services > .our-services__frame > .service.current {
+  background-color: rgba(5, 20, 56, 0.75);
+  opacity: 1;
 }
 
 .our-services > .our-services__frame > .service:hover, .our-services > .our-services__frame > .service:focus {
@@ -731,9 +736,9 @@ a:focus {
 
 .main-gallery > .single .main-gallery__frame > .main-gallery__frame__thumbnail,
 .main-gallery > .double .main-gallery__frame > .main-gallery__frame__thumbnail {
-  cursor: not-allowed;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+  cursor: not-allowed;
   -webkit-filter: blur(10px);
           filter: blur(10px);
   -webkit-transition: 0.3s ease-in-out;
@@ -781,7 +786,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: footer;
@@ -792,4 +797,166 @@ a:focus {
 }
 
 /*INDEX LAYOUT ABOVE*/
+.main-grid.gps {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+  -ms-grid-columns: (8.33333%)[12];
+      grid-template-columns: repeat(12, 8.33333%);
+  -ms-grid-rows: (minmax(25vh))[4];
+      grid-template-rows: repeat(4, minmax(25vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services services services services services services services services services services services services" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.main-grid.gps > * {
+  border-right: 2px solid #aaa;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #444;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 576px) {
+  .main-grid.gps {
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services services services services services services services services services services ." ". map map map map map map map map map map ."     ". footer footer footer footer footer footer footer footer footer footer .";
+  }
+  .main-grid.gps > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.gps > .intro {
+    height: 250px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: intro;
+  }
+  .main-grid.gps > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: services;
+  }
+  .main-grid.gps > .main-footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: footer;
+  }
+  .main-grid.gps > .gps__map-container {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: map;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-grid.gps {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services services services services services services services services . ." ". . map map map map map map map map . ." ". . footer footer footer footer footer footer footer footer . .";
+  }
+  .main-grid.gps > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.gps > .intro {
+    height: 60vmin;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.gps > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: services;
+  }
+  .main-grid.gps > .main-footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: footer;
+  }
+  .main-grid.gps > .gps__map-container {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: map;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.gps {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services services services services services services services services services services services services" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+  .main-grid.gps > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.gps > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.gps > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: about;
+  }
+  .main-grid.gps > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: services;
+  }
+  .main-grid.gps > .main-footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: footer;
+  }
+  .main-grid.gps > .gps__map-container {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: map;
+  }
+}
+
+.gps__map-container {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: map;
+  height: 440px;
+  overflow: hidden;
+  padding-bottom: 0 !important;
+}
+
+.gps__map-container > .gps__map-container__map {
+  width: 100%;
+}
+
+.gps__map-container > .gps__map-container__cover {
+  cursor: not-allowed;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  opacity: 0.4;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+/*GPS LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */
