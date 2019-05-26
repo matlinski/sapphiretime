@@ -959,12 +959,13 @@ a:focus {
 .gps__map-container > .gps__map-container__map {
   width: 100%;
   opacity: 0;
-  -webkit-transition: all 0.4s 0.4s ease-in-out;
-  transition: all 0.4s 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .gps__map-container > .gps__map-container__cover {
-  background-image: url("/res/cover.png");
+  background-image: url("../res/cover.png");
+  opacity: 0.5;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;

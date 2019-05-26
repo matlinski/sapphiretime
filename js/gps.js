@@ -20,7 +20,7 @@ function gpsStart(){
             mapSingle.style.display = "initial";
             cover.style.display = "none";
             mapSingle.style.opacity = "1";
-            }, 250);
+            }, 500);
     }
 
     var revealD = function() {
@@ -35,7 +35,7 @@ function gpsStart(){
             mapDouble.style.display = "initial";
             cover.style.display = "none";
             mapDouble.style.opacity = "1";
-            }, 250);
+            }, 500);
     }
     var singleLogo = document.querySelector('#single-logo');
     var doubleLogo = document.querySelector('#double-logo');
