@@ -10,6 +10,7 @@ function gpsStart(){
 
     var revealS = function() {
         cover.style.display = "initial";
+        cover.style.opacity = "1";
         doubleLogo.classList.remove('current');
         singleLogo.classList.add('current');
         maps.forEach(function(i){
@@ -18,6 +19,7 @@ function gpsStart(){
         setTimeout(function(){
             mapSingle.style.display = "initial";
             cover.style.display = "none";
+            mapSingle.style.opacity = "1";
             }, 250);
     }
 
@@ -31,6 +33,7 @@ function gpsStart(){
         setTimeout(function(){
             mapDouble.style.display = "initial";
             cover.style.display = "none";
+            mapDouble.style.opacity = "1";
             }, 250);
     }
     var singleLogo = document.querySelector('#single-logo');

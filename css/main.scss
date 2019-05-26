@@ -677,9 +677,12 @@ a:focus{
     padding-bottom: 0 !important;
     &>.gps__map-container__map{
         width: 100%;
+        opacity: 0;
+        transition: all 0.4s 0.4s ease-in-out;
     }
     &>.gps__map-container__cover{
-        background-image: url('/res/Sin nombre.png');
+        opacity: 0.5;
+        background-image: url('/res/cover.png');
         background-size: cover;
         background-position-x: center;
         background-position-y: center;
@@ -687,7 +690,7 @@ a:focus{
         width: 100%;
         position: absolute;
         cursor: not-allowed;
-        transition: 0.3s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 }
 
