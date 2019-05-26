@@ -10,7 +10,7 @@ function gpsStart(){
 
     var revealS = function() {
         cover.style.display = "initial";
-        cover.style.opacity = "1";
+        cover.style.opacity = '1';
         doubleLogo.classList.remove('current');
         singleLogo.classList.add('current');
         maps.forEach(function(i){
@@ -25,6 +25,7 @@ function gpsStart(){
 
     var revealD = function() {
         cover.style.display = "initial";
+        cover.style.opacity = '1';
         singleLogo.classList.remove('current');
         doubleLogo.classList.add('current');
         maps.forEach(function(i){
