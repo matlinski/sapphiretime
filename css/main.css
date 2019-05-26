@@ -956,8 +956,6 @@ a:focus {
   top: 0;
   bottom: 0;
   cursor: not-allowed;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }

@@ -679,7 +679,6 @@ a:focus{
         position: absolute;
         top: 0; bottom: 0;
         cursor: not-allowed;
-        filter: blur(5px);
         transition: 0.3s ease-in-out;
     }
 }
