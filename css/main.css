@@ -98,11 +98,6 @@ a:focus {
   min-height: 50vh;
   /*grid-template-columns: repeat($cols, calc(100vw/12));
     grid-template-rows: repeat($index-rows, minmax(calc(100vw/$index-rows), auto));*/
-  -ms-grid-columns: (8.33333%)[12];
-      grid-template-columns: repeat(12, 8.33333%);
-  -ms-grid-rows: (minmax(16.66667vh))[6];
-      grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .main-grid > * {
@@ -113,42 +108,50 @@ a:focus {
   margin-bottom: 10px;
 }
 
+.main-grid.index {
+  -ms-grid-columns: (8.33333%)[12];
+      grid-template-columns: repeat(12, 8.33333%);
+  -ms-grid-rows: (minmax(16.66667vh))[6];
+      grid-template-rows: repeat(6, minmax(16.66667vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
 @media (min-width: 576px) {
-  .main-grid {
+  .main-grid.index {
         grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
   }
-  .main-grid > .main-header {
+  .main-grid.index > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid > .intro {
+  .main-grid.index > .intro {
     height: 250px;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid > .about-us {
+  .main-grid.index > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: about;
   }
-  .main-grid > .our-services {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
     grid-area: services;
   }
-  .main-grid > .main-gallery {
+  .main-grid.index > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: gallery;
   }
-  .main-grid > .main-footer {
+  .main-grid.index > .main-footer {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
@@ -157,41 +160,41 @@ a:focus {
 }
 
 @media (min-width: 768px) {
-  .main-grid {
+  .main-grid.index {
         grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
   }
-  .main-grid > .main-header {
+  .main-grid.index > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid > .intro {
+  .main-grid.index > .intro {
     height: 60vmin;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid > .about-us {
+  .main-grid.index > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: about;
   }
-  .main-grid > .our-services {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
     grid-area: services;
   }
-  .main-grid > .main-gallery {
+  .main-grid.index > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: gallery;
   }
-  .main-grid > .main-footer {
+  .main-grid.index > .main-footer {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
@@ -200,40 +203,40 @@ a:focus {
 }
 
 @media (orientation: portrait) {
-  .main-grid {
+  .main-grid.index {
         grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
-  .main-grid > .main-header {
+  .main-grid.index > .main-header {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: header;
   }
-  .main-grid > .intro {
+  .main-grid.index > .intro {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid > .about-us {
+  .main-grid.index > .about-us {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
   }
-  .main-grid > .our-services {
-    -ms-grid-row: 3;
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: services;
   }
-  .main-grid > .main-gallery {
+  .main-grid.index > .main-gallery {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: gallery;
   }
-  .main-grid > .main-footer {
+  .main-grid.index > .main-footer {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
@@ -613,7 +616,7 @@ a:focus {
   padding: .5% .5%;
   position: relative;
   height: 32vh;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services;
@@ -808,7 +811,7 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(25vh))[4];
       grid-template-rows: repeat(4, minmax(25vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services services services services services services services services services services services services" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
 }
 
 .main-grid.gps > * {
@@ -819,9 +822,16 @@ a:focus {
   margin-bottom: 10px;
 }
 
+.main-grid.gps > .our-services {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: services_gps;
+}
+
 @media (min-width: 576px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services services services services services services services services services services ." ". map map map map map map map map map map ."     ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ." ". map map map map map map map map map map ."     ". footer footer footer footer footer footer footer footer footer footer .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -840,7 +850,7 @@ a:focus {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
-    grid-area: services;
+    grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
     -ms-grid-row: 5;
@@ -858,7 +868,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services services services services services services services services . ." ". . map map map map map map map map . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ." ". . map map map map map map map map . ." ". . footer footer footer footer footer footer footer footer . .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -877,7 +887,7 @@ a:focus {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
-    grid-area: services;
+    grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
     -ms-grid-row: 5;
@@ -895,7 +905,7 @@ a:focus {
 
 @media (orientation: portrait) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services services services services services services services services services services services services" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -919,7 +929,7 @@ a:focus {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
-    grid-area: services;
+    grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
     -ms-grid-row: 5;
@@ -951,10 +961,13 @@ a:focus {
 }
 
 .gps__map-container > .gps__map-container__cover {
+  background-image: url("/res/Sin nombre.png");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
   cursor: not-allowed;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
