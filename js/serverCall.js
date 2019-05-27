@@ -2,10 +2,10 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function () {
-serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'), document.querySelector('.about-us__body'), document.querySelector('#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'),  document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
+serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'), document.querySelector('.about-us__body'), document.querySelector('.main-gallery>#info'), document.querySelector('.gps__map-container>#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'),  document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
 })
 
-function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {
+function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, infoMap, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {
 
     function isInPage(node) {
         return (node === document.body) ? false : document.body.contains(node);
@@ -72,6 +72,7 @@ function langChange(init) {
     if(isInPage(aboutUsTitle))aboutUsTitle.innerHTML = init.aboutUsTitle;
     if(isInPage(aboutUsBody))aboutUsBody.innerHTML = init.aboutUsBody;
     if(isInPage(infoGallery))infoGallery.innerHTML = init.infoGallery;
+    if(isInPage(infoMap))infoMap.innerHTML = init.infoMap;
     footerText.innerHTML = init.footerText;
 }
 

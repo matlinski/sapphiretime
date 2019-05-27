@@ -113,12 +113,12 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
       grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
 }
 
 @media (min-width: 576px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ." ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -152,16 +152,13 @@ a:focus {
     grid-area: gallery;
   }
   .main-grid.index > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
 
 @media (min-width: 768px) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . .";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -195,16 +192,13 @@ a:focus {
     grid-area: gallery;
   }
   .main-grid.index > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
 
 @media (orientation: portrait) {
   .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery" "footer footer footer footer footer footer footer footer footer footer footer footer";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
   }
   .main-grid.index > .main-header {
     -ms-grid-row: 1;
@@ -237,9 +231,6 @@ a:focus {
     grid-area: gallery;
   }
   .main-grid.index > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
     grid-area: footer;
   }
 }
@@ -789,9 +780,6 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
   grid-area: footer;
   background-color: #1f2e52;
   border-top: 2px solid #aaa;
@@ -811,7 +799,7 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(25vh))[4];
       grid-template-rows: repeat(4, minmax(25vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map";
 }
 
 .main-grid.gps > * {
@@ -831,7 +819,7 @@ a:focus {
 
 @media (min-width: 576px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ." ". map map map map map map map map map map ."     ". footer footer footer footer footer footer footer footer footer footer .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ." ". map map map map map map map map map map .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -842,8 +830,8 @@ a:focus {
   .main-grid.gps > .intro {
     height: 250px;
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: intro;
   }
   .main-grid.gps > .our-services {
@@ -853,9 +841,6 @@ a:focus {
     grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
@@ -868,7 +853,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ." ". . map map map map map map map map . ." ". . footer footer footer footer footer footer footer footer . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ." ". . map map map map map map map map . .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -890,9 +875,6 @@ a:focus {
     grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
@@ -905,7 +887,7 @@ a:focus {
 
 @media (orientation: portrait) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "footer footer footer footer footer footer footer footer footer footer footer footer";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -932,9 +914,6 @@ a:focus {
     grid-area: services_gps;
   }
   .main-grid.gps > .main-footer {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
@@ -943,6 +922,30 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: map;
   }
+}
+
+.gps > .our-services > .our-services__frame {
+  position: relative;
+}
+
+.gps > .our-services > .our-services__frame:hover img,
+.gps > .our-services > .our-services__frame :focus img {
+  display: none;
+}
+
+.gps > .our-services > .our-services__frame:hover span,
+.gps > .our-services > .our-services__frame :focus span {
+  display: initial;
+}
+
+.gps > .our-services > .our-services__frame span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
 }
 
 .gps__map-container {
@@ -956,11 +959,26 @@ a:focus {
   padding-bottom: 0 !important;
 }
 
+.gps__map-container > #info {
+  display: block;
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  padding: .5em;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
 .gps__map-container > .gps__map-container__map {
   width: 100%;
   opacity: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .gps__map-container > .gps__map-container__cover {
@@ -978,4 +996,283 @@ a:focus {
 }
 
 /*GPS LAYOUT ABOVE*/
+.main-grid.cont {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  min-height: 50vh;
+  /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+  -ms-grid-columns: (8.33333%)[12];
+      grid-template-columns: repeat(12, 8.33333%);
+  -ms-grid-rows: (minmax(33.33333vh))[3];
+      grid-template-rows: repeat(3, minmax(33.33333vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "contact contact contact contact contact contact contact contact contact contact contact contact";
+}
+
+.main-grid.cont > * {
+  border-right: 2px solid #aaa;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #444;
+  margin-bottom: 10px;
+}
+
+.main-grid.cont > .contact-info {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: contact;
+}
+
+@media (min-width: 576px) {
+  .main-grid.cont {
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". contact contact contact contact contact contact contact contact contact contact .";
+  }
+  .main-grid.cont > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.cont > .intro {
+    height: 250px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: intro;
+  }
+  .main-grid.cont > .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: contact;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-grid.cont {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . contact contact contact contact contact contact contact contact . .";
+  }
+  .main-grid.cont > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.cont > .intro {
+    height: 60vmin;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.cont > .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: contact;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.cont {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "contact contact contact contact contact contact contact contact contact contact contact contact";
+  }
+  .main-grid.cont > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.cont > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.cont > .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: contact;
+  }
+}
+
+.cont > .contact-info {
+  background: rgba(5, 20, 56, 0.75);
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: contact;
+}
+
+.cont > .contact-info > .contact-info__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1%;
+  margin-bottom: 0;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item {
+  background: rgba(56, 71, 107, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 3em 0;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > span {
+  margin-left: 25%;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img {
+  width: 5vh;
+  height: 5vh;
+  position: absolute;
+  left: 10%;
+  -webkit-transition: all 0.2s 0.2s ease-in-out;
+  transition: all 0.2s 0.2s ease-in-out;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#PL {
+  left: 14%;
+}
+
+@media (min-width: 1200px) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#PL {
+    width: 3.5vh;
+    height: 3.5vh;
+    left: 10%;
+    top: 33%;
+  }
+}
+
+@media (orientation: portrait) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#PL {
+    width: 5vh;
+    height: 5vh;
+    left: 14%;
+    top: initial;
+  }
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
+  left: 6%;
+}
+
+@media (min-width: 1200px) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
+    width: 3.5vh;
+    height: 3.5vh;
+    left: 10%;
+    bottom: 33%;
+  }
+}
+
+@media (orientation: portrait) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
+    width: 5vh;
+    height: 5vh;
+    left: 6%;
+    bottom: initial;
+  }
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus, .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover {
+  background: #1f2e52;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus i,
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover i {
+  left: 5%;
+  opacity: .5;
+}
+
+@media (min-width: 576px) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus i,
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover i {
+    left: 9%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus i,
+  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover i {
+    left: 5%;
+  }
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus img,
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover img {
+  opacity: 0;
+}
+
+.cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > .fas {
+  position: absolute;
+  font-size: 3rem;
+  left: 15%;
+  color: white;
+  opacity: 0;
+  -webkit-transition: all 0.2s 0.2s ease-in-out;
+  transition: all 0.2s 0.2s ease-in-out;
+}
+
+@media (-ms-high-contrast: none) {
+  .cont > .contact-info > .contact-info__list {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cont > .contact-info > .contact-info__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (orientation: portrait) {
+  .cont > .contact-info > .contact-info__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/*CONTACT LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */

@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    gpsStart();
+    gpsStart(document.querySelector(".gps__map-container__cover"), document.querySelectorAll(".gps__map-container__map"), document.querySelector("#info"));
     })
 
-function gpsStart(){
-    var cover = document.querySelector(".gps__map-container__cover");
-    var maps = document.querySelectorAll(".gps__map-container__map");
+function gpsStart(cover, maps, infoMap){
     var mapSingle = maps[0]
     var mapDouble = maps[1]
 
     var revealS = function() {
+        infoMap.style.display = "none";
         cover.style.opacity = '0.4';
         cover.style.display = "initial";
         setTimeout(function(){
@@ -27,6 +26,7 @@ function gpsStart(){
     }
 
     var revealD = function() {
+        infoMap.style.display = "none";
         cover.style.opacity = '0.4';
         cover.style.display = "initial";
         setTimeout(function(){

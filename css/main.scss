@@ -15,6 +15,7 @@ $title-color-trans: rgba(100%, 72%, 56%, 0.75);
 $cols: 12;
 $index-rows: 6;
 $gps-rows: 4;
+$cont-rows: 3;
 $services-num: 2;
 
 
@@ -123,7 +124,7 @@ a:focus{
         "about about about about about about about about about about about about"
         "services services services services services services services services services services services services"
         "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
-        "footer footer footer footer footer footer footer footer footer footer footer footer";
+;
 
         @media (min-width: 576px){
             grid-template-areas:
@@ -131,8 +132,7 @@ a:focus{
             ". intro intro intro intro intro intro intro intro intro intro ."
             ". about about about about about about about about about about ."
             ". services services services services services services services services services services ."
-            ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
-            ". footer footer footer footer footer footer footer footer footer footer .";
+            ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery .";
 
             &>.main-header{ grid-area: header;}
             &>.intro{ 
@@ -152,7 +152,7 @@ a:focus{
             ". . about about about about about about about about . ."
             ". . services services services services services services services services . ."
             ". . gallery gallery gallery gallery gallery gallery gallery gallery . ."
-            ". . footer footer footer footer footer footer footer footer . .";
+            ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
@@ -171,7 +171,7 @@ a:focus{
             "about about about about about about about about about about about about"
             "services services services services services services services services services services services services"
             "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
-            "footer footer footer footer footer footer footer footer footer footer footer footer";
+    ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
@@ -602,8 +602,7 @@ a:focus{
     "header header header header header header header header header header header header" 
     "intro intro intro intro intro intro intro intro intro intro intro intro"
     "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps"
-    "map map map map map map map map map map map map"
-    "footer footer footer footer footer footer footer footer footer footer footer footer";
+    "map map map map map map map map map map map map";
 
         &>*{
             border-right: 2px solid #aaa;
@@ -621,8 +620,7 @@ a:focus{
             "header header header header header header header header header header header header" 
             ". intro intro intro intro intro intro intro intro intro intro ."
             ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ."
-            ". map map map map map map map map map map ."    
-            ". footer footer footer footer footer footer footer footer footer footer .";
+            ". map map map map map map map map map map ."    ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{ 
@@ -640,7 +638,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ."
             ". . map map map map map map map map . ."
-            ". . footer footer footer footer footer footer footer footer . .";
+            ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
@@ -657,7 +655,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps"
             "map map map map map map map map map map map map"
-            "footer footer footer footer footer footer footer footer footer footer footer footer";
+    ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
@@ -669,16 +667,48 @@ a:focus{
             &>.gps__map-container{ grid-area: map; }
         }
 }
-.gps__map-container{ 
+.gps>.our-services>.our-services__frame{
+    position: relative;
+    &:hover img,
+    & :focus img{
+        display: none;
+    }
+    &:hover span,
+    & :focus span{
+        display: initial;
+    }
+    & span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        display: none;
+    }
+}
+.gps__map-container{
     grid-area: map;
     position: relative;
     height: 440px;
     overflow: hidden;
     padding-bottom: 0 !important;
+    &>#info{
+        display: block;
+        width: 40%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        padding: .5em;
+        background-color: $main-bg-color-bright;
+        color: black;
+    }
     &>.gps__map-container__map{
         width: 100%;
         opacity: 0;
-        transition: all 0.2s ease-in-out;
+        transition: all .4s ease-in-out;
     }
     &>.gps__map-container__cover{
         background-image: url('../res/cover.png');
@@ -697,3 +727,175 @@ a:focus{
 
 
 /*GPS LAYOUT ABOVE*/
+
+.main-grid.cont{
+
+    display: grid;
+    width: 100%;
+    min-height: 50vh;
+    /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+    grid-template-columns: repeat($cols, (100% / $cols));
+    grid-template-rows: repeat($cont-rows, minmax((100vh / $cont-rows) ));
+
+    grid-template-areas:
+    "header header header header header header header header header header header header" 
+    "intro intro intro intro intro intro intro intro intro intro intro intro"
+    "contact contact contact contact contact contact contact contact contact contact contact contact";
+
+        &>*{
+            border-right: 2px solid #aaa;
+            border-top: 2px solid #aaa;
+            border-left: 2px solid #444;
+            border-bottom: 2px solid #444;
+            margin-bottom: 10px;
+        }
+        &>.contact-info{grid-area: contact}
+        
+        @media (min-width: 576px){
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            ". intro intro intro intro intro intro intro intro intro intro ."
+            ". contact contact contact contact contact contact contact contact contact contact .";
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{ 
+                height: 250px;
+                grid-area: intro;
+            }
+            &>.contact-info{grid-area: contact}
+        }
+
+        @media (min-width: 768px){
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            ". . contact contact contact contact contact contact contact contact . .";
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{
+                height: 60vmin; 
+                grid-area: intro
+            }
+            &>.contact-info{grid-area: contact}
+        }
+        @media (orientation: portrait) {
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            "contact contact contact contact contact contact contact contact contact contact contact contact";
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{
+                grid-area: intro
+            }
+            &>.contact-info{grid-area: contact}
+        }
+}
+
+.cont>.contact-info{
+    background: $main-bg-color-darkest;
+    grid-area: contact;
+    &>.contact-info__list{
+        list-style: none;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 1%;
+        margin-bottom: 0;
+        &>.contact-info__list__list-item{
+            background: $main-bg-color-dark;
+            display: flex;
+            flex: 1 1;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            &>a{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                padding: 3em 0;
+                &>span{
+                    margin-left: 25%;
+                }
+                &>img{
+                    width: 5vh;
+                    height: 5vh;
+                    position: absolute;
+                    left: 10%;
+                    transition: all 0.2s 0.2s ease-in-out;
+                    &#PL{
+                        left: 14%;
+                        @media (min-width: 1200px) {
+                            width: 3.5vh;
+                            height: 3.5vh;
+                            left: 10%;
+                            top: 33%
+                        }
+                        @media (orientation: portrait) {
+                            width: 5vh;
+                            height: 5vh;
+                            left: 14%;
+                            top: initial
+                        }
+                    }
+                    &#UK{
+                        left: 6%;
+                        @media (min-width: 1200px) {
+                            width: 3.5vh;
+                            height: 3.5vh;
+                            left: 10%;
+                            bottom: 33%;
+                        }
+                        @media (orientation: portrait) {
+                            width: 5vh;
+                            height: 5vh;
+                            left: 6%;
+                            bottom: initial;
+                        }
+                    }
+                }
+                &:focus,
+                &:hover{
+                    background: $main-bg-color-darker;
+                }
+                &:focus i,
+                &:hover i{
+                    left: 5%;
+                    opacity: .5;
+                    @media (min-width: 576px) {
+                        left: 9%;
+                    }
+                    @media (min-width: 1200px) {
+                        left: 5%;
+                    }
+                }
+                &:focus img,
+                &:hover img{
+                    opacity:0;
+                }
+                &>.fas{
+                    position: absolute;
+                    font-size: 3rem;
+                    left: 15%;
+                    color: white;
+                    opacity: 0;
+                    transition: all 0.2s 0.2s ease-in-out;
+                }
+            }  
+        }
+        @media (-ms-high-contrast: none){
+            display: block;
+         } 
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
+        @media (orientation: portrait) {
+            flex-direction: column;
+        }
+        
+    }
+}
+
+/*CONTACT LAYOUT ABOVE*/
