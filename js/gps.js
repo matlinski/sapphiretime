@@ -9,8 +9,11 @@ function gpsStart(){
     var mapDouble = maps[1]
 
     var revealS = function() {
+        cover.style.opacity = '0.4';
         cover.style.display = "initial";
-        cover.style.opacity = '1';
+        setTimeout(function(){
+            cover.style.opacity = '1';
+            }, 200);
         doubleLogo.classList.remove('current');
         singleLogo.classList.add('current');
         maps.forEach(function(i){
@@ -24,8 +27,11 @@ function gpsStart(){
     }
 
     var revealD = function() {
+        cover.style.opacity = '0.4';
         cover.style.display = "initial";
-        cover.style.opacity = '1';
+        setTimeout(function(){
+            cover.style.opacity = '1';
+            }, 200);
         singleLogo.classList.remove('current');
         doubleLogo.classList.add('current');
         maps.forEach(function(i){

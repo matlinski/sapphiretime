@@ -678,7 +678,7 @@ a:focus{
     &>.gps__map-container__map{
         width: 100%;
         opacity: 0;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
     &>.gps__map-container__cover{
         background-image: url('../res/cover.png');
@@ -690,7 +690,7 @@ a:focus{
         width: 100%;
         position: absolute;
         cursor: not-allowed;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
 }
 

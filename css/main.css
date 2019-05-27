@@ -959,8 +959,8 @@ a:focus {
 .gps__map-container > .gps__map-container__map {
   width: 100%;
   opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .gps__map-container > .gps__map-container__cover {
@@ -973,8 +973,8 @@ a:focus {
   width: 100%;
   position: absolute;
   cursor: not-allowed;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /*GPS LAYOUT ABOVE*/
