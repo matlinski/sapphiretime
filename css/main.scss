@@ -985,5 +985,12 @@ a:focus{
             &>.gps__map-container{ grid-area: map; }
         }
 }
-
+.about-us__quotes{
+    width: 40%;
+    padding: 1em;
+    text-align: right;
+    &>.quote{
+        font-style: italic;
+    }
+}
 /*RESERVATION LAYOUT ABOVE*/

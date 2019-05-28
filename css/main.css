@@ -1417,5 +1417,15 @@ a:focus {
   }
 }
 
+.about-us__quotes {
+  width: 40%;
+  padding: 1em;
+  text-align: right;
+}
+
+.about-us__quotes > .quote {
+  font-style: italic;
+}
+
 /*RESERVATION LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */

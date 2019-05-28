@@ -8,6 +8,12 @@ fetch('json/comment-single.htm')
     return doc;
 }).then(function(doc){
     arr = doc.querySelectorAll('.c-review__body');
-    console.log(arr)  
-    document.querySelector('.about-us__quotes').innerHTML = arr[(Math.floor(Math.random()*9)+1)].innerHTML
+    console.log(arr);
+    var comment = arr[(Math.floor(Math.random()*9)+1)].innerHTML;
+    document.querySelector('.about-us__quotes').innerHTML = '<span class="quote">'+comment+'</span>'
+    /*setInterval(function(){
+      
+      document.querySelector('.about-us__quotes').innerHTML = '<span class="quote">'+comment+'</span>'
+    }, comment.length*65)*/
+    
 })
