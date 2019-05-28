@@ -916,6 +916,7 @@ a:focus{
     "intro intro intro intro intro intro intro intro intro intro intro intro"
     "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
     "about about about about about about about about about about about about"
+    "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews"
     "map map map map map map map map map map map map";
 
         &>*{
@@ -928,13 +929,67 @@ a:focus{
         &>.our-services{
             grid-area: services_res;
         }
+        &>.about-us{
+            grid-area: about;
+            flex-direction: column;
+            & ins{
+                margin-bottom: 1.5em 1em -2 1em;
+                padding: 1em;
+                background: white;
+
+            }
+            &>.about-us__body{
+                width: 100%;
+                max-width: 100%;
+                &::after{
+                    display: none;
+                }
+            }
+        }
+        &>.reviews{
+            grid-area: reviews;
+            padding: 1.5em 2em;
+            background: $main-bg-color-darkest;
+            position: relative;
+            &>.reviews__score{
+                position: absolute;
+                font-size: 1em;
+                right: 1.5em;
+                top: 1.7em;
+                border: 2px solid white;
+                width: 3em;
+                height: 3em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50% 0 50% 50%;
+            }
+            &>.reviews__name{
+                display: flex;
+                justify-content: space-between;
+            }
+            &>.reviews__positive{
+                font-style: italic;
+                padding: 1em 0 1.5em 0;
+            }
+            &>.reviews__stayed{
+                position: absolute;
+                bottom: 2em;
+            }
+            &>.reviews__reviewed{
+                position: absolute;
+                right: 2em;
+                bottom: 2em;
+            }
+        }
         
         @media (min-width: 576px){
             grid-template-areas:
             "header header header header header header header header header header header header" 
             ". intro intro intro intro intro intro intro intro intro intro ."
             ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ."
-            "about about about about about about about about about about about about"
+            ". about about about about about about about about about about ."
+            ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ."
             ". map map map map map map map map map map ."    ;
 
             &>.main-header{ grid-area: header;}
@@ -943,6 +998,8 @@ a:focus{
                 grid-area: intro;
             }
             &>.our-services{ grid-area: services_res}
+            &>.about-us{ grid-area: about}
+            &>.reviews{ grid-area: reviews}
             &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
         }
@@ -953,6 +1010,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             ". . services_res services_res services_res services_res services_res services_res services_res services_res . ."
             ". . about about about about about about about about . ."
+            ". . reviews reviews reviews reviews reviews reviews reviews reviews . ."
             ". . map map map map map map map map . ."
             ;
 
@@ -962,6 +1020,7 @@ a:focus{
                 grid-area: intro
             }
             &>.about-us{ grid-area: about}
+            &>.reviews{ grid-area: reviews}
             &>.our-services{ grid-area: services_res}
             &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
@@ -972,6 +1031,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
             "about about about about about about about about about about about about"
+            "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews"
             "map map map map map map map map map map map map"
     ;
 
@@ -980,17 +1040,11 @@ a:focus{
                 grid-area: intro
             }
             &>.about-us{ grid-area: about}
-            &>.our-services{ grid-area: services_gps}
+            &>.reviews{ grid-area: reviews}
+            &>.our-services{ grid-area: services_res}
             &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
         }
 }
-.about-us__quotes{
-    width: 40%;
-    padding: 1em;
-    text-align: right;
-    &>.quote{
-        font-style: italic;
-    }
-}
+
 /*RESERVATION LAYOUT ABOVE*/

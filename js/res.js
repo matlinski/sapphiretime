@@ -1,19 +1,18 @@
-var arr = [];
-fetch('json/comment-single.htm')
-  .then(function(res){ return res.text()})
-  .then(function(data){
-    const parser = new DOMParser();
-    const doc = parser
-      .parseFromString(data, 'text/html');
-    return doc;
-}).then(function(doc){
-    var quoteArea = document.querySelector('.about-us__quotes');
-    var arrHead = doc.querySelectorAll('.bui-avatar-block__title');
-    var arrLabel = doc.querySelectorAll('.bui-avatar-block__subtitle');
-    var arrBody = doc.querySelectorAll('.c-review__body');
-    var index = (Math.floor(Math.random()*9)+1)
-    var commentTitle = arrHead[index].innerHTML;
-    var commentLabel = arrLabel[index].innerHTML;
-    var commentBody = arrBody[index].innerHTML;
-    document.querySelector('.about-us__quotes').innerHTML = '<h3>'+commentTitle+'</h3><small>'+commentLabel+'</small><hr><span class="quote">'+commentBody+'</span>'
-})
+var lang = 'pl';
+var comments = [];
+fetch('json/single.' + lang + '.json')
+  .then(res => res.json())
+  .then(data => {
+    for(var i = 0; i < data.length; i++){
+      comments.push({
+        stayed: data[i].date.stayed,
+        reviewed: data[i].date.reviewed,
+        pic: data[i].guest.pic,
+        name: data[i].guest.name,
+        country: data[i].guest.country,
+        positive: data[i].review.positive,
+        score: data[i].score
+      })
+    }
+    console.log(comments)
+  })
