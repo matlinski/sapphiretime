@@ -134,9 +134,9 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.index > .our-services {
@@ -174,9 +174,9 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.index > .our-services {
@@ -213,7 +213,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -536,7 +536,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
@@ -844,9 +844,9 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 4;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: map;
   }
 }
@@ -878,9 +878,9 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 4;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: map;
   }
 }
@@ -902,7 +902,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.gps > .about-us {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -917,7 +917,7 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: map;
@@ -949,7 +949,7 @@ a:focus {
 }
 
 .gps__map-container {
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: map;
@@ -1038,8 +1038,8 @@ a:focus {
   .main-grid.cont > .intro {
     height: 250px;
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: intro;
   }
   .main-grid.cont > .contact-info {
@@ -1275,4 +1275,147 @@ a:focus {
 }
 
 /*CONTACT LAYOUT ABOVE*/
+.main-grid.res {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+  -ms-grid-columns: (8.33333%)[12];
+      grid-template-columns: repeat(12, 8.33333%);
+  -ms-grid-rows: (minmax(16.66667vh))[6];
+      grid-template-rows: repeat(6, minmax(16.66667vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "map map map map map map map map map map map map";
+}
+
+.main-grid.res > * {
+  border-right: 2px solid #aaa;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #444;
+  margin-bottom: 10px;
+}
+
+.main-grid.res > .our-services {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: services_res;
+}
+
+@media (min-width: 576px) {
+  .main-grid.res {
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ." "about about about about about about about about about about about about" ". map map map map map map map map map map .";
+  }
+  .main-grid.res > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.res > .intro {
+    height: 250px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: intro;
+  }
+  .main-grid.res > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: services_res;
+  }
+  .main-grid.res > .main-footer {
+    grid-area: footer;
+  }
+  .main-grid.res > .gps__map-container {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: map;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-grid.res {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . map map map map map map map map . .";
+  }
+  .main-grid.res > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.res > .intro {
+    height: 60vmin;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.res > .about-us {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: about;
+  }
+  .main-grid.res > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: services_res;
+  }
+  .main-grid.res > .main-footer {
+    grid-area: footer;
+  }
+  .main-grid.res > .gps__map-container {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: map;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.res {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "map map map map map map map map map map map map";
+  }
+  .main-grid.res > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.res > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.res > .about-us {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: about;
+  }
+  .main-grid.res > .our-services {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: services_gps;
+  }
+  .main-grid.res > .main-footer {
+    grid-area: footer;
+  }
+  .main-grid.res > .gps__map-container {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: map;
+  }
+}
+
+/*RESERVATION LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */

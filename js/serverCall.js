@@ -2,7 +2,7 @@
 'use strict'
 
 document.addEventListener('DOMContentLoaded', function () {
-serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.about-us__title'), document.querySelector('.about-us__body'), document.querySelector('.main-gallery>#info'), document.querySelector('.gps__map-container>#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'),  document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
+serverStart(document.querySelectorAll('.menu1'), document.querySelectorAll('.menu2'), document.querySelectorAll('.menu3'), document.querySelectorAll('.menu4'), document.querySelector('.index>.about-us__title'), document.querySelector('.index>.about-us__body'), document.querySelector('.main-gallery>#info'), document.querySelector('.gps__map-container>#info'), document.querySelector('.main-footer__body'), document.querySelectorAll('.single>a>img'), document.querySelectorAll('.double>a>img'),  document.querySelector('.main-header__frame__logo'), document.querySelector('.single-alt'), document.querySelector('.double-alt'), document.querySelectorAll('.flag'));
 })
 
 function serverStart(indexMenu, gpsMenu, resMenu, contMenu, aboutUsTitle, aboutUsBody, infoGallery, infoMap, footerText, singlePhotos, doublePhotos, mainLogo, serviceLogo, serviceLogoDouble, flags) {

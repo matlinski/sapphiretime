@@ -16,6 +16,7 @@ $cols: 12;
 $index-rows: 6;
 $gps-rows: 4;
 $cont-rows: 3;
+$res-rows: 6;
 $services-num: 2;
 
 
@@ -899,3 +900,90 @@ a:focus{
 }
 
 /*CONTACT LAYOUT ABOVE*/
+
+.main-grid.res{
+
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
+    grid-template-columns: repeat($cols, (100% / $cols));
+    grid-template-rows: repeat($res-rows, minmax((100vh / $res-rows) ));
+
+    grid-template-areas:
+    "header header header header header header header header header header header header" 
+    "intro intro intro intro intro intro intro intro intro intro intro intro"
+    "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
+    "about about about about about about about about about about about about"
+    "map map map map map map map map map map map map";
+
+        &>*{
+            border-right: 2px solid #aaa;
+            border-top: 2px solid #aaa;
+            border-left: 2px solid #444;
+            border-bottom: 2px solid #444;
+            margin-bottom: 10px;
+        }
+        &>.our-services{
+            grid-area: services_res;
+        }
+        
+        @media (min-width: 576px){
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            ". intro intro intro intro intro intro intro intro intro intro ."
+            ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ."
+            "about about about about about about about about about about about about"
+            ". map map map map map map map map map map ."    ;
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{ 
+                height: 250px;
+                grid-area: intro;
+            }
+            &>.our-services{ grid-area: services_res}
+            &>.main-footer{ grid-area: footer}
+            &>.gps__map-container{ grid-area: map; }
+        }
+
+        @media (min-width: 768px){
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            ". . services_res services_res services_res services_res services_res services_res services_res services_res . ."
+            ". . about about about about about about about about . ."
+            ". . map map map map map map map map . ."
+            ;
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{
+                height: 60vmin; 
+                grid-area: intro
+            }
+            &>.about-us{ grid-area: about}
+            &>.our-services{ grid-area: services_res}
+            &>.main-footer{ grid-area: footer}
+            &>.gps__map-container{ grid-area: map; }
+        }
+        @media (orientation: portrait) {
+            grid-template-areas:
+            "header header header header header header header header header header header header" 
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
+            "about about about about about about about about about about about about"
+            "map map map map map map map map map map map map"
+    ;
+
+            &>.main-header{ grid-area: header;}
+            &>.intro{
+                grid-area: intro
+            }
+            &>.about-us{ grid-area: about}
+            &>.our-services{ grid-area: services_gps}
+            &>.main-footer{ grid-area: footer}
+            &>.gps__map-container{ grid-area: map; }
+        }
+}
+
+/*RESERVATION LAYOUT ABOVE*/
