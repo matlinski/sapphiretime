@@ -1343,11 +1343,11 @@ a:focus {
 .main-grid.res > .reviews > .reviews__score {
   position: absolute;
   font-size: 1em;
-  right: 1.5em;
-  top: 1.7em;
+  right: 1em;
+  top: 1em;
   border: 2px solid white;
-  width: 3em;
-  height: 3em;
+  width: 50px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1360,18 +1360,43 @@ a:focus {
   border-radius: 50% 0 50% 50%;
 }
 
-.main-grid.res > .reviews > .reviews__name {
+.main-grid.res > .reviews .reviews__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 70%;
+}
+
+.main-grid.res > .reviews .reviews__name > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0 50% 50% 50%;
+}
+
+.main-grid.res > .reviews .reviews__name > span {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .main-grid.res > .reviews > .reviews__positive {
   font-style: italic;
   padding: 1em 0 1.5em 0;
+}
+
+.main-grid.res > .reviews .reviews__country {
+  position: absolute;
+  left: 50%;
+  top: 6em;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .main-grid.res > .reviews > .reviews__stayed {
