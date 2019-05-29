@@ -933,14 +933,22 @@ a:focus{
             grid-area: about;
             flex-direction: column;
             & ins{
-                margin-bottom: 1.5em 1em -2 1em;
-                padding: 1em;
+                width: 100%;
+                padding: .5em 1em 0 1em;
+                margin-bottom: 1em;
                 background: white;
 
             }
             &>.about-us__body{
+                display: none;
                 width: 100%;
                 max-width: 100%;
+                & .hidden{
+                    display: none;
+                }
+                &.double{
+                    display: none;
+                }
                 &::after{
                     display: none;
                 }
@@ -951,6 +959,7 @@ a:focus{
             padding: 1.5em 2em;
             background: $main-bg-color-darkest;
             position: relative;
+            display: none;
             &>.reviews__score{
                 position: absolute;
                 font-size: 1em;
@@ -1029,6 +1038,7 @@ a:focus{
             ". . services_res services_res services_res services_res services_res services_res services_res services_res . ."
             ". . about about about about about about about about . ."
             ". . reviews reviews reviews reviews reviews reviews reviews reviews . ."
+            ". . reviews reviews reviews reviews reviews reviews reviews reviews . ."
             ". . map map map map map map map map . ."
             ;
 
@@ -1038,7 +1048,9 @@ a:focus{
                 grid-area: intro
             }
             &>.about-us{ grid-area: about}
-            &>.reviews{ grid-area: reviews}
+            &>.reviews{ 
+                grid-area: reviews;
+            }
             &>.our-services{ grid-area: services_res}
             &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
@@ -1064,5 +1076,14 @@ a:focus{
             &>.gps__map-container{ grid-area: map; }
         }
 }
-
+.btn-more{
+    background-color: $main-bg-color-darker;
+    padding: .5em 1em;
+    font-weight: 900;
+    transition: 0.4s ease-in-out;
+    &:hover,
+    &:focus{
+        background-color: $main-bg-color-darkest;
+    }
+}
 /*RESERVATION LAYOUT ABOVE*/

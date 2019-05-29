@@ -1316,14 +1316,24 @@ a:focus {
 }
 
 .main-grid.res > .about-us ins {
-  margin-bottom: 1.5em 1em -2 1em;
-  padding: 1em;
+  width: 100%;
+  padding: .5em 1em 0 1em;
+  margin-bottom: 1em;
   background: white;
 }
 
 .main-grid.res > .about-us > .about-us__body {
+  display: none;
   width: 100%;
   max-width: 100%;
+}
+
+.main-grid.res > .about-us > .about-us__body .hidden {
+  display: none;
+}
+
+.main-grid.res > .about-us > .about-us__body.double {
+  display: none;
 }
 
 .main-grid.res > .about-us > .about-us__body::after {
@@ -1338,6 +1348,7 @@ a:focus {
   padding: 1.5em 2em;
   background: rgba(5, 20, 56, 0.75);
   position: relative;
+  display: none;
 }
 
 .main-grid.res > .reviews > .reviews__score {
@@ -1458,7 +1469,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . map map map map map map map map . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . map map map map map map map map . .";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1481,6 +1492,7 @@ a:focus {
   }
   .main-grid.res > .reviews {
     -ms-grid-row: 5;
+    -ms-grid-row-span: 2;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: reviews;
@@ -1495,7 +1507,7 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.res > .gps__map-container {
-    -ms-grid-row: 6;
+    -ms-grid-row: 7;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: map;
@@ -1545,6 +1557,18 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: map;
   }
+}
+
+.btn-more {
+  background-color: #1f2e52;
+  padding: .5em 1em;
+  font-weight: 900;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.btn-more:hover, .btn-more:focus {
+  background-color: rgba(5, 20, 56, 0.75);
 }
 
 /*RESERVATION LAYOUT ABOVE*/

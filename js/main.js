@@ -1,6 +1,14 @@
 'use strict'
 
-function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, doubleLogo, doubleGallery, doubleFrames, doublePhotos){
+function mainStart(singleLogo,
+                   singleGallery,
+                   singleFrames,
+                   singlePhotos,
+                   doubleLogo,
+                   doubleGallery,
+                   doubleFrames,
+                   doublePhotos
+                   ){
     var prevent = function(e) {
         e.preventDefault()
     }
@@ -72,5 +80,13 @@ function mainStart(singleLogo, singleGallery, singleFrames, singlePhotos, double
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    mainStart(document.querySelector('#single-logo'), document.querySelector('.single'), document.querySelectorAll('.single>a'), document.querySelectorAll('.single>a>img'), document.querySelector('#double-logo'), document.querySelector('.double'), document.querySelectorAll('.double>a'), document.querySelectorAll('.double>a>img'));
+    mainStart(document.querySelector('#single-logo'),
+              document.querySelector('.single'),
+              document.querySelectorAll('.single>a'),
+              document.querySelectorAll('.single>a>img'),
+              document.querySelector('#double-logo'),
+              document.querySelector('.double'),
+              document.querySelectorAll('.double>a'),
+              document.querySelectorAll('.double>a>img')
+              );
 })
