@@ -21,11 +21,12 @@ fetch('json/single.' + lang + '.json')
         score: data[i].score
       })
     }
-    var showComment = function(index){
-      qouteSwap(index)
+    var showComment = function(index){ return function(){
+      qouteSwap(index);
       index = Math.floor(Math.random()*(comments.length-1));
-      return setTimeout(qouteSwap(index), comments[index].positive.length*65)
+      return setTimeout(showComment(index), comments[index].positive.length*65)
     }
+  } 
     showComment(Math.floor(Math.random()*(comments.length-1)))()
 
     function qouteSwap(randomIndex){
