@@ -21,20 +21,23 @@ fetch('json/single.' + lang + '.json')
         score: data[i].score
       })
     }
-    var randomIndex = Math.floor(Math.random()*(comments.length-1));
-    setTimeout(qouteSwap(randomIndex),comments[randomIndex].positive.length*65);
+    var showComment = function(index){
+      qouteSwap(index)
+      index = Math.floor(Math.random()*(comments.length-1));
+      return setTimeout(qouteSwap(index), comments[index].positive.length*65)
+    }
+    showComment(Math.floor(Math.random()*(comments.length-1)))()
 
-
-    function qouteSwap(random){
-      console.log(comments[random].positive.length)
-      console.log(comments[random].positive.length*65)
-      stayedArea.innerHTML = comments[random].stayed;
-        reviewedArea.innerHTML = comments[random].reviewed;
-        picArea.src = comments[random].pic;
-        nameArea.innerHTML = comments[random].name;
-        countryArea.innerHTML = comments[random].country;
-        positiveArea.innerHTML = comments[random].positive;
-        (comments[random].score !== null) ?scoreArea.innerHTML = comments[randomIndex].score+'/10':scoreArea.innerHTML = "N/A";
+    function qouteSwap(randomIndex){
+      console.log(randomIndex, comments[randomIndex].positive)
+      console.log(randomIndex, comments[randomIndex].positive.length*65)
+      stayedArea.innerHTML = comments[randomIndex].stayed;
+        reviewedArea.innerHTML = comments[randomIndex].reviewed;
+        picArea.src = comments[randomIndex].pic;
+        nameArea.innerHTML = comments[randomIndex].name;
+        countryArea.innerHTML = comments[randomIndex].country;
+        positiveArea.innerHTML = comments[randomIndex].positive;
+        (comments[randomIndex].score !== null) ?scoreArea.innerHTML = comments[randomIndex].score+'/10':scoreArea.innerHTML = "N/A";
     }
     
   })
