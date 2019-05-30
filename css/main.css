@@ -92,150 +92,6 @@ a:focus {
 }
 
 /*GLOBAL ABOVE*/
-.main-grid {
-  display: -ms-grid;
-  display: grid;
-  width: 100%;
-  min-height: 50vh;
-  /*grid-template-columns: repeat($cols, calc(100vw/12));
-    grid-template-rows: repeat($index-rows, minmax(calc(100vw/$index-rows), auto));*/
-}
-
-.main-grid > * {
-  border-right: 2px solid #aaa;
-  border-top: 2px solid #aaa;
-  border-left: 2px solid #444;
-  border-bottom: 2px solid #444;
-  margin-bottom: 10px;
-}
-
-.main-grid.index {
-  -ms-grid-columns: (8.33333%)[12];
-      grid-template-columns: repeat(12, 8.33333%);
-  -ms-grid-rows: (minmax(16.66667vh))[6];
-      grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
-}
-
-@media (min-width: 576px) {
-  .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery .";
-  }
-  .main-grid.index > .main-header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: header;
-  }
-  .main-grid.index > .intro {
-    height: 250px;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: intro;
-  }
-  .main-grid.index > .about-us {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: about;
-  }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
-    grid-area: services;
-  }
-  .main-grid.index > .main-gallery {
-    -ms-grid-row: 5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
-    grid-area: gallery;
-  }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
-  }
-}
-
-@media (min-width: 768px) {
-  .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . .";
-  }
-  .main-grid.index > .main-header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: header;
-  }
-  .main-grid.index > .intro {
-    height: 60vmin;
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: intro;
-  }
-  .main-grid.index > .about-us {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: about;
-  }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-    grid-area: services;
-  }
-  .main-grid.index > .main-gallery {
-    -ms-grid-row: 5;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-    grid-area: gallery;
-  }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
-  }
-}
-
-@media (orientation: portrait) {
-  .main-grid.index {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
-  }
-  .main-grid.index > .main-header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: header;
-  }
-  .main-grid.index > .intro {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: intro;
-  }
-  .main-grid.index > .about-us {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: about;
-  }
-  .main-grid.index > .our-services {
-    -ms-grid-row: 4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: services;
-  }
-  .main-grid.index > .main-gallery {
-    -ms-grid-row: 5;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: gallery;
-  }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
-  }
-}
-
 .main-header {
   visibility: hidden;
   -ms-grid-row: 1;
@@ -424,7 +280,8 @@ a:focus {
 }
 
 .intro {
-  height: 150px;
+  position: relative;
+  height: 300px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
@@ -537,7 +394,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
@@ -903,7 +760,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.gps > .about-us {
-    -ms-grid-row: 5;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -1287,7 +1144,7 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
       grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "links links links links links links links links links links links links" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
 }
 
 .main-grid.res > * {
@@ -1298,86 +1155,15 @@ a:focus {
   margin-bottom: 10px;
 }
 
-.main-grid.res > .our-links {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-area: links;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  background-color: #fff;
-  padding: 1em;
-}
-
-.main-grid.res > .our-links .our-links__frame {
-  width: 100%;
-}
-
-.main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
-  padding-bottom: .72em;
-  border-bottom: 0.06em solid rgba(56, 71, 107, 0.7);
-}
-
-.main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
-  padding-top: .72em;
-}
-
-@media (orientation: landscape) {
-  .main-grid.res > .our-links {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .main-grid.res > .our-links .our-links__frame {
-    width: 50%;
-  }
-  .main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
-    padding-right: .72em;
-    border-right: 0.06em solid rgba(56, 71, 107, 0.7);
-    padding-bottom: 0;
-    border-bottom: 0 solid rgba(56, 71, 107, 0.7);
-  }
-  .main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
-    padding-left: .72em;
-    padding-top: 0;
-  }
-}
-
-@media (orientation: portrait) {
-  .main-grid.res > .our-links {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .main-grid.res > .our-links .our-links__frame {
-    width: 100%;
-  }
-  .main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
-    padding-bottom: .72em;
-    border-bottom: 0.06em solid rgba(56, 71, 107, 0.7);
-  }
-  .main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
-    padding-top: .72em;
-  }
-}
-
 .main-grid.res > .our-services {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services_res;
 }
 
 .main-grid.res > .about-us {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
@@ -1410,7 +1196,7 @@ a:focus {
 }
 
 .main-grid.res > .reviews {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: reviews;
@@ -1527,7 +1313,7 @@ a:focus {
 
 @media (min-width: 576px) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". links links links links links links links links links links ." ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ." ". about about about about about about about about about about ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ." ". about about about about about about about about about about ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews .";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1538,30 +1324,24 @@ a:focus {
   .main-grid.res > .intro {
     height: 250px;
     -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.res > .our-links {
-    -ms-grid-row: 3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
-    grid-area: links;
-  }
   .main-grid.res > .our-services {
-    -ms-grid-row: 4;
+    -ms-grid-row: 3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: services_res;
   }
   .main-grid.res > .about-us {
-    -ms-grid-row: 5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: reviews;
@@ -1579,7 +1359,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . links links links links links links links links . ." ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . .";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1594,27 +1374,21 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.res > .our-links {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
-    grid-area: links;
-  }
   .main-grid.res > .about-us {
-    -ms-grid-row: 5;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-row-span: 2;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: reviews;
   }
   .main-grid.res > .our-services {
-    -ms-grid-row: 4;
+    -ms-grid-row: 3;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: services_res;
@@ -1632,7 +1406,7 @@ a:focus {
 
 @media (orientation: portrait) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "links links links links links links links links links links links links" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1646,26 +1420,20 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
-  .main-grid.res > .our-links {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-area: links;
-  }
   .main-grid.res > .about-us {
-    -ms-grid-row: 5;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 6;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: reviews;
   }
   .main-grid.res > .our-services {
-    -ms-grid-row: 4;
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: services_res;
@@ -1693,5 +1461,197 @@ a:focus {
   background-color: rgba(5, 20, 56, 0.75);
 }
 
+.intro > .our-links {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+}
+
+.intro > .our-links > * {
+  -webkit-transition: all 0.4s 0.8s ease-in-out;
+  transition: all 0.4s 0.8s ease-in-out;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  text-align: center;
+  color: rgba(5, 20, 56, 0.75);
+}
+
+.intro > .our-links strong {
+  font-size: calc(1.2vmin + 50%);
+  display: block;
+  width: 100%;
+  height: 3.0vmin;
+  margin-bottom: .5vmin;
+}
+
+.intro > .our-links > *:nth-child(odd) {
+  position: absolute;
+  right: 1.5vw;
+  background: white;
+  border-radius: 0 0 .5rem .5rem;
+}
+
+.intro > .our-links > *:nth-child(even) {
+  position: absolute;
+  left: 1.5vw;
+  background: white;
+  border-radius: 0 0 .5rem .5rem;
+}
+
 /*RESERVATION LAYOUT ABOVE*/
+.main-grid {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  min-height: 50vh;
+  /*grid-template-columns: repeat($cols, calc(100vw/12));
+    grid-template-rows: repeat($index-rows, minmax(calc(100vw/$index-rows), auto));*/
+}
+
+.main-grid > * {
+  border-right: 2px solid #aaa;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #444;
+  margin-bottom: 10px;
+}
+
+.main-grid.index {
+  -ms-grid-columns: (8.33333%)[12];
+      grid-template-columns: repeat(12, 8.33333%);
+  -ms-grid-rows: (minmax(16.66667vh))[6];
+      grid-template-rows: repeat(6, minmax(16.66667vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+}
+
+.main-grid.index .our-services {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: services;
+}
+
+@media (min-width: 576px) {
+  .main-grid.index {
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". about about about about about about about about about about ." ". services services services services services services services services services services ." ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery .";
+  }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.index > .intro {
+    height: 250px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: intro;
+  }
+  .main-grid.index > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: about;
+  }
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: services;
+  }
+  .main-grid.index > .main-gallery {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: gallery;
+  }
+  .main-grid.index > .main-footer {
+    grid-area: footer;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-grid.index {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . about about about about about about about about . ." ". . services services services services services services services services . ." ". . gallery gallery gallery gallery gallery gallery gallery gallery . .";
+  }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.index > .intro {
+    height: 60vmin;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.index > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: about;
+  }
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: services;
+  }
+  .main-grid.index > .main-gallery {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: gallery;
+  }
+  .main-grid.index > .main-footer {
+    grid-area: footer;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.index {
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+  }
+  .main-grid.index > .main-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: header;
+  }
+  .main-grid.index > .intro {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: intro;
+  }
+  .main-grid.index > .about-us {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: about;
+  }
+  .main-grid.index > .our-services {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: services;
+  }
+  .main-grid.index > .main-gallery {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: gallery;
+  }
+  .main-grid.index > .main-footer {
+    grid-area: footer;
+  }
+}
 /*# sourceMappingURL=main.css.map */
