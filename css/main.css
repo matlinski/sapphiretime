@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,400,400i,700i,900&display=swap&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap&subset=latin-ext");
 *,
@@ -31,7 +32,7 @@ html {
 
 @media (orientation: portrait) {
   html {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 
@@ -134,7 +135,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -174,7 +175,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -213,7 +214,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.index > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -536,7 +537,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
@@ -844,9 +845,9 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 6;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
     grid-area: map;
   }
 }
@@ -878,9 +879,9 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 6;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
     grid-area: map;
   }
 }
@@ -902,7 +903,7 @@ a:focus {
     grid-area: intro;
   }
   .main-grid.gps > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
@@ -917,7 +918,7 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.gps > .gps__map-container {
-    -ms-grid-row: 6;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: map;
@@ -949,7 +950,7 @@ a:focus {
 }
 
 .gps__map-container {
-  -ms-grid-row: 6;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: map;
@@ -1286,7 +1287,7 @@ a:focus {
       grid-template-columns: repeat(12, 8.33333%);
   -ms-grid-rows: (minmax(16.66667vh))[6];
       grid-template-rows: repeat(6, minmax(16.66667vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" "map map map map map map map map map map map map";
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "links links links links links links links links links links links links" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
 }
 
 .main-grid.res > * {
@@ -1297,15 +1298,86 @@ a:focus {
   margin-bottom: 10px;
 }
 
-.main-grid.res > .our-services {
+.main-grid.res > .our-links {
   -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: links;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.main-grid.res > .our-links .our-links__frame {
+  width: 100%;
+}
+
+.main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
+  padding-bottom: .72em;
+  border-bottom: 0.06em solid rgba(56, 71, 107, 0.7);
+}
+
+.main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
+  padding-top: .72em;
+}
+
+@media (orientation: landscape) {
+  .main-grid.res > .our-links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-grid.res > .our-links .our-links__frame {
+    width: 50%;
+  }
+  .main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
+    padding-right: .72em;
+    border-right: 0.06em solid rgba(56, 71, 107, 0.7);
+    padding-bottom: 0;
+    border-bottom: 0 solid rgba(56, 71, 107, 0.7);
+  }
+  .main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
+    padding-left: .72em;
+    padding-top: 0;
+  }
+}
+
+@media (orientation: portrait) {
+  .main-grid.res > .our-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-grid.res > .our-links .our-links__frame {
+    width: 100%;
+  }
+  .main-grid.res > .our-links .our-links__frame:nth-of-type(odd) {
+    padding-bottom: .72em;
+    border-bottom: 0.06em solid rgba(56, 71, 107, 0.7);
+  }
+  .main-grid.res > .our-links .our-links__frame:last-of-type:nth-of-type(even) {
+    padding-top: .72em;
+  }
+}
+
+.main-grid.res > .our-services {
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: services_res;
 }
 
 .main-grid.res > .about-us {
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
@@ -1315,11 +1387,8 @@ a:focus {
           flex-direction: column;
 }
 
-.main-grid.res > .about-us ins {
-  width: 100%;
-  padding: .5em 1em 0 1em;
-  margin-bottom: 1em;
-  background: white;
+.main-grid.res > .about-us strong {
+  text-align: center;
 }
 
 .main-grid.res > .about-us > .about-us__body {
@@ -1336,16 +1405,17 @@ a:focus {
   display: none;
 }
 
-.main-grid.res > .about-us > .about-us__body::after {
+.main-grid.res > .about-us > .about-us__body::before, .main-grid.res > .about-us > .about-us__body::after {
   display: none;
 }
 
 .main-grid.res > .reviews {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: reviews;
-  padding: 1.5em 2em;
+  padding: 1.5rem 2rem;
+  padding-top: 5rem;
   background: rgba(5, 20, 56, 0.75);
   position: relative;
   display: none;
@@ -1354,11 +1424,11 @@ a:focus {
 .main-grid.res > .reviews > .reviews__score {
   position: absolute;
   font-size: 1em;
-  right: 1em;
-  top: 1em;
+  right: .75rem;
+  top: 1rem;
   border: 2px solid white;
-  width: 50px;
-  height: 50px;
+  width: 3.5rem;
+  height: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1385,45 +1455,79 @@ a:focus {
 }
 
 .main-grid.res > .reviews .reviews__name > img {
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  left: .75rem;
+  top: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 0 50% 50% 50%;
 }
 
 .main-grid.res > .reviews .reviews__name > span {
   position: absolute;
+  top: 1rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
 .main-grid.res > .reviews > .reviews__positive {
+  margin: .5rem;
+  padding: .5rem;
+  margin-bottom: 1.5rem;
+  text-indent: 1rem;
   font-style: italic;
-  padding: 1em 0 1.5em 0;
+  line-height: 2rem !important;
+  letter-spacing: 0.05rem;
+  background: rgba(56, 71, 107, 0.7);
+}
+
+.main-grid.res > .reviews > .reviews__positive::before {
+  left: -.5rem;
+  top: 0.5rem;
+  position: relative;
+  content: '“';
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1rem;
+  color: #ffb88f;
+  font-weight: 900;
+}
+
+.main-grid.res > .reviews > .reviews__positive::after {
+  right: -.5rem;
+  top: 0.5rem;
+  position: relative;
+  content: '”';
+  font-style: italic;
+  font-size: 2rem;
+  color: #ffb88f;
+  font-weight: 900;
 }
 
 .main-grid.res > .reviews .reviews__country {
   position: absolute;
   left: 50%;
-  top: 6em;
+  top: 3.5rem;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
 .main-grid.res > .reviews > .reviews__stayed {
   position: absolute;
-  bottom: 2em;
+  left: .75rem;
+  bottom: 1rem;
 }
 
 .main-grid.res > .reviews > .reviews__reviewed {
   position: absolute;
-  right: 2em;
-  bottom: 2em;
+  right: .75rem;
+  bottom: 1rem;
 }
 
 @media (min-width: 576px) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ." ". about about about about about about about about about about ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ." ". map map map map map map map map map map .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". links links links links links links links links links links ." ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ." ". about about about about about about about about about about ." ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews .";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1438,20 +1542,26 @@ a:focus {
     -ms-grid-column-span: 10;
     grid-area: intro;
   }
-  .main-grid.res > .our-services {
+  .main-grid.res > .our-links {
     -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: links;
+  }
+  .main-grid.res > .our-services {
+    -ms-grid-row: 4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: services_res;
   }
   .main-grid.res > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 5;
+    -ms-grid-row: 6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: reviews;
@@ -1460,16 +1570,16 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.res > .gps__map-container {
-    -ms-grid-row: 6;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 10;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: map;
   }
 }
 
 @media (min-width: 768px) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . map map map map map map map map . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . links links links links links links links links . ." ". . services_res services_res services_res services_res services_res services_res services_res services_res . ." ". . about about about about about about about about . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . ." ". . reviews reviews reviews reviews reviews reviews reviews reviews . .";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1484,21 +1594,27 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
+  .main-grid.res > .our-links {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: links;
+  }
   .main-grid.res > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 5;
+    -ms-grid-row: 6;
     -ms-grid-row-span: 2;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: reviews;
   }
   .main-grid.res > .our-services {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: services_res;
@@ -1507,16 +1623,16 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.res > .gps__map-container {
-    -ms-grid-row: 7;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 8;
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
     grid-area: map;
   }
 }
 
 @media (orientation: portrait) {
   .main-grid.res {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews" "map map map map map map map map map map map map";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "links links links links links links links links links links links links" "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res" "about about about about about about about about about about about about" "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
   }
   .main-grid.res > .main-header {
     -ms-grid-row: 1;
@@ -1530,20 +1646,26 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: intro;
   }
+  .main-grid.res > .our-links {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: links;
+  }
   .main-grid.res > .about-us {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: about;
   }
   .main-grid.res > .reviews {
-    -ms-grid-row: 5;
+    -ms-grid-row: 6;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: reviews;
   }
   .main-grid.res > .our-services {
-    -ms-grid-row: 3;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: services_res;
@@ -1552,7 +1674,7 @@ a:focus {
     grid-area: footer;
   }
   .main-grid.res > .gps__map-container {
-    -ms-grid-row: 6;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: map;

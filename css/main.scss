@@ -44,7 +44,7 @@ html{
         font-size: 16px;
     }
     @media (orientation: portrait){
-        font-size: 24px;
+        font-size: 30px;
     }
 }
 
@@ -914,10 +914,10 @@ a:focus{
     grid-template-areas:
     "header header header header header header header header header header header header" 
     "intro intro intro intro intro intro intro intro intro intro intro intro"
+    "links links links links links links links links links links links links"
     "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
     "about about about about about about about about about about about about"
-    "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews"
-    "map map map map map map map map map map map map";
+    "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews";
 
         &>*{
             border-right: 2px solid #aaa;
@@ -926,18 +926,61 @@ a:focus{
             border-bottom: 2px solid #444;
             margin-bottom: 10px;
         }
+        &>.our-links{
+            grid-area: links;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: #fff;
+            padding: 1em;
+            & .our-links__frame{
+                width: 100%;
+                &:nth-of-type(odd){
+                    padding-bottom: .72em;
+                    border-bottom: 0.06em solid $main-bg-color-dark;
+                }
+                &:last-of-type:nth-of-type(even){
+                    padding-top: .72em;
+                }
+            }
+            @media (orientation: landscape) {
+                flex-direction: row;
+                & .our-links__frame{
+                    width: 50%;
+                    &:nth-of-type(odd){
+                        padding-right: .72em;
+                        border-right: 0.06em solid $main-bg-color-dark;
+                        padding-bottom: 0;
+                        border-bottom: 0 solid $main-bg-color-dark;
+                    }
+                    &:last-of-type:nth-of-type(even){
+                        padding-left: .72em;
+                        padding-top: 0;
+                    }
+                }
+            }
+            @media (orientation: portrait) {
+                flex-direction: column;
+                & .our-links__frame{
+                    width: 100%;
+                    &:nth-of-type(odd){
+                        padding-bottom: .72em;
+                        border-bottom: 0.06em solid $main-bg-color-dark;
+                    }
+                    &:last-of-type:nth-of-type(even){
+                        padding-top: .72em;
+                    }
+                }
+            }
+        }
         &>.our-services{
             grid-area: services_res;
         }
         &>.about-us{
             grid-area: about;
             flex-direction: column;
-            & ins{
-                width: 100%;
-                padding: .5em 1em 0 1em;
-                margin-bottom: 1em;
-                background: white;
-
+            & strong{
+                text-align: center;
             }
             &>.about-us__body{
                 display: none;
@@ -949,6 +992,7 @@ a:focus{
                 &.double{
                     display: none;
                 }
+                &::before,
                 &::after{
                     display: none;
                 }
@@ -956,18 +1000,19 @@ a:focus{
         }
         &>.reviews{
             grid-area: reviews;
-            padding: 1.5em 2em;
+            padding: 1.5rem 2rem;
+            padding-top: 5rem;
             background: $main-bg-color-darkest;
             position: relative;
             display: none;
             &>.reviews__score{
                 position: absolute;
                 font-size: 1em;
-                right: 1em;
-                top: 1em;
+                right: .75rem;
+                top: 1rem;
                 border: 2px solid white;
-                width: 50px;
-                height: 50px;
+                width: 3.5rem;
+                height: 3.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -979,34 +1024,66 @@ a:focus{
                 align-items: center;
                 width: 70%;
                 &>img{
-                    width: 50px;
-                    height: 50px;
+                    position: absolute;
+                    left: .75rem;
+                    top: 1rem;
+                    width: 3.5rem;
+                    height: 3.5rem;
                     border-radius: 0 50% 50% 50%;
                 }
                 &>span{
                     position: absolute;
+                    top: 1rem;
                     left: 50%;
                     transform: translateX(-50%);
                 }
             }
             &>.reviews__positive{
+                margin: .5rem;
+                padding: .5rem;
+                margin-bottom: 1.5rem;
+                text-indent: 1rem;
                 font-style: italic;
-                padding: 1em 0 1.5em 0;
+                line-height: 2rem !important;
+                letter-spacing: 0.05rem;
+                background: $main-bg-color-dark;
+                &::before{
+                    left: -.5rem;
+                    top: 0.5rem;
+                    position: relative;
+                    content: '“';
+                    font-style: italic;
+                    font-size: 2rem;
+                    line-height: 1rem;
+                    color: $title-color;
+                    font-weight: 900;
+                }
+                &::after{
+                    right: -.5rem;
+                    top: 0.5rem;
+                    position: relative;
+                    content: '”';
+                    font-style: italic;
+                    font-size: 2rem;
+                    color: $title-color;
+                    font-weight: 900;
+                }
             }
             & .reviews__country{
                     position: absolute;
                     left: 50%;
-                    top: 6em;
+                    top: 3.5rem;
                     transform: translateX(-50%);
             }
             &>.reviews__stayed{
                 position: absolute;
-                bottom: 2em;
+                left: .75rem;
+                bottom: 1rem;
             }
             &>.reviews__reviewed{
                 position: absolute;
-                right: 2em;
-                bottom: 2em;
+                right: .75rem;
+                bottom: 1rem;
             }
         }
         
@@ -1014,16 +1091,17 @@ a:focus{
             grid-template-areas:
             "header header header header header header header header header header header header" 
             ". intro intro intro intro intro intro intro intro intro intro ."
+            ". links links links links links links links links links links ."
             ". services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res ."
             ". about about about about about about about about about about ."
-            ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews ."
-            ". map map map map map map map map map map ."    ;
+            ". reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews .";
 
             &>.main-header{ grid-area: header;}
             &>.intro{ 
                 height: 250px;
                 grid-area: intro;
             }
+            &>.our-links{grid-area: links}
             &>.our-services{ grid-area: services_res}
             &>.about-us{ grid-area: about}
             &>.reviews{ grid-area: reviews}
@@ -1035,11 +1113,11 @@ a:focus{
             grid-template-areas:
             "header header header header header header header header header header header header" 
             "intro intro intro intro intro intro intro intro intro intro intro intro"
+            ". . links links links links links links links links . ."
             ". . services_res services_res services_res services_res services_res services_res services_res services_res . ."
             ". . about about about about about about about about . ."
             ". . reviews reviews reviews reviews reviews reviews reviews reviews . ."
             ". . reviews reviews reviews reviews reviews reviews reviews reviews . ."
-            ". . map map map map map map map map . ."
             ;
 
             &>.main-header{ grid-area: header;}
@@ -1047,6 +1125,7 @@ a:focus{
                 height: 60vmin; 
                 grid-area: intro
             }
+            &>.our-links{grid-area: links}
             &>.about-us{ grid-area: about}
             &>.reviews{ 
                 grid-area: reviews;
@@ -1059,16 +1138,17 @@ a:focus{
             grid-template-areas:
             "header header header header header header header header header header header header" 
             "intro intro intro intro intro intro intro intro intro intro intro intro"
+            "links links links links links links links links links links links links"
             "services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res services_res"
             "about about about about about about about about about about about about"
             "reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews reviews"
-            "map map map map map map map map map map map map"
     ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
                 grid-area: intro
             }
+            &>.our-links{grid-area: links}
             &>.about-us{ grid-area: about}
             &>.reviews{ grid-area: reviews}
             &>.our-services{ grid-area: services_res}

@@ -15,7 +15,11 @@ function resStart(){
   var hidden = true;
   var singleLogo = document.querySelector('#single-logo');
   var doubleLogo = document.querySelector('#double-logo');
+  btnMore.style.display = 'none';
   singleLogo.addEventListener('click', function(){
+    singleLogo.classList.add('current');
+    doubleLogo.classList.remove('current');
+    btnMore.style.display = 'block';
     aboutUsInfo.style.display = 'none';
     aboutUsBody[1].style.display = 'none';
     aboutUsBody[0].style.display = 'block';
@@ -26,6 +30,9 @@ function resStart(){
     else singleEN.style.display = 'block';
   })
   doubleLogo.addEventListener('click', function(){
+    singleLogo.classList.remove('current');
+    doubleLogo.classList.add('current');
+    btnMore.style.display = 'block';
     aboutUsInfo.style.display = 'none';
     aboutUsBody[0].style.display = 'none';
     aboutUsBody[1].style.display = 'block';
@@ -39,7 +46,9 @@ function resStart(){
   btnMore.addEventListener('click', function(e){
     (hidden === true) ?hidden = false :hidden = true;
     e.preventDefault();
-    hiddenPart[0].classList.toggle("hidden")
+    hiddenPart.forEach(function(i){
+      i.classList.toggle("hidden")
+    })
     if(hidden === true) btnMore.innerHTML = 'rozwiń';
     if(hidden === false) btnMore.innerHTML = 'zwiń';
   })
@@ -116,7 +125,7 @@ function resStart(){
           comments.push({
               stayed: data[i].date.stayed,
               reviewed: data[i].date.reviewed,
-              pic: data[i].guest.pic,
+              pic: (typeof data[i].guest.pic === 'string' || data[i].guest.pic instanceof String) ?data[i].guest.pic : 'https://a.wattpad.com/useravatar/AliensTear.256.117810.jpg',
               name: data[i].guest.name,
               country: data[i].guest.country,
               positive: data[i].review.positive,
@@ -125,7 +134,7 @@ function resStart(){
           }
           var  qouteSwap = function(index){ return function(){
               showComment(index);
-          return setTimeout( qouteSwap(Math.floor(Math.random()*(comments.length-1))), comments[index].positive.length*65)
+          return setTimeout( qouteSwap(Math.floor(Math.random()*(comments.length-1))), comments[index].positive.length*90)
           }
         } 
         qouteSwap(Math.floor(Math.random()*(comments.length-1)))()
