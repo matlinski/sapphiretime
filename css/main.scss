@@ -1014,44 +1014,48 @@ a:focus{
         background-color: $main-bg-color-darkest;
     }
 }
-.intro>.our-links{
-    position: absolute;
-    top: -5%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    &>*{
-        transition: all 0.4s 0.8s ease-in-out;
-        transform: scaleY(0);
-        transform-origin: top;
-        text-align: center;
-        color: $main-bg-color-darkest;
-        padding: 0.5rem;
-        @media (max-width: 576px) {
-            width: 250px;
-            padding: 0;
-        }   
-        @media (orientation: portrait) {
-            padding: 1rem;        
+.intro{
+    &:hover .our-links>*{
+        transform: scaleY(1);     
+    }
+    &>.our-links{
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        &>*{
+            transition: all 0.4s 0.8s ease-in-out;
+            transform: scaleY(0);
+            transform-origin: top;
+            text-align: center;
+            color: $main-bg-color-darkest;
+            padding: 0.5rem;
+            background: rgba(100%, 100%, 100%, 0.75);
+            @media (max-width: 576px) {
+                width: 250px;
+                padding: 0;
+            }   
+            @media (orientation: portrait) {
+                padding: 1rem;        
+            }
         }
-    }
-    & strong{
-        font-size: calc(45% + 10px);
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-    }
-    &>*:nth-child(odd){
-        position: absolute;
-        right: 1.5vw;
-        background: white;
-        border-radius: 0 0 .5rem .5rem;
-    }
-    &>*:nth-child(even){
-        position: absolute;
-        left: 1.5vw;
-        background: white;
-        border-radius: 0 0 .5rem .5rem;
+        & strong{
+            font-size: calc(45% + 10px);
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        &>*:nth-child(odd){
+            position: absolute;
+            right: 1.5vw;
+            border-radius: 0 0 .5rem .5rem;
+        }
+        &>*:nth-child(even){
+            position: absolute;
+            left: 1.5vw;
+            border-radius: 0 0 .5rem .5rem;
+        }
     }
 }
 /*RESERVATION LAYOUT ABOVE*/

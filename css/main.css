@@ -1435,6 +1435,11 @@ a:focus {
   background-color: rgba(5, 20, 56, 0.75);
 }
 
+.intro:hover .our-links > * {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
 .intro > .our-links {
   position: absolute;
   top: -5%;
@@ -1454,6 +1459,7 @@ a:focus {
   text-align: center;
   color: rgba(5, 20, 56, 0.75);
   padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 @media (max-width: 576px) {
@@ -1479,14 +1485,12 @@ a:focus {
 .intro > .our-links > *:nth-child(odd) {
   position: absolute;
   right: 1.5vw;
-  background: white;
   border-radius: 0 0 .5rem .5rem;
 }
 
 .intro > .our-links > *:nth-child(even) {
   position: absolute;
   left: 1.5vw;
-  background: white;
   border-radius: 0 0 .5rem .5rem;
 }
 
