@@ -5,6 +5,8 @@
 	<title>Witaj na stronie Sapphire Time</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/cookiealert.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -96,17 +98,19 @@
 			<div class="our-services__frame">
 				<a class="service" id="single-logo" href="#target">
 					<img height="100%" src="res/sapphiretime.png" alt="Logo Sapphire Time" class="single-alt our-services__frame__logo">
+					<a href="https://www.booking.com/hotel/pl/apartment-sapphire-time.en.html?aid=1791140&no_rooms=1&group_adults=1" target="_blank" style="color: white; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" class="btn btn-primary">ZAREZERWUJ</a>
 				</a>
 			</div>
 			<div class="our-services__frame">
 				<a class="service" id="double-logo" href="#target">
 					<img height="100%" src="res/sapphiretime-double.png" alt="Logo Double Sapphire Time" class="double-alt our-services__frame__logo">
+					<a href="https://www.booking.com/hotel/pl/apartment-double-sapphire-time.en.html?aid=1791140&no_rooms=1&group_adults=1" target="_blank" style="color: white; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" class="btn btn-primary">ZAREZERWUJ</a>
 				</a>
 			</div>
 		</aside>
 
 		<article class="about-us">
-				<strong>Aby wyswietlic opis i komentarze kliknij jeden z powyzszych logotypów</strong>
+				<strong>Aby wyswietlic opis i komentarze kliknij wybrany panel wokół logotypu powyżej.</strong>
 				<p class="about-us__body single">
 					Apartament ten zlokalizowany jest w odległości 2,6 km od centrum handlowego Manufaktura w Łodzi. Oferuje on bezpłatne WiFi. Obiekt znajduje się 3,6 km od cmentarza żydowskiego.<span class="hidden"> Na miejscu dostępny jest prywatny parking.Apartament zapewnia aneks kuchenny z kuchenką mikrofalową i tosterem. Pozostałe udogodnienia obejmują pościel i ręczniki. W prywatnej łazience mieści się wanna lub prysznic.Instytut Medycyny Pracy znajduje się 300 metrów od obiektu. W oddalonym o 750 metrów parku im. Adama Mickiewicza można pospacerować i uprawiać rozmaite sporty.Obiekt Apartment Sapphire Time położony jest 4,2 km od ulicy Piotrkowskiej oraz 4,4 km od Muzeum Animacji Se-ma-for. Odległość od łódzkiego lotniska im. Władysława Reymonta wynosi 8 km.Bałuty to świetny wybór dla osób, które interesują się zakupami, historią i restauracjami.Parom bardzo się podoba ta lokalizacja – za pobyt dla 2 osób oceniają ją na 8,7Ten obiekt w Łodzi jest także pozytywnie oceniany ze względu na stosunek jakości do ceny! Goście otrzymują więcej w tej cenie w porównaniu z innymi obiektami w tym mieście.Mówimy w Twoim języku! </span>
 				</p>
@@ -176,6 +180,12 @@
 	<footer class="main-footer">
 		<span class="main-footer__body">Wszelkie prawa zastrzeżone © 2019 autor witryny Mateusz Matliński.</span>
 	</footer>
+	<div style="position: fixed" class="alert alert-dismissible text-center cookiealert" role="alert">
+		<div class="cookiealert-container">
+			<b>Do you like cookies?</b> &#x1F36A; <span>We use cookies to ensure you get the best experience on our website.</span> <a href="http://cookiesandyou.com/" target="_blank">Learn more</a>
+			<button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">I agree</button>
+		</div>
+	  </div>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -187,23 +197,9 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?flags=always,gated&features=NodeList.prototype.forEach,localStorage,fetch"></script>
+	<script src="js/cookiealert.js"></script>
 	<script type="text/javascript" src="js/serverCall.js"></script>
 	<script type="text/javascript" src="js/res.js"></script>
 </body>
 
 </html>
-
-<!--
-						<ins class="bookingaff" data-aid="1791161" data-target_aid="1791161" data-prod="rw" data-width="0" data-height="0" data-lang="pl" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-hid="2310850">
-							<a href="//www.booking.com?aid=1791161">Booking.com</a>
-						</ins>
-						<script type="text/javascript">
-							(function(d, sc, u) {
-							  var s = d.createElement(sc), p = d.getElementsByTagName(sc)[0];
-							  s.type = 'text/javascript';
-							  s.async = true;
-							  s.src = u + '?v=' + (+new Date());
-							  p.parentNode.insertBefore(s,p);
-							  })(document, 'script', '//aff.bstatic.com/static/affiliate_base/js/flexiproduct.js');
-						</script>
--->

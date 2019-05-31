@@ -831,15 +831,29 @@ a:focus{
         }
         &>.our-services{
             grid-area: services_res;
+            &>.our-services__frame{
+                & .btn{
+                    display: none;
+                }
+                &:hover img,
+                &:focus img{
+                    display: none
+                }
+                &:hover .btn,
+                &:focus .btn{
+                    display: block;
+                }
+            }
         }
         &>.about-us{
+            position: relative;
             grid-area: about;
-            flex-direction: column;
             & strong{
                 text-align: center;
             }
             &>.about-us__body{
                 display: none;
+                flex-direction: column !important;
                 width: 100%;
                 max-width: 100%;
                 & .hidden{
@@ -1097,7 +1111,7 @@ a:focus{
             &>.intro{ 
                 grid-area: intro;
             }
-            &>.about-us{ grid-area: about}
+            &>.about-us{ grid-area: about;}
             &>.our-services{ grid-area: services}
             &>.main-gallery{ grid-area: gallery}
             &>.main-footer{ grid-area: footer}

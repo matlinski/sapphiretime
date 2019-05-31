@@ -1138,15 +1138,26 @@ a:focus {
   grid-area: services_res;
 }
 
+.main-grid.res > .our-services > .our-services__frame .btn {
+  display: none;
+}
+
+.main-grid.res > .our-services > .our-services__frame:hover img,
+.main-grid.res > .our-services > .our-services__frame:focus img {
+  display: none;
+}
+
+.main-grid.res > .our-services > .our-services__frame:hover .btn,
+.main-grid.res > .our-services > .our-services__frame:focus .btn {
+  display: block;
+}
+
 .main-grid.res > .about-us {
+  position: relative;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: about;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .main-grid.res > .about-us strong {
@@ -1155,6 +1166,10 @@ a:focus {
 
 .main-grid.res > .about-us > .about-us__body {
   display: none;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
   width: 100%;
   max-width: 100%;
 }

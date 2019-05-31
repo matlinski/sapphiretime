@@ -16,7 +16,12 @@ serverStart(document.querySelectorAll('.menu1'),
             document.querySelector('.main-header__frame__logo'),
             document.querySelector('.single-alt'),
             document.querySelector('.double-alt'),
-            document.querySelectorAll('.flag')
+            document.querySelectorAll('.flag'),
+            document.querySelectorAll('.reviews'),
+            document.querySelector('.res.about-us>strong'),
+            document.querySelectorAll('.res.about-us__body'),
+            document.querySelector('.btn-more'),
+            document.querySelector('.cookiealert-container')
             );
 })
 
@@ -34,7 +39,12 @@ function serverStart(indexMenu,
                     mainLogo,
                     serviceLogo,
                     serviceLogoDouble,
-                    flags
+                    flags,
+                    reviews,
+                    aboutUsInfoRes,
+                    aboutUsBodyRes,
+                    btnMore,
+                    cookieContainer
                     ) {
 	document.querySelector('.our-links__frame.single').innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
     document.querySelector('.our-links__frame.double').innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
@@ -87,6 +97,10 @@ function serverStart(indexMenu,
     }
 
 function langChange(init) {
+    var boldCookie = cookieContainer.querySelector('b');
+    var mainCookie = cookieContainer.querySelector('span');
+    var linkCookie = cookieContainer.querySelector('a');
+    var buttonCookie = cookieContainer.querySelector('button');
     (localStorage.getItem('gps') === 'PL') ? flags[0].classList.add('current') : flags[1].classList.add('current');
     document.title = init.title;
     mainLogo.alt = init.mainLogo;
@@ -109,13 +123,15 @@ function langChange(init) {
     if(isInPage(infoGallery))infoGallery.innerHTML = init.infoGallery;
     if(isInPage(infoMap))infoMap.innerHTML = init.infoMap;
     footerText.innerHTML = init.footerText;
+    boldCookie.innerHTML = init.boldCookie;
+    console.log(boldCookie, init.boldCookie)
+    mainCookie.innerHTML = init.mainCookie;
+    linkCookie.innerHTML = init.linkCookie;
+    linkCookie.href = init.hrefCookie;
+    buttonCookie.innerHTML = init.buttonCookie;
 }
 
 function chooseLang(e) {
-    var reviews = document.querySelectorAll('.reviews');
-    var aboutUsInfoRes = document.querySelector('.res.about-us>strong');
-    var aboutUsBodyRes = document.querySelectorAll('.res.about-us__body');
-    var btnMore = document.querySelector('.btn-more');
     localStorage.clear();
     localStorage.setItem('gps', e.target.alt);
     flags.forEach(function (i) {
