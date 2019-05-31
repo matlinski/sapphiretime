@@ -1166,10 +1166,6 @@ a:focus {
 
 .main-grid.res > .about-us > .about-us__body {
   display: none;
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: column !important;
-          flex-direction: column !important;
   width: 100%;
   max-width: 100%;
 }

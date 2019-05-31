@@ -74,7 +74,6 @@ function mainStart(singleLogo,
 
         
     }
-
     singleLogo.addEventListener('click', revealS);
     doubleLogo.addEventListener('click', revealD);
 }
@@ -90,3 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
               document.querySelectorAll('.double>a>img')
               );
 })
+/*                 singleLogo,
+                   singleGallery,
+                   singleFrames,
+                   singlePhotos,
+                   doubleLogo,
+                   doubleGallery,
+                   doubleFrames,
+                   doublePhotos */

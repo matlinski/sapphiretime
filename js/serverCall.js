@@ -20,8 +20,11 @@ serverStart(document.querySelectorAll('.menu1'),
             document.querySelectorAll('.reviews'),
             document.querySelector('.res.about-us>strong'),
             document.querySelectorAll('.res.about-us__body'),
-            document.querySelector('.btn-more'),
-            document.querySelector('.cookiealert-container')
+            document.querySelector('.cookiealert-container'),
+            document.querySelector('.res .about-us__body.single'),
+            document.querySelector('.res .about-us__body.double'),
+            document.querySelector('.res .about-us strong'),
+            document.querySelectorAll('.res .btn-lg'),
             );
 })
 
@@ -43,9 +46,13 @@ function serverStart(indexMenu,
                     reviews,
                     aboutUsInfoRes,
                     aboutUsBodyRes,
-                    btnMore,
-                    cookieContainer
+                    cookieContainer,
+                    aboutSingle,
+                    aboutDouble,
+                    aboutResInfo,
+                    resButton
                     ) {
+                        console.log(aboutSingle, aboutDouble, aboutResInfo, resButton)
 	document.querySelector('.our-links__frame.single').innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
     document.querySelector('.our-links__frame.double').innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
     
@@ -129,6 +136,12 @@ function langChange(init) {
     linkCookie.innerHTML = init.linkCookie;
     linkCookie.href = init.hrefCookie;
     buttonCookie.innerHTML = init.buttonCookie;
+    if(isInPage(aboutSingle))aboutSingle.innerText = init.aboutSingle;
+    if(isInPage(aboutDouble))aboutDouble.innerText = init.aboutDouble;
+    if(isInPage(aboutResInfo))aboutResInfo.innerHTML = init.aboutResInfo;
+    resButton.forEach(function(i){
+        if(isInPage(i))i.innerHTML = init.resButton;
+    })
 }
 
 function chooseLang(e) {
@@ -143,7 +156,6 @@ function chooseLang(e) {
     aboutUsBodyRes.forEach(function(i){
         if(isInPage(i)) i.style.display = 'none';
     })
-    if(isInPage(btnMore)) btnMore.style.display = 'none';
     if(isInPage(aboutUsInfoRes)) aboutUsInfoRes.style.display = 'block';
     fetch('json/' + localStorage.getItem('gps') + '.json').then(function (response) {
         return response.json();
