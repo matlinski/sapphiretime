@@ -1102,9 +1102,11 @@ a:focus{
 }
 .btn-more{
     background-color: $main-bg-color-darker;
-    padding: .5em 1em;
+    padding: 0.75em 0.75em;
     font-weight: 900;
     transition: 0.4s ease-in-out;
+    text-align: center;
+    border-radius: 0.5em;
     &:hover,
     &:focus{
         background-color: $main-bg-color-darkest;
@@ -1152,6 +1154,21 @@ a:focus{
             left: 1.5vw;
             border-radius: 0 0 .5rem .5rem;
         }
+    }
+}
+
+.single.en,
+.double.en{
+    position: relative;
+    &::after{
+        content: 'Translated automatically, to see the original please change the language settings by clicking on the polish flag.';
+        font-size: 0.8rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+        font-style: italic;
+        color: $main-bg-color-bright;
     }
 }
 /*RESERVATION LAYOUT ABOVE*/

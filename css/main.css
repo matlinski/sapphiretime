@@ -1585,10 +1585,12 @@ a:focus {
 
 .btn-more {
   background-color: #1f2e52;
-  padding: .5em 1em;
+  padding: 0.75em 0.75em;
   font-weight: 900;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  text-align: center;
+  border-radius: 0.5em;
 }
 
 .btn-more:hover, .btn-more:focus {
@@ -1652,6 +1654,24 @@ a:focus {
   position: absolute;
   left: 1.5vw;
   border-radius: 0 0 .5rem .5rem;
+}
+
+.single.en,
+.double.en {
+  position: relative;
+}
+
+.single.en::after,
+.double.en::after {
+  content: 'Translated automatically, to see the original please change the language settings by clicking on the polish flag.';
+  font-size: 0.8rem;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /*RESERVATION LAYOUT ABOVE*/

@@ -141,7 +141,7 @@ function langChange(init) {
     if(isInPage(aboutSingleSecondary))aboutSingleSecondary.innerHTML = init.aboutSingleSecondary;
     if(isInPage(aboutDoubleMain))aboutDoubleMain.innerHTML = init.aboutDoubleMain;
     if(isInPage(aboutDoubleSecondary))aboutDoubleSecondary.innerHTML = init.aboutDoubleSecondary;
-    if(isInPage(aboutResInfo))aboutResInfoMain.innerHTML = init.aboutResInfoMain;
+    if(isInPage(aboutResInfo))aboutResInfo.innerHTML = init.aboutResInfo;
     resButton.forEach(function(i){
         if(isInPage(i))i.innerHTML = init.resButton;
     })
