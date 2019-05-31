@@ -78,7 +78,7 @@ function mainStart(singleLogo,
     doubleLogo.addEventListener('click', revealD);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     mainStart(document.querySelector('#single-logo'),
               document.querySelector('.single'),
               document.querySelectorAll('.single>a'),
@@ -89,11 +89,3 @@ document.addEventListener('DOMContentLoaded', function () {
               document.querySelectorAll('.double>a>img')
               );
 })
-/*                 singleLogo,
-                   singleGallery,
-                   singleFrames,
-                   singlePhotos,
-                   doubleLogo,
-                   doubleGallery,
-                   doubleFrames,
-                   doublePhotos */

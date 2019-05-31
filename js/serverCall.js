@@ -21,10 +21,13 @@ serverStart(document.querySelectorAll('.menu1'),
             document.querySelector('.res.about-us>strong'),
             document.querySelectorAll('.res.about-us__body'),
             document.querySelector('.cookiealert-container'),
-            document.querySelector('.res .about-us__body.single'),
-            document.querySelector('.res .about-us__body.double'),
+            document.querySelector('.res .about-us__body.single .main'),
+            document.querySelector('.res .about-us__body.single .secondary'),
+            document.querySelector('.res .about-us__body.double .main'),
+            document.querySelector('.res .about-us__body.double .secondary'),
             document.querySelector('.res .about-us strong'),
             document.querySelectorAll('.res .btn-lg'),
+            document.querySelector('.btn-more')
             );
 })
 
@@ -47,12 +50,14 @@ function serverStart(indexMenu,
                     aboutUsInfoRes,
                     aboutUsBodyRes,
                     cookieContainer,
-                    aboutSingle,
-                    aboutDouble,
+                    aboutSingleMain,
+                    aboutSingleSecondary,
+                    aboutDoubleMain,
+                    aboutDoubleSecondary,
                     aboutResInfo,
-                    resButton
+                    resButton,
+                    btnMore
                     ) {
-                        console.log(aboutSingle, aboutDouble, aboutResInfo, resButton)
 	document.querySelector('.our-links__frame.single').innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
     document.querySelector('.our-links__frame.double').innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
     
@@ -73,7 +78,6 @@ function serverStart(indexMenu,
             })
             .then(function (set) {
                 langChange(set);
-                console.log(localStorage.getItem('gps'));
             })
         return;
     }
@@ -90,7 +94,6 @@ function serverStart(indexMenu,
                 if (country !== 'PL') country = 'UK';
                 fetch('json/' + country + '.json')
                     .then(function (response) {
-                        console.log(response);
                         return response.json();
                     })
                     .then(function (set) {
@@ -98,7 +101,6 @@ function serverStart(indexMenu,
                     })
                     .then(function (set) {
                         langChange(set);
-                        console.log(country);
                     })
             })
     }
@@ -131,17 +133,19 @@ function langChange(init) {
     if(isInPage(infoMap))infoMap.innerHTML = init.infoMap;
     footerText.innerHTML = init.footerText;
     boldCookie.innerHTML = init.boldCookie;
-    console.log(boldCookie, init.boldCookie)
     mainCookie.innerHTML = init.mainCookie;
     linkCookie.innerHTML = init.linkCookie;
     linkCookie.href = init.hrefCookie;
     buttonCookie.innerHTML = init.buttonCookie;
-    if(isInPage(aboutSingle))aboutSingle.innerText = init.aboutSingle;
-    if(isInPage(aboutDouble))aboutDouble.innerText = init.aboutDouble;
-    if(isInPage(aboutResInfo))aboutResInfo.innerHTML = init.aboutResInfo;
+    if(isInPage(aboutSingleMain))aboutSingleMain.innerHTML = init.aboutSingleMain;
+    if(isInPage(aboutSingleSecondary))aboutSingleSecondary.innerHTML = init.aboutSingleSecondary;
+    if(isInPage(aboutDoubleMain))aboutDoubleMain.innerHTML = init.aboutDoubleMain;
+    if(isInPage(aboutDoubleSecondary))aboutDoubleSecondary.innerHTML = init.aboutDoubleSecondary;
+    if(isInPage(aboutResInfo))aboutResInfoMain.innerHTML = init.aboutResInfoMain;
     resButton.forEach(function(i){
         if(isInPage(i))i.innerHTML = init.resButton;
     })
+    if(isInPage(btnMore)) btnMore.innerHTML = init.btnMore;
 }
 
 function chooseLang(e) {
@@ -165,7 +169,6 @@ function chooseLang(e) {
         })
         .then(function (set) {
             langChange(set);
-            console.log(localStorage.getItem('gps'));
         })
 }
 }

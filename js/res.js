@@ -11,7 +11,7 @@ function resStart(){
   var aboutUsInfo = document.querySelector('.about-us>strong');
   var aboutUsBody = document.querySelectorAll('.about-us__body');
   var btnMore = document.querySelector('.btn-more')
-  var hiddenPart = document.querySelectorAll('.about-us__body>span')
+  var hiddenPart = document.querySelectorAll('.about-us__body>.secondary')
   var hidden = true;
   var singleLogo = document.querySelector('#single-logo');
   var doubleLogo = document.querySelector('#double-logo');
@@ -43,14 +43,15 @@ function resStart(){
     else doubleEN.style.display = 'block';
   })
 
-  btnMore.addEventListener('click', function(e){
+    btnMore.addEventListener('click', function(e){
     (hidden === true) ?hidden = false :hidden = true;
+    
     e.preventDefault();
     hiddenPart.forEach(function(i){
       i.classList.toggle("hidden")
     })
-    if(hidden === true) btnMore.innerHTML = 'rozwiń';
-    if(hidden === false) btnMore.innerHTML = 'zwiń';
+    if(hidden === true) (localStorage.getItem('gps') === 'PL') ?btnMore.innerHTML = 'rozwiń' :btnMore.innerHTML = 'show more';
+    if(hidden === false) (localStorage.getItem('gps') === 'PL') ?btnMore.innerHTML = 'zwiń' :btnMore.innerHTML = 'show less';
   })
   runComments()
   function runComments(){
