@@ -918,19 +918,14 @@ a:focus{
                 & .btn{
                     display: none;
                 }
+                & img{
+                    transition-delay: 1s;
+                }
                 &:hover img{
                     display: none;
                 }
                 &:hover .btn{
                     display: block;
-                }
-                &>.service{
-                    &:focus img{
-                        display: none;
-                    }
-                    &:focus .btn{
-                        display: block !important; //doesn't work
-                    }
                 }
             }
         }

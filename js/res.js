@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector('.btn-more'),
           document.querySelectorAll('.about-us__body>.secondary'),
           document.querySelector('#single-logo'),
-          document.querySelector('#double-logo')
+          document.querySelector('#double-logo'),
+          document.querySelectorAll('.service')
           );
 });
 
@@ -25,9 +26,27 @@ function resStart(singlePL,
                   btnMore,
                   hiddenPart,
                   singleLogo,
-                  doubleLogo
+                  doubleLogo,
+                  serviceLinks
                   ){
-
+  serviceLinks.forEach(function(i){
+    i.addEventListener('focus', function(e){
+      console.log(e)
+      e.path[1].querySelector('img').style.display = "block";
+      setTimeout(function(){
+        e.path[1].querySelector('img').style.display = "none";
+        e.path[1].querySelector('.reserve').style.display = "block";
+      }, 1000);
+    })
+    i.addEventListener('blur', function(e){
+      console.log(e)
+      e.path[1].querySelector('img').style.display = "none";
+      setTimeout(function(){
+        e.path[1].querySelector('img').style.display = "block";
+        e.path[1].querySelector('.reserve').style.display = "none";
+      }, 1000);
+    })
+  })
   var hidden = true;
   var comments = [];
   btnMore.style.display = 'none';
