@@ -755,8 +755,8 @@ a:focus {
 }
 
 .main-footer {
-  height: 8.33333vh;
-  padding: 0 1em;
+  min-height: 8.33333vh;
+  padding: 1.5em 7em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,7 +771,7 @@ a:focus {
   background-color: #1f2e52;
   border-top: 2px solid #aaa;
   font-size: 0.9rem;
-  height: 5em;
+  height: auto;
 }
 
 /*INDEX LAYOUT ABOVE*/
@@ -779,7 +779,7 @@ a:focus {
   display: -ms-grid;
   display: grid;
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   /*grid-template-columns: repeat($cols, calc(100vw/12));
     grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   -ms-grid-columns: (8.33333%)[12];
@@ -1291,14 +1291,20 @@ a:focus {
   display: none;
 }
 
-.main-grid.res > .our-services > .our-services__frame:hover img,
-.main-grid.res > .our-services > .our-services__frame:focus img {
+.main-grid.res > .our-services > .our-services__frame:hover img {
   display: none;
 }
 
-.main-grid.res > .our-services > .our-services__frame:hover .btn,
-.main-grid.res > .our-services > .our-services__frame:focus .btn {
+.main-grid.res > .our-services > .our-services__frame:hover .btn {
   display: block;
+}
+
+.main-grid.res > .our-services > .our-services__frame > .service:focus img {
+  display: none;
+}
+
+.main-grid.res > .our-services > .our-services__frame > .service:focus .btn {
+  display: block !important;
 }
 
 .main-grid.res > .about-us {
@@ -1597,9 +1603,15 @@ a:focus {
   background-color: rgba(5, 20, 56, 0.75);
 }
 
-.intro:hover .our-links > * {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+@media (min-width: 725px) {
+  .intro:hover .our-links > * {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  .intro .our-links > *:focus {
+    -webkit-transform: scaleY(1) !important;
+            transform: scaleY(1) !important;
+  }
 }
 
 .intro > .our-links {
@@ -1661,15 +1673,21 @@ a:focus {
   position: relative;
 }
 
+.single.en p,
+.double.en p {
+  padding-bottom: 4em !important;
+}
+
 .single.en::after,
 .double.en::after {
-  content: 'Translated automatically, to see the original please change the language settings by clicking on the polish flag.';
+  content: "Content\'s translation generated automatically";
+  text-align: center;
   font-size: 0.8rem;
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 1rem;
+  bottom: 3.5rem;
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
 }

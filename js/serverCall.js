@@ -27,7 +27,9 @@ serverStart(document.querySelectorAll('.menu1'),
             document.querySelector('.res .about-us__body.double .secondary'),
             document.querySelector('.res .about-us strong'),
             document.querySelectorAll('.res .btn-lg'),
-            document.querySelector('.btn-more')
+            document.querySelector('.btn-more'),
+            document.querySelector('.our-links__frame.single'),
+            document.querySelector('.our-links__frame.double')
             );
 })
 
@@ -56,11 +58,12 @@ function serverStart(indexMenu,
                     aboutDoubleSecondary,
                     aboutResInfo,
                     resButton,
-                    btnMore
+                    btnMore,
+                    widgetS,
+                    widgetD
                     ) {
-	document.querySelector('.our-links__frame.single').innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
-    document.querySelector('.our-links__frame.double').innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
-    
+                        widgetS.innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
+                        widgetD.innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
     function isInPage(node) {
         return (node === document.body) ? false : document.body.contains(node);
       }

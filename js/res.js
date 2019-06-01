@@ -1,20 +1,35 @@
+'use strict'
+
 document.addEventListener('DOMContentLoaded', function () {
-  resStart();
+  resStart(document.querySelector('.single.pl'),
+          document.querySelector('.single.en'),
+          document.querySelector('.double.pl'),
+          document.querySelector('.double.en'),
+          document.querySelectorAll('.reviews'),
+          document.querySelector('.about-us>strong'),
+          document.querySelectorAll('.about-us__body'),
+          document.querySelector('.btn-more'),
+          document.querySelectorAll('.about-us__body>.secondary'),
+          document.querySelector('#single-logo'),
+          document.querySelector('#double-logo')
+          );
 });
 
-function resStart(){
-  var singlePL = document.querySelector('.single.pl');
-  var singleEN = document.querySelector('.single.en');
-  var doublePL = document.querySelector('.double.pl');
-  var doubleEN = document.querySelector('.double.en');
-  var reviews = document.querySelectorAll('.reviews');
-  var aboutUsInfo = document.querySelector('.about-us>strong');
-  var aboutUsBody = document.querySelectorAll('.about-us__body');
-  var btnMore = document.querySelector('.btn-more')
-  var hiddenPart = document.querySelectorAll('.about-us__body>.secondary')
+function resStart(singlePL,
+                  singleEN,
+                  doublePL,
+                  doubleEN,
+                  reviews,
+                  aboutUsInfo,
+                  aboutUsBody,
+                  btnMore,
+                  hiddenPart,
+                  singleLogo,
+                  doubleLogo
+                  ){
+
   var hidden = true;
-  var singleLogo = document.querySelector('#single-logo');
-  var doubleLogo = document.querySelector('#double-logo');
+  var comments = [];
   btnMore.style.display = 'none';
   singleLogo.addEventListener('click', function(){
     singleLogo.classList.add('current');
@@ -117,7 +132,6 @@ function resStart(){
           scoreArea,
           version
           ){
-            var comments = [];
         
           fetch('json/'+apart+'.'+lang+'.json')
         .then(res => res.json())
@@ -135,7 +149,7 @@ function resStart(){
           }
           var  qouteSwap = function(index){ return function(){
               showComment(index);
-          return setTimeout( qouteSwap(Math.floor(Math.random()*(comments.length-1))), comments[index].positive.length*90)
+          return setTimeout( qouteSwap(Math.floor(Math.random()*(comments.length-1))),(comments[index].positive.length*90 < 4000) ?4000 :comments[index].positive.length*110)
           }
         } 
         qouteSwap(Math.floor(Math.random()*(comments.length-1)))()
