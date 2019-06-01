@@ -1291,20 +1291,9 @@ a:focus {
   display: none;
 }
 
-.main-grid.res > .our-services > .our-services__frame:hover img {
-  display: none;
-}
-
-.main-grid.res > .our-services > .our-services__frame:hover .btn {
-  display: block;
-}
-
-.main-grid.res > .our-services > .our-services__frame > .service:focus img {
-  display: none;
-}
-
-.main-grid.res > .our-services > .our-services__frame > .service:focus .btn {
-  display: block !important;
+.main-grid.res > .our-services > .our-services__frame img {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .main-grid.res > .about-us {

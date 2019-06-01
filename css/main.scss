@@ -921,12 +921,7 @@ a:focus{
                 & img{
                     transition-delay: 1s;
                 }
-                &:hover img{
-                    display: none;
-                }
-                &:hover .btn{
-                    display: block;
-                }
+
             }
         }
         &>.about-us{
