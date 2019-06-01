@@ -11,25 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector('.btn-more'),
           document.querySelectorAll('.about-us__body>.secondary'),
           document.querySelector('#single-logo'),
-          document.querySelector('#double-logo')
+          document.querySelector('#double-logo'),
+          document.querySelectorAll('.service')
           );
-          var serviceLinks = document.querySelectorAll('.service');
-          serviceLinks.forEach(function(i){
-            i.addEventListener('focus', function(e){
-              e.path[1].querySelector('img').style.display = "block";
-              setTimeout(function(){
-                e.path[1].querySelector('img').style.display = "none";
-                e.path[1].querySelector('.reserve').style.display = "block";
-              }, 1000);
-            })
-            i.addEventListener('blur', function(e){
-              e.path[1].querySelector('img').style.display = "none";
-              setTimeout(function(){
-                e.path[1].querySelector('img').style.display = "block";
-                e.path[1].querySelector('.reserve').style.display = "none";
-              }, 1000);
-            })
-          })
 });
 
 function resStart(singlePL,
@@ -42,10 +26,30 @@ function resStart(singlePL,
                   btnMore,
                   hiddenPart,
                   singleLogo,
-                  doubleLogo
+                  doubleLogo,
+                  serviceLinks
                   ){
+                    
+          serviceLinks.forEach(function(i){
+            i.addEventListener('focus', function(e){
+              console.log(e)
+              e.target.parentNode.querySelector('img').style.display = "block";
+              setTimeout(function(){
+                e.target.parentNode.querySelector('img').style.display = "none";
+                e.target.parentNode.querySelector('.reserve').style.display = "block";
+              }, 1000);
+            })
+            i.addEventListener('blur', function(e){
+              console.log(e)
+              e.target.parentNode.querySelector('img').style.display = "none";
+              setTimeout(function(){
+                e.target.parentNode.querySelector('img').style.display = "block";
+                e.target.parentNode.querySelector('.reserve').style.display = "none";
+              }, 1000);
+            })
+          })
+          
   var hidden = true;
-  var comments = [];
   btnMore.style.display = 'none';
   singleLogo.addEventListener('click', function(){
     singleLogo.classList.add('current');
@@ -148,22 +152,26 @@ function resStart(singlePL,
           scoreArea,
           version
           ){
+            var comments = [];
         
           fetch('json/'+apart+'.'+lang+'.json')
-        .then(res => res.json())
-        .then(data => {
+        .then(function(res){
+          console.log(data)
+          res.json()
+        })
+        .then(function(data){
           for(var i = 0; i < data.length; i++){
           comments.push({
               stayed: data[i].date.stayed,
               reviewed: data[i].date.reviewed,
-              pic: (typeof data[i].guest.pic === 'string' || data[i].guest.pic instanceof String) ?data[i].guest.pic : 'https://a.wattpad.com/useravatar/AliensTear.256.117810.jpg',
+              pic: (typeof data[i].guest.pic === 'string' || data[i].guest.pic instanceof String) ?data[i].guest.pic :'https://a.wattpad.com/useravatar/AliensTear.256.117810.jpg',
               name: data[i].guest.name,
               country: data[i].guest.country,
               positive: data[i].review.positive,
               score: data[i].score
           })
           }
-          var  qouteSwap = function(index){ return function(){
+          var qouteSwap = function(index){ return function(){
               showComment(index);
           return setTimeout( qouteSwap(Math.floor(Math.random()*(comments.length-1))),(comments[index].positive.length*90 < 4000) ?4000 :comments[index].positive.length*110)
           }
