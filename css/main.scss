@@ -683,6 +683,7 @@ a:focus{
     overflow: hidden;
     padding-bottom: 0 !important;
     &>#info{
+        border-radius: 1rem;
         display: block;
         width: 40%;
         position: absolute;

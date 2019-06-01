@@ -29,9 +29,9 @@ function resStart(singlePL,
                   doubleLogo,
                   serviceLinks
                   ){
+                    
   serviceLinks.forEach(function(i){
     i.addEventListener('focus', function(e){
-      console.log(e)
       e.path[1].querySelector('img').style.display = "block";
       setTimeout(function(){
         e.path[1].querySelector('img').style.display = "none";
@@ -39,7 +39,6 @@ function resStart(singlePL,
       }, 1000);
     })
     i.addEventListener('blur', function(e){
-      console.log(e)
       e.path[1].querySelector('img').style.display = "none";
       setTimeout(function(){
         e.path[1].querySelector('img').style.display = "block";

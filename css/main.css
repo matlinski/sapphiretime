@@ -945,6 +945,7 @@ a:focus {
 }
 
 .gps__map-container > #info {
+  border-radius: 1rem;
   display: block;
   width: 40%;
   position: absolute;
