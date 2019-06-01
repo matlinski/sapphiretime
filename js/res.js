@@ -155,11 +155,8 @@ function resStart(singlePL,
             var comments = [];
         
           fetch('json/'+apart+'.'+lang+'.json')
-        .then(function(res){
-          console.log(data)
-          res.json()
-        })
-        .then(function(data){
+        .then(res => res.json())
+        .then(data => {
           for(var i = 0; i < data.length; i++){
           comments.push({
               stayed: data[i].date.stayed,
