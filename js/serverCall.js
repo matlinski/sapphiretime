@@ -176,22 +176,3 @@ function chooseLang(e) {
         })
 }
 }
-
-/*   serviceLinks.forEach(function(i){
-    i.addEventListener('focus', function(e){
-      console.log(e)
-      e.path[1].querySelector('img').style.display = "block";
-      setTimeout(function(){
-        e.path[1].querySelector('img').style.display = "none";
-        e.path[1].querySelector('.reserve').style.display = "block";
-      }, 1000);
-    })
-    i.addEventListener('blur', function(e){
-      console.log(e)
-      e.path[1].querySelector('img').style.display = "none";
-      setTimeout(function(){
-        e.path[1].querySelector('img').style.display = "block";
-        e.path[1].querySelector('.reserve').style.display = "none";
-      }, 1000);
-    })
-  }) */
