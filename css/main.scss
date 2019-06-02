@@ -809,40 +809,17 @@ a:focus{
                     margin-left: 25%;
                 }
                 &>img{
-                    width: 5vh;
-                    height: 5vh;
+                    width: 2rem;
+                    height: 2rem;
                     position: absolute;
                     left: 10%;
                     transition: all 0.2s 0.2s ease-in-out;
                     &#PL{
                         left: 14%;
-                        @media (min-width: 1200px) {
-                            width: 3.5vh;
-                            height: 3.5vh;
-                            left: 10%;
-                            top: 33%
-                        }
-                        @media (orientation: portrait) {
-                            width: 5vh;
-                            height: 5vh;
-                            left: 14%;
-                            top: initial
-                        }
+
                     }
                     &#UK{
                         left: 6%;
-                        @media (min-width: 1200px) {
-                            width: 3.5vh;
-                            height: 3.5vh;
-                            left: 10%;
-                            bottom: 33%;
-                        }
-                        @media (orientation: portrait) {
-                            width: 5vh;
-                            height: 5vh;
-                            left: 6%;
-                            bottom: initial;
-                        }
                     }
                 }
                 &:focus,

@@ -1143,8 +1143,8 @@ a:focus {
 }
 
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img {
-  width: 5vh;
-  height: 5vh;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   left: 10%;
   -webkit-transition: all 0.2s 0.2s ease-in-out;
@@ -1155,44 +1155,8 @@ a:focus {
   left: 14%;
 }
 
-@media (min-width: 1200px) {
-  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#PL {
-    width: 3.5vh;
-    height: 3.5vh;
-    left: 10%;
-    top: 33%;
-  }
-}
-
-@media (orientation: portrait) {
-  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#PL {
-    width: 5vh;
-    height: 5vh;
-    left: 14%;
-    top: initial;
-  }
-}
-
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
   left: 6%;
-}
-
-@media (min-width: 1200px) {
-  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
-    width: 3.5vh;
-    height: 3.5vh;
-    left: 10%;
-    bottom: 33%;
-  }
-}
-
-@media (orientation: portrait) {
-  .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > img#UK {
-    width: 5vh;
-    height: 5vh;
-    left: 6%;
-    bottom: initial;
-  }
 }
 
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:focus, .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a:hover {
