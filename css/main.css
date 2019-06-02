@@ -1319,6 +1319,12 @@ a:focus {
   display: none;
   width: 100%;
   max-width: 100%;
+  line-height: 1.5rem;
+}
+
+.main-grid.res > .about-us > .about-us__body b {
+  font-size: 1.5rem;
+  color: #ffb88f;
 }
 
 .main-grid.res > .about-us > .about-us__body .hidden {

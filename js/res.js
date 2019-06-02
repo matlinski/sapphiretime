@@ -30,9 +30,6 @@ function resStart(singlePL,
                   serviceLinks
                   ){
           
-          var mobile = window.matchMedia("(hover: none) and (pointer: coarse)");
-          console.log(mobile.matches)
-          if(!(mobile.matches)) {
             serviceLinks.forEach(function(i){
               i.addEventListener('focus', function(e){
                 console.log(e)
@@ -51,7 +48,6 @@ function resStart(singlePL,
                 }, 1000);
               })
             })
-          }
           
   var hidden = true;
   btnMore.style.display = 'none';

@@ -941,6 +941,11 @@ a:focus{
                 display: none;
                 width: 100%;
                 max-width: 100%;
+                line-height: 1.5rem;
+                & b{
+                    font-size: 1.5rem;
+                    color: $title-color;
+                }
                 & .hidden{
                     display: none;
                 }
