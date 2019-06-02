@@ -1297,6 +1297,12 @@ a:focus {
           transition-delay: 1s;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .main-grid.res > .our-services > .our-services__frame .btn {
+    display: block;
+  }
+}
+
 .main-grid.res > .about-us {
   position: relative;
   -ms-grid-row: 4;

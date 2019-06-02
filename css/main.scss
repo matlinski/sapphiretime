@@ -922,9 +922,14 @@ a:focus{
                 & img{
                     transition-delay: 1s;
                 }
-
+                @media (hover: none) and (pointer: coarse) {
+                    & .btn{
+                        display: block;
+                    }
+                }
             }
         }
+        
         &>.about-us{
             position: relative;
             grid-area: about;

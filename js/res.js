@@ -29,25 +29,29 @@ function resStart(singlePL,
                   doubleLogo,
                   serviceLinks
                   ){
-                    
-          serviceLinks.forEach(function(i){
-            i.addEventListener('focus', function(e){
-              console.log(e)
-              e.target.parentNode.querySelector('img').style.display = "block";
-              setTimeout(function(){
-                e.target.parentNode.querySelector('img').style.display = "none";
-                e.target.parentNode.querySelector('.reserve').style.display = "block";
-              }, 1000);
-            })
-            i.addEventListener('blur', function(e){
-              console.log(e)
-              e.target.parentNode.querySelector('img').style.display = "none";
-              setTimeout(function(){
+          
+          var mobile = window.matchMedia("(hover: none) and (pointer: coarse)");
+          console.log(mobile.matches)
+          if(!(mobile.matches)) {
+            serviceLinks.forEach(function(i){
+              i.addEventListener('focus', function(e){
+                console.log(e)
                 e.target.parentNode.querySelector('img').style.display = "block";
-                e.target.parentNode.querySelector('.reserve').style.display = "none";
-              }, 1000);
+                setTimeout(function(){
+                  e.target.parentNode.querySelector('img').style.display = "none";
+                  e.target.parentNode.querySelector('.reserve').style.display = "block";
+                }, 1000);
+              })
+              i.addEventListener('blur', function(e){
+                console.log(e)
+                e.target.parentNode.querySelector('img').style.display = "none";
+                setTimeout(function(){
+                  e.target.parentNode.querySelector('img').style.display = "block";
+                  e.target.parentNode.querySelector('.reserve').style.display = "none";
+                }, 1000);
+              })
             })
-          })
+          }
           
   var hidden = true;
   btnMore.style.display = 'none';
