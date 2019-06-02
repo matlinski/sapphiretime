@@ -915,17 +915,18 @@ a:focus{
         }
         &>.our-services{
             grid-area: services_res;
+            
             &>.our-services__frame{
                 & .btn{
                     display: none;
+                    color: white;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                 }
                 & img{
                     transition-delay: 1s;
-                }
-                @media (hover: none) and (pointer: coarse) {
-                    & .btn{
-                        display: block;
-                    }
                 }
             }
         }
