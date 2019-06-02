@@ -14,7 +14,7 @@ $title-color: rgb(100%, 72%, 56%);
 $title-color-trans: rgba(100%, 72%, 56%, 0.75);
 $cols: 12;
 $index-rows: 6;
-$gps-rows: 4;
+$gps-rows: 5;
 $cont-rows: 3;
 $res-rows: 6;
 $services-num: 2;
@@ -286,7 +286,6 @@ a:focus{
             &>.about-us{ grid-area: about;}
             &>.our-services{ grid-area: services}
             &>.main-gallery{ grid-area: gallery}
-            &>.main-footer{ grid-area: footer}
         }
 
         @media (min-width: 768px){
@@ -305,7 +304,6 @@ a:focus{
             &>.about-us{ grid-area: about}
             &>.our-services{ grid-area: services}
             &>.main-gallery{ grid-area: gallery}
-            &>.main-footer{ grid-area: footer}
         }
         @media (orientation: portrait) {
             grid-template-areas:
@@ -323,7 +321,6 @@ a:focus{
             &>.about-us{ grid-area: about}
             &>.our-services{ grid-area: services}
             &>.main-gallery{ grid-area: gallery}
-            &>.main-footer{ grid-area: footer}
         }
     }
 }
@@ -594,7 +591,8 @@ a:focus{
     "header header header header header header header header header header header header" 
     "intro intro intro intro intro intro intro intro intro intro intro intro"
     "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps"
-    "map map map map map map map map map map map map";
+    "map map map map map map map map map map map map"
+    "news news news news news news news news news news news news";
 
         &>*{
             border-right: 2px solid #aaa;
@@ -603,8 +601,14 @@ a:focus{
             border-bottom: 2px solid #444;
             margin-bottom: 10px;
         }
-        &>.our-services{
-            grid-area: services_gps;
+        &>.our-services{ grid-area: services_gps}
+        &>.city-news{
+            grid-area: news;
+            background-color: $main-bg-color-darker;
+            background-image: url("../res/manufaktura.jpg");
+            background-size: cover;
+            background-position-y: bottom;
+            height: auto;
         }
         
         @media (min-width: 576px){
@@ -612,15 +616,16 @@ a:focus{
             "header header header header header header header header header header header header" 
             ". intro intro intro intro intro intro intro intro intro intro ."
             ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ."
-            ". map map map map map map map map map map ."    ;
+            ". map map map map map map map map map map ."
+            ". news news news news news news news news news news ."    ;
 
             &>.main-header{ grid-area: header;}
             &>.intro{
                 grid-area: intro;
             }
             &>.our-services{ grid-area: services_gps}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
+            &>.city-news{ grid-area: news}
         }
 
         @media (min-width: 768px){
@@ -629,6 +634,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ."
             ". . map map map map map map map map . ."
+            ". . news news news news news news news news . ."
             ;
 
             &>.main-header{ grid-area: header;}
@@ -636,8 +642,8 @@ a:focus{
                 grid-area: intro
             }
             &>.our-services{ grid-area: services_gps}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
+            &>.city-news{ grid-area: news}
         }
         @media (orientation: portrait) {
             grid-template-areas:
@@ -645,6 +651,7 @@ a:focus{
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps"
             "map map map map map map map map map map map map"
+            "news news news news news news news news news news news news"
     ;
 
             &>.main-header{ grid-area: header;}
@@ -653,8 +660,8 @@ a:focus{
             }
             &>.about-us{ grid-area: about}
             &>.our-services{ grid-area: services_gps}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
+            &>.city-news{ grid-area: news}
         }
 }
 .gps>.our-services>.our-services__frame{
@@ -1035,7 +1042,6 @@ a:focus{
             &>.our-services{ grid-area: services_res}
             &>.about-us{ grid-area: about}
             &>.reviews{ grid-area: reviews}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
         }
 
@@ -1058,7 +1064,6 @@ a:focus{
                 grid-area: reviews;
             }
             &>.our-services{ grid-area: services_res}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
         }
         @media (orientation: portrait) {
@@ -1077,7 +1082,6 @@ a:focus{
             &>.about-us{ grid-area: about}
             &>.reviews{ grid-area: reviews}
             &>.our-services{ grid-area: services_res}
-            &>.main-footer{ grid-area: footer}
             &>.gps__map-container{ grid-area: map; }
         }
 }

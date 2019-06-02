@@ -345,9 +345,6 @@ a:focus {
     -ms-grid-column-span: 10;
     grid-area: gallery;
   }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
-  }
 }
 
 @media (min-width: 768px) {
@@ -384,9 +381,6 @@ a:focus {
     -ms-grid-column-span: 8;
     grid-area: gallery;
   }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
-  }
 }
 
 @media (orientation: portrait) {
@@ -422,9 +416,6 @@ a:focus {
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: gallery;
-  }
-  .main-grid.index > .main-footer {
-    grid-area: footer;
   }
 }
 
@@ -784,9 +775,9 @@ a:focus {
     grid-template-rows: repeat($rows, minmax(calc(100vw/$rows), auto));*/
   -ms-grid-columns: (8.33333%)[12];
       grid-template-columns: repeat(12, 8.33333%);
-  -ms-grid-rows: (minmax(25vh))[4];
-      grid-template-rows: repeat(4, minmax(25vh));
-      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map";
+  -ms-grid-rows: (minmax(20vh))[5];
+      grid-template-rows: repeat(5, minmax(20vh));
+      grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "news news news news news news news news news news news news";
 }
 
 .main-grid.gps > * {
@@ -804,9 +795,21 @@ a:focus {
   grid-area: services_gps;
 }
 
+.main-grid.gps > .city-news {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-area: news;
+  background-color: #1f2e52;
+  background-image: url("../res/manufaktura.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  height: auto;
+}
+
 @media (min-width: 576px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ." ". map map map map map map map map map map .";
+        grid-template-areas: "header header header header header header header header header header header header"  ". intro intro intro intro intro intro intro intro intro intro ." ". services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps ." ". map map map map map map map map map map ." ". news news news news news news news news news news .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -826,20 +829,23 @@ a:focus {
     -ms-grid-column-span: 10;
     grid-area: services_gps;
   }
-  .main-grid.gps > .main-footer {
-    grid-area: footer;
-  }
   .main-grid.gps > .gps__map-container {
     -ms-grid-row: 4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 10;
     grid-area: map;
+  }
+  .main-grid.gps > .city-news {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-area: news;
   }
 }
 
 @media (min-width: 768px) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ." ". . map map map map map map map map . .";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" ". . services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps . ." ". . map map map map map map map map . ." ". . news news news news news news news news . .";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -859,20 +865,23 @@ a:focus {
     -ms-grid-column-span: 8;
     grid-area: services_gps;
   }
-  .main-grid.gps > .main-footer {
-    grid-area: footer;
-  }
   .main-grid.gps > .gps__map-container {
     -ms-grid-row: 4;
     -ms-grid-column: 3;
     -ms-grid-column-span: 8;
     grid-area: map;
   }
+  .main-grid.gps > .city-news {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: news;
+  }
 }
 
 @media (orientation: portrait) {
   .main-grid.gps {
-        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map";
+        grid-template-areas: "header header header header header header header header header header header header"  "intro intro intro intro intro intro intro intro intro intro intro intro" "services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps services_gps" "map map map map map map map map map map map map" "news news news news news news news news news news news news";
   }
   .main-grid.gps > .main-header {
     -ms-grid-row: 1;
@@ -898,14 +907,17 @@ a:focus {
     -ms-grid-column-span: 12;
     grid-area: services_gps;
   }
-  .main-grid.gps > .main-footer {
-    grid-area: footer;
-  }
   .main-grid.gps > .gps__map-container {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: map;
+  }
+  .main-grid.gps > .city-news {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: news;
   }
 }
 
@@ -1448,9 +1460,6 @@ a:focus {
     -ms-grid-column-span: 10;
     grid-area: reviews;
   }
-  .main-grid.res > .main-footer {
-    grid-area: footer;
-  }
   .main-grid.res > .gps__map-container {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
@@ -1494,9 +1503,6 @@ a:focus {
     -ms-grid-column-span: 8;
     grid-area: services_res;
   }
-  .main-grid.res > .main-footer {
-    grid-area: footer;
-  }
   .main-grid.res > .gps__map-container {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
@@ -1538,9 +1544,6 @@ a:focus {
     -ms-grid-column: 1;
     -ms-grid-column-span: 12;
     grid-area: services_res;
-  }
-  .main-grid.res > .main-footer {
-    grid-area: footer;
   }
   .main-grid.res > .gps__map-container {
     -ms-grid-row: 4;
