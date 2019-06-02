@@ -942,10 +942,6 @@ a:focus{
                 width: 100%;
                 max-width: 100%;
                 line-height: 1.5rem;
-                & b{
-                    font-size: 1.5rem;
-                    color: $title-color;
-                }
                 & .hidden{
                     display: none;
                 }
@@ -1187,5 +1183,9 @@ a:focus{
         font-style: italic;
         color: $main-bg-color-bright;
     }
+}
+.subtitle-special{
+    font-size: 1.5rem;
+    color: $title-color;
 }
 /*RESERVATION LAYOUT ABOVE*/

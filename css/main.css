@@ -1322,11 +1322,6 @@ a:focus {
   line-height: 1.5rem;
 }
 
-.main-grid.res > .about-us > .about-us__body b {
-  font-size: 1.5rem;
-  color: #ffb88f;
-}
-
 .main-grid.res > .about-us > .about-us__body .hidden {
   display: none;
 }
@@ -1692,6 +1687,11 @@ a:focus {
   bottom: 3.5rem;
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.subtitle-special {
+  font-size: 1.5rem;
+  color: #ffb88f;
 }
 
 /*RESERVATION LAYOUT ABOVE*/
