@@ -936,6 +936,7 @@ a:focus {
 }
 
 .gps > .our-services > .our-services__frame span {
+  min-width: 500px !important;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1657,7 +1658,7 @@ a:focus {
 }
 
 .subtitle-special {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #ffb88f;
 }
 
