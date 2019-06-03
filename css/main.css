@@ -1661,5 +1661,10 @@ a:focus {
   color: #ffb88f;
 }
 
+.source {
+  margin-left: 0.5rem;
+  color: #ddd;
+}
+
 /*RESERVATION LAYOUT ABOVE*/
 /*# sourceMappingURL=main.css.map */
