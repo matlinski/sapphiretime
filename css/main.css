@@ -427,7 +427,7 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: intro;
-  background-image: url("../res/img/single/1.jpg");
+  background-image: url("../res/main.jpg");
   background-size: cover;
   background-position-y: center;
   display: -webkit-box;
