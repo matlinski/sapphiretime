@@ -169,9 +169,9 @@ a:focus {
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a {
   position: relative;
-  background-color: rgba(56, 71, 107, 0.7);
+  background-color: #1f2e52;
   opacity: 0.8;
-  color: aliceblue;
+  color: white;
   padding: 1.1em 1.1em;
   font-size: calc(0.7vmin + 9px);
   font-weight: 400;
@@ -193,11 +193,11 @@ a:focus {
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a.current-tab {
   background-color: rgba(255, 184, 143, 0.75);
-  color: #333;
+  color: black;
 }
 
 .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:hover, .main-header > .main-nav > .main-nav__menu-list > .main-nav__menu-list__list-item > a:focus {
-  color: #333;
+  color: black;
   background-color: rgba(255, 184, 143, 0.75);
 }
 
@@ -739,10 +739,6 @@ a:focus {
     float: left;
     width: 100%;
   }
-}
-
-.main-gallery .single2 {
-  display: block;
 }
 
 .main-footer {

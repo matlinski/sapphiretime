@@ -153,9 +153,9 @@ a:focus{
 
                 &>a{
                     position: relative;
-                    background-color: $main-bg-color-dark;
+                    background-color: $main-bg-color-darker;
                     opacity: 0.8;
-                    color: aliceblue;
+                    color: white;
                     padding: 1.1em 1.1em;
                     font-size:  calc(0.7vmin + 9px);
                     font-weight: 400;
@@ -172,11 +172,11 @@ a:focus{
                     }
                     &.current-tab{
                         background-color: $title-color-trans;
-                        color: #333;
+                        color: black;
                     }
                     &:hover,
                     &:focus{
-                        color: #333;
+                        color: black;
                         background-color: $title-color-trans;
                     }
                     &:active{
@@ -557,9 +557,6 @@ a:focus{
                 width: 100%;
             }
         }
-    }
-    & .single2{
-        display: block;
     }
 }
 .main-footer{
