@@ -34,17 +34,17 @@ $services-num: 2;
 
 html{ 
     scroll-behavior: smooth;
-    font-size: 20px;
+    font-size: 16px;
     box-sizing: border-box;
 
     @media (min-width: 576px){
-        font-size: 18px;
+        font-size: 14px;
     }
     @media (min-width: 768px){
-        font-size: 16px;
+        font-size: 12x;
     }
     @media (orientation: portrait){
-        font-size: 26px;
+        font-size: 16px;
     }
 }
 
@@ -438,7 +438,7 @@ a:focus{
     }
 }
 .our-services{
-    padding: .5% .5%;
+    padding: 0.75em 1em;
     position: relative;
     height: 32vh;
     grid-area: services;
@@ -448,7 +448,7 @@ a:focus{
         width: 100%;
         height: 50%;
         position: relative;
-        padding: .5% .5%;
+        padding: 0.75em 1em;
         cursor: pointer;
         &>.service{
             background-color: $main-bg-color-dark;
@@ -471,11 +471,11 @@ a:focus{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            min-height: 8vh;
-            max-height: 6vw;
+            min-height: 6vh;
+            max-height: 4vw;
             @media (orientation: portrait) {
-                min-height: 13vh;
-                max-height: 9vw;
+                min-height: 9vh;
+                max-height: 6vw;
             }
         }
         @media (orientation: landscape) {
@@ -561,7 +561,7 @@ a:focus{
 }
 .main-footer{
     min-height: 100vh / $index-rows / 2;
-    padding: 1.5em 7em;
+    padding: 1.5em 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -600,6 +600,7 @@ a:focus{
         }
         &>.our-services{ grid-area: services_gps}
         &>.city-news{
+            padding: 1em;
             grid-area: news;
             background-color: $main-bg-color-darker;
             background-image: url("../res/manufaktura.jpg");
@@ -691,14 +692,14 @@ a:focus{
     &>#info{
         border-radius: 1rem;
         display: block;
-        width: 40%;
+        width: 60%;
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
         text-align: center;
-        padding: .5em;
+        padding: 1.5em 2em;
         background-color: $main-bg-color-bright;
         color: black;
     }
@@ -796,7 +797,7 @@ a:focus{
         display: flex;
         width: 100%;
         flex-direction: column;
-        padding: 1%;
+        padding: 0.75em 2em;
         margin-bottom: 0;
         &>.contact-info__list__list-item{
             background: $main-bg-color-dark;
@@ -805,12 +806,13 @@ a:focus{
             flex-direction: column;
             justify-content: center;
             position: relative;
+            margin: 0.75em 0;
             &>a{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-                padding: 3em 0;
+                padding: 1.5em 2em;
                 &>span{
                     margin-left: 25%;
                 }
@@ -1086,7 +1088,7 @@ a:focus{
 }
 .btn-more{
     background-color: $main-bg-color-darker;
-    padding: 0.75em 0.75em;
+    padding: 1em 1.5em;
     font-weight: 900;
     transition: 0.4s ease-in-out;
     text-align: center;
@@ -1117,14 +1119,10 @@ a:focus{
             transform-origin: top;
             text-align: center;
             color: $main-bg-color-darkest;
-            padding: 0.5rem;
-            background: rgba(100%, 100%, 100%, 0.75);
-            @media (max-width: 576px) {
-                width: 250px;
-                padding: 0;
-            }   
+            padding: 1.5em 2em;
+            background: rgba(100%, 100%, 100%, 0.75);   
             @media (orientation: portrait) {
-                padding: 1rem;        
+                padding: 1.5em 2em;      
             }
         }
         & strong{
@@ -1150,6 +1148,7 @@ a:focus{
 .double.en{
     position: relative;
     & p{
+        padding: 1.5em 2em !important;
         padding-bottom: 4em !important;
     }
     &::after{

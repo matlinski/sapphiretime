@@ -13,26 +13,26 @@
 /*ROOT ABOVE*/
 html {
   scroll-behavior: smooth;
-  font-size: 20px;
+  font-size: 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 @media (min-width: 576px) {
   html {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 12x;
   }
 }
 
 @media (orientation: portrait) {
   html {
-    font-size: 26px;
+    font-size: 16px;
   }
 }
 
@@ -582,7 +582,7 @@ a:focus {
 }
 
 .our-services {
-  padding: .5% .5%;
+  padding: 0.75em 1em;
   position: relative;
   height: 32vh;
   -ms-grid-row: 4;
@@ -596,7 +596,7 @@ a:focus {
   width: 100%;
   height: 50%;
   position: relative;
-  padding: .5% .5%;
+  padding: 0.75em 1em;
   cursor: pointer;
 }
 
@@ -624,14 +624,14 @@ a:focus {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  min-height: 8vh;
-  max-height: 6vw;
+  min-height: 6vh;
+  max-height: 4vw;
 }
 
 @media (orientation: portrait) {
   .our-services > .our-services__frame .our-services__frame__logo {
-    min-height: 13vh;
-    max-height: 9vw;
+    min-height: 9vh;
+    max-height: 6vw;
   }
 }
 
@@ -743,7 +743,7 @@ a:focus {
 
 .main-footer {
   min-height: 8.33333vh;
-  padding: 1.5em 7em;
+  padding: 1.5em 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -792,6 +792,7 @@ a:focus {
 }
 
 .main-grid.gps > .city-news {
+  padding: 1em;
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
@@ -956,7 +957,7 @@ a:focus {
 .gps__map-container > #info {
   border-radius: 1rem;
   display: block;
-  width: 40%;
+  width: 60%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -964,7 +965,7 @@ a:focus {
           transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  padding: .5em;
+  padding: 1.5em 2em;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
 }
@@ -1110,7 +1111,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1%;
+  padding: 0.75em 2em;
   margin-bottom: 0;
 }
 
@@ -1130,6 +1131,7 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  margin: 0.75em 0;
 }
 
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a {
@@ -1144,7 +1146,7 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  padding: 3em 0;
+  padding: 1.5em 2em;
 }
 
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a > span {
@@ -1552,7 +1554,7 @@ a:focus {
 
 .btn-more {
   background-color: #1f2e52;
-  padding: 0.75em 0.75em;
+  padding: 1em 1.5em;
   font-weight: 900;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
@@ -1593,20 +1595,13 @@ a:focus {
           transform-origin: top;
   text-align: center;
   color: rgba(5, 20, 56, 0.75);
-  padding: 0.5rem;
+  padding: 1.5em 2em;
   background: rgba(255, 255, 255, 0.75);
-}
-
-@media (max-width: 576px) {
-  .intro > .our-links > * {
-    width: 250px;
-    padding: 0;
-  }
 }
 
 @media (orientation: portrait) {
   .intro > .our-links > * {
-    padding: 1rem;
+    padding: 1.5em 2em;
   }
 }
 
@@ -1636,6 +1631,7 @@ a:focus {
 
 .single.en p,
 .double.en p {
+  padding: 1.5em 2em !important;
   padding-bottom: 4em !important;
 }
 
