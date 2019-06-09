@@ -129,10 +129,8 @@ a:focus{
     & .main-header__frame{
         display: flex;
         align-items: center;
-        height: 100%;
-        min-height: 100px;
+        padding: 1vmin;
         width: auto;
-        padding: 10% 0;
 
         & .main-header__frame__logo{
             min-height: 10vh;
