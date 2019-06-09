@@ -16,6 +16,7 @@ html {
   font-size: 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100%;
 }
 
 @media (min-width: 576px) {
@@ -49,6 +50,17 @@ body {
   background: linear-gradient(135deg, #21233d 0%, #262948 7%, #2c2f52 16%, #1f2139 29%, #131423 37%, #000000 45%, #08080e 52%, #131423 67%, #0c0d16 86%, #080910 100%);
   color: white;
   font-family: "Nunito", sans-serif;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 ol {
@@ -710,7 +722,6 @@ a:focus {
 .main-gallery > .double2 .main-gallery__frame > .main-gallery__frame__thumbnail {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  cursor: not-allowed;
   -webkit-filter: blur(10px);
           filter: blur(10px);
   -webkit-transition: 0.3s ease-in-out;
@@ -754,7 +765,6 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  grid-area: footer;
   background-color: #1f2e52;
   border-top: 2px solid #aaa;
   font-size: 0.9rem;

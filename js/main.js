@@ -2,34 +2,27 @@
 
 function mainStart(singleLogo,
                    singleGallery,
-                   singleFrames,
-                   singlePhotos,
                    doubleLogo,
-                   doubleGallery,
-                   doubleFrames,
-                   doublePhotos
+                   doubleGallery
                    ){
+    var singleLoaded = false;
+    var doubleLoaded = false;
+    var photoNum = 15;
     var prevent = function(e) {
         e.preventDefault()
     }
-    function reset(){
-        for(var i = 0; i < singleFrames.length; i++){
-            singleFrames[i].addEventListener('click', prevent);
-            singleFrames[i].style.cursor = 'not-allowed';
-        }
-    }
-    reset()
-    function resetRemove(){
-        for(var i = 0; i < singleFrames.length; i++){
-            singlePhotos[i].style.cursor = 'pointer';
-            doublePhotos[i].style.cursor = 'pointer';
-            singleFrames[i].style.cursor = 'pointer';
-            singleFrames[i].setAttribute('data-lightbox', 'mygallery');
-            singleFrames[i].removeEventListener('click', prevent);
-        }
-    }
     var revealS = function() {
-        resetRemove()
+        if(!singleLoaded){
+            for(var i = 1; i <= photoNum; i++){
+                singleGallery.innerHTML += `<a href="res/img/single/`+i+`.jpg" data-lightbox="mygallery2" class="main-gallery__frame">
+                <img width="100%" src="res/img/single/`+i+`.jpg" alt="Zdjęcie z apartamentu Sapphire Time"
+                    class="main-gallery__frame__thumbnail">
+            </a>`
+            }
+            singleLoaded = true;
+        }
+        var singleFrames = singleGallery.querySelectorAll('a')
+        var singlePhotos = singleGallery.querySelectorAll('a>img')
         doubleLogo.classList.remove('current');
         singleLogo.classList.add('current');
         
@@ -50,7 +43,18 @@ function mainStart(singleLogo,
         }, 250)
     }
     var revealD = function() {
-        resetRemove()
+        if(!doubleLoaded){
+            for(var i = 1; i <= photoNum; i++){
+                doubleGallery.innerHTML += `<a href="res/img/double/`+i+`.jpg" data-lightbox="mygallery2" class="main-gallery__frame">
+                <img width="100%" src="res/img/double/`+i+`.jpg" alt="Zdjęcie z apartamentu Double Sapphire Time"
+                    class="main-gallery__frame__thumbnail">
+            </a>`
+            }
+            doubleLoaded = true;
+        }
+        var doubleFrames = doubleGallery.querySelectorAll('a');
+        var doublePhotos = doubleGallery.querySelectorAll('a>img');
+
         singleLogo.classList.remove('current');
         doubleLogo.classList.add('current');
         singleGallery.style.display = 'none';
@@ -77,11 +81,7 @@ function mainStart(singleLogo,
 document.addEventListener('DOMContentLoaded', function() {
     mainStart(document.querySelector('#single-logo'),
               document.querySelector('.single2'),
-              document.querySelectorAll('.single2>a'),
-              document.querySelectorAll('.single2>a>img'),
               document.querySelector('#double-logo'),
-              document.querySelector('.double2'),
-              document.querySelectorAll('.double2>a'),
-              document.querySelectorAll('.double2>a>img')
+              document.querySelector('.double2')
               );
 })

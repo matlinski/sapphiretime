@@ -36,6 +36,7 @@ html{
     scroll-behavior: smooth;
     font-size: 16px;
     box-sizing: border-box;
+    height: 100%;
 
     @media (min-width: 576px){
         font-size: 14px;
@@ -61,6 +62,10 @@ body{
     background: linear-gradient(135deg, #21233d 0%,#262948 7%,#2c2f52 16%,#1f2139 29%,#131423 37%,#000000 45%,#08080e 52%,#131423 67%,#0c0d16 86%,#080910 100%); 
     color: white;
     font-family: $main-font;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 ol{
@@ -531,7 +536,6 @@ a:focus{
             opacity: 0.4;
             &>.main-gallery__frame__thumbnail{
                 transform: scale(0.9);
-                cursor: not-allowed;
                 filter: blur(10px);
                 transition: 0.3s ease-in-out;
             }
@@ -566,7 +570,6 @@ a:focus{
     justify-content: center;
     align-items: center;
     text-align: center;
-    grid-area: footer;
     background-color: $main-bg-color-darker;
     border-top: 2px solid #aaa;
     font-size: 0.9rem;
