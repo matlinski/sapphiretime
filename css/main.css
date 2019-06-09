@@ -1384,9 +1384,16 @@ a:focus {
   margin-bottom: 1.5rem;
   text-indent: 1rem;
   font-style: italic;
-  line-height: 2rem !important;
+  font-size: 1rem;
+  line-height: 1.5rem !important;
   letter-spacing: 0.05rem;
   background: rgba(56, 71, 107, 0.7);
+}
+
+@media (orientation: portrait) {
+  .main-grid.res > .reviews > .reviews__positive {
+    font-size: 0.8rem;
+  }
 }
 
 .main-grid.res > .reviews > .reviews__positive::before {
@@ -1395,8 +1402,8 @@ a:focus {
   position: relative;
   content: '“';
   font-style: italic;
-  font-size: 2rem;
-  line-height: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   color: #ffb88f;
   font-weight: 900;
 }

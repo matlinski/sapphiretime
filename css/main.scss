@@ -985,17 +985,21 @@ a:focus{
                 margin-bottom: 1.5rem;
                 text-indent: 1rem;
                 font-style: italic;
-                line-height: 2rem !important;
+                font-size: 1rem;
+                line-height: 1.5rem !important;
                 letter-spacing: 0.05rem;
                 background: $main-bg-color-dark;
+                @media (orientation: portrait) {
+                    font-size: 0.8rem;
+                }
                 &::before{
                     left: -.5rem;
                     top: 0.5rem;
                     position: relative;
                     content: '“';
                     font-style: italic;
-                    font-size: 2rem;
-                    line-height: 1rem;
+                    font-size: 1.5rem;
+                    line-height: 1.5rem;
                     color: $title-color;
                     font-weight: 900;
                 }
