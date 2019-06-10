@@ -333,17 +333,28 @@ a:focus{
 .intro{
     position: relative;
     min-height: 15vmax;
-    height: 40vmin;
+    height: 55vmin;
     grid-area: intro;
     background-image: url("../res/main.jpg");
-    background-size: 100% auto;
+    background-size: 100%;
     background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    @media (min-width: 576px) {
+        height: 35vmin;
+        background-position-y: top;
+    }
+    @media (orientation: portrait) {
+        height: 40vmin;
+        background-position-y: 15%;
+    }
+    @media (min-width: 768px) {
+        height: 45vmin;
+        background-position-y: 80% !important;
+    }
     &>.intro__title{
         width: 20%;
         display: flex;
@@ -607,7 +618,7 @@ a:focus{
         &>.city-news{
             padding: 1em;
             grid-area: news;
-            background-color: $main-bg-color-darker;
+            background-color: $main-bg-color-darkest;
             height: auto;
         }
         

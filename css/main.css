@@ -437,15 +437,14 @@ a:focus {
 .intro {
   position: relative;
   min-height: 15vmax;
-  height: 40vmin;
+  height: 55vmin;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: intro;
   background-image: url("../res/main.jpg");
-  background-size: 100% auto;
+  background-size: 100%;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -460,6 +459,27 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 576px) {
+  .intro {
+    height: 35vmin;
+    background-position-y: top;
+  }
+}
+
+@media (orientation: portrait) {
+  .intro {
+    height: 40vmin;
+    background-position-y: 15%;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro {
+    height: 45vmin;
+    background-position-y: 80% !important;
+  }
 }
 
 .intro > .intro__title {
@@ -812,7 +832,7 @@ a:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: news;
-  background-color: #1f2e52;
+  background-color: rgba(5, 20, 56, 0.75);
   height: auto;
 }
 
