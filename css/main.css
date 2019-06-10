@@ -992,6 +992,7 @@ a:focus {
   background-position-y: center;
   height: 100%;
   width: 100%;
+  z-index: -1;
   position: absolute;
   cursor: not-allowed;
   -webkit-transition: all 0.2s ease-in-out;
