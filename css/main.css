@@ -1145,7 +1145,7 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.75em 2em;
+  padding: 0.25em 0.33em;
   margin-bottom: 0;
 }
 
@@ -1165,7 +1165,7 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  margin: 0.75em 0;
+  padding: 0.25em 0.33em;
 }
 
 .cont > .contact-info > .contact-info__list > .contact-info__list__list-item > a {
@@ -1331,6 +1331,12 @@ a:focus {
   line-height: 1.5rem;
 }
 
+@media (orientation: portrait) {
+  .main-grid.res > .about-us > .about-us__body {
+    font-size: 0.8rem;
+  }
+}
+
 .main-grid.res > .about-us > .about-us__body .hidden {
   display: none;
 }
@@ -1420,6 +1426,8 @@ a:focus {
 @media (orientation: portrait) {
   .main-grid.res > .reviews > .reviews__positive {
     font-size: 0.8rem;
+    padding: .35rem !important;
+    padding-bottom: 4rem !important;
   }
 }
 
@@ -1441,7 +1449,7 @@ a:focus {
   position: relative;
   content: '”';
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ffb88f;
   font-weight: 900;
 }
@@ -1698,6 +1706,10 @@ a:focus {
 .source {
   margin-left: 0.5rem;
   color: #ddd;
+}
+
+hr {
+  margin: 0.8em 0;
 }
 
 /*RESERVATION LAYOUT ABOVE*/
