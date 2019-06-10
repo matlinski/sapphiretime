@@ -608,9 +608,6 @@ a:focus{
             padding: 1em;
             grid-area: news;
             background-color: $main-bg-color-darker;
-            background-image: url("../res/manufaktura.jpg");
-            background-size: cover;
-            background-position-y: bottom;
             height: auto;
         }
         
@@ -715,8 +712,8 @@ a:focus{
     }
     &>.gps__map-container__cover{
         background-image: url('../res/cover.png');
+        background-size: 898px 438px;
         opacity: 0.5;
-        background-size: cover;
         background-position-x: center;
         background-position-y: center;
         height: 100%;
