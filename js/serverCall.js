@@ -31,6 +31,12 @@ serverStart(document.querySelectorAll('.menu1'),
             document.querySelector('.our-links__frame.single'),
             document.querySelector('.our-links__frame.double')
             );
+setTimeout(function(){
+    document.querySelectorAll("ins>iframe").forEach(function(i){
+        i.title = "Reviews Booking"
+    })
+console.log(document.querySelectorAll("ins>iframe"))
+},800)
 })
 
 function serverStart(indexMenu,
