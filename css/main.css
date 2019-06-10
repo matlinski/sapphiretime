@@ -10,6 +10,11 @@
           box-sizing: inherit;
 }
 
+img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
 /*ROOT ABOVE*/
 html {
   scroll-behavior: smooth;
@@ -92,6 +97,7 @@ a:focus {
 
 .bg {
   background-image: url(../res/united-squares-negative.png);
+  background-size: 30vw 30vw;
   opacity: 0.2;
   z-index: -2;
   position: absolute;
@@ -430,15 +436,17 @@ a:focus {
 
 .intro {
   position: relative;
-  min-height: 18vmax;
+  min-height: 15vmax;
   height: 40vmin;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: intro;
   background-image: url("../res/main.jpg");
-  background-size: cover;
-  background-position-y: center;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -27,7 +27,9 @@ $services-num: 2;
     margin: 0;
     box-sizing: inherit;
 }
-
+img{
+    object-fit: scale-down;
+}
 
 /*ROOT ABOVE*/
 
@@ -94,6 +96,7 @@ a:focus{
 }
 .bg{
     background-image: url(../res/united-squares-negative.png);
+    background-size: 30vw 30vw;
     opacity: 0.2;
     z-index: -2;
     position: absolute;
@@ -329,12 +332,14 @@ a:focus{
 
 .intro{
     position: relative;
-    min-height: 18vmax;
+    min-height: 15vmax;
     height: 40vmin;
     grid-area: intro;
     background-image: url("../res/main.jpg");
-    background-size: cover;
-    background-position-y: center;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
