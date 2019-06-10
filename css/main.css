@@ -443,7 +443,8 @@ a:focus {
   -ms-grid-column-span: 12;
   grid-area: intro;
   background-image: url("../res/main.jpg");
-  background-size: 100%;
+  background-size: 110%;
+  background-position-x: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -464,7 +465,7 @@ a:focus {
 @media (min-width: 576px) {
   .intro {
     height: 35vmin;
-    background-position-y: top;
+    background-position-y: 35%;
   }
 }
 
@@ -475,10 +476,10 @@ a:focus {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .intro {
-    height: 45vmin;
-    background-position-y: 80% !important;
+    height: 50vmin;
+    background-position-y: 70% !important;
   }
 }
 

@@ -336,7 +336,8 @@ a:focus{
     height: 55vmin;
     grid-area: intro;
     background-image: url("../res/main.jpg");
-    background-size: 100%;
+    background-size: 110%;
+    background-position-x: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     display: flex;
@@ -345,15 +346,15 @@ a:focus{
     align-items: center;
     @media (min-width: 576px) {
         height: 35vmin;
-        background-position-y: top;
+        background-position-y: 35%;
     }
     @media (orientation: portrait) {
         height: 40vmin;
         background-position-y: 15%;
     }
-    @media (min-width: 768px) {
-        height: 45vmin;
-        background-position-y: 80% !important;
+    @media (min-width: 1000px) {
+        height: 50vmin;
+        background-position-y: 70% !important;
     }
     &>.intro__title{
         width: 20%;
