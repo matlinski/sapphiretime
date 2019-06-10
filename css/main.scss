@@ -1138,7 +1138,7 @@ a:focus{
         transform: translateX(-50%);
         z-index: 1;
         &>*{
-            transition: all 0.4s 0.8s ease-in-out;
+            transition: transform 0.4s 0.8s ease-in-out, background 0.4s ease-in-out;
             transform: scaleY(0);
             transform-origin: top;
             text-align: center;
@@ -1147,6 +1147,10 @@ a:focus{
             background: rgba(100%, 100%, 100%, 0.75);   
             @media (orientation: portrait) {
                 padding: 1.5em 2em;      
+            }
+            &:hover,
+            &:focus{
+                background: $title-color-trans !important; 
             }
         }
         & strong{
