@@ -154,7 +154,7 @@ function resStart(singlePL,
           ){
             var comments = [];
         
-          fetch('json/'+apart+'.'+lang+'.json')
+          fetch('../json/'+apart+'.'+lang+'.json')
         .then(res => res.json())
         .then(data => {
           for(var i = 0; i < data.length; i++){
