@@ -16,7 +16,7 @@ function gpsStart(cover, infoMap, singleLogo, doubleLogo, coverDiv){
         e.preventDefault()
         infoMap.style.display = "none";
         if(!mapSLoaded){
-            coverDiv.innerHTML += '<iframe class="gps__map-container__map map-single" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7079.621650760226!2d19.431609981749283!3d51.79794370786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bca903e63f943%3A0xc41c3844423b33ca!2sApartament+Sapphire+Time!5e1!3m2!1spl!2ses!4v1558770961811!5m2!1spl!2ses" width="100%" height="450" frameborder="0" style=" border:0; z-index: 99; " allowfullscreen></iframe>'
+            coverDiv.innerHTML += '<iframe class="gps__map-container__map map-single" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.7904920881497!2d19.431555715780654!3d51.79843717968392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcb640ddefa31%3A0xc25e52b664055476!2sSapphire+Time!5e1!3m2!1spl!2ses!4v1562675825663!5m2!1spl!2ses" width="100%" height="450" frameborder="0" style=" border:0; z-index: 99; " allowfullscreen></iframe>'
             mapSLoaded = true;
         }
         var maps = document.querySelectorAll(".gps__map-container__map");
