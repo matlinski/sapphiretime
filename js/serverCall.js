@@ -128,7 +128,7 @@ function langChange(init) {
     var mainCookie = cookieContainer.querySelector('span');
     var linkCookie = cookieContainer.querySelector('a');
     var buttonCookie = cookieContainer.querySelector('button');
-    (localStorage.getItem('gps') === 'PL') ? flags[0].classList.add('current') : flags[1].classList.add('current');
+    /*(localStorage.getItem('gps') === 'PL') ? flags[0].classList.add('current') : flags[1].classList.add('current')*/flags[0].classList.add('current');
     document.title = init.title;
     document.lang = (localStorage.getItem('gps') === 'PL') ?"pl" :"en";
     mainLogo.alt = init.mainLogo;
