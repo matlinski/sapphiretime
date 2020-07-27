@@ -130,7 +130,7 @@ function langChange(init) {
     var buttonCookie = cookieContainer.querySelector('button');
     /*(localStorage.getItem('gps') === 'PL') ? flags[0].classList.add('current') : flags[1].classList.add('current')*/flags[0].classList.add('current');
     document.title = init.title;
-    document.lang = (localStorage.getItem('gps') === 'PL') ?"pl" :"en";
+    document.lang = /*(localStorage.getItem('gps') === 'PL') ?*/"pl"/* :"en"*/;
     mainLogo.alt = init.mainLogo;
     if(isInPage(serviceLogo))serviceLogo.alt = init.serviceLogo;
     if(isInPage(serviceLogoDouble))serviceLogoDouble.alt = init.serviceLogoDouble;
