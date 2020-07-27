@@ -168,8 +168,8 @@ function langChange(init) {
 }
 
 function chooseLang(e) {
-    localStorage.clear();
-    localStorage.setItem('gps', e.target.alt);
+    /*localStorage.clear();
+    localStorage.setItem('gps', e.target.alt);*/
     flags.forEach(function (i) {
         i.classList.remove('current');
     })
@@ -180,7 +180,7 @@ function chooseLang(e) {
         if(isInPage(i)) i.style.display = 'none';
     })
     if(isInPage(aboutUsInfoRes)) aboutUsInfoRes.style.display = 'block';
-    fetch('../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
+    fetch('../json/' + /*localStorage.getItem('gps')*/ 'PL' + '.json').then(function (response) {
         return response.json();
     })
         .then(function (set) {
