@@ -68,8 +68,8 @@ function serverStart(indexMenu,
                     widgetS,
                     widgetD
                     ) {
-                        widgetS.innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
-                        widgetD.innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+((localStorage.getItem('gps') === "PL") ?"pl" :"en")+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
+                        widgetS.innerHTML += '<ins class="bookingaff" data-aid="1792900" data-target_aid="1792900" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="1649307" data-lang="'+/*((localStorage.getItem('gps') === "PL") ?"pl" :"en")*/'PL'+'"><!-- Anything inside will go away once widget is loaded. --><a href="//www.booking.com?aid=1792900">Booking.com</a></ins>';
+                        widgetD.innerHTML += '<ins class="bookingaff" data-aid="1792901" data-target_aid="1792901" data-prod="rw" data-width="0" data-height="0" data-show_rw_logo="1" data-show_rw_badge="1" data-show_rw_text="1" data-show_rw_border="1" data-hid="2310850" data-lang="'+/*((localStorage.getItem('gps') === "PL") ?"pl" :"en")*/'PL'+'"> <!-- Anything inside will go away once widget is loaded. --> <a href="//www.booking.com?aid=1792901">Booking.com</a> </ins>';
     function isInPage(node) {
         return (node === document.body) ? false : document.body.contains(node);
       }
@@ -77,7 +77,7 @@ function serverStart(indexMenu,
     flags[0].addEventListener('click', chooseLang);
     flags[1].addEventListener('click', chooseLang);
 
-    if (typeof localStorage.getItem('gps') === 'string' || localStorage.getItem('gps') instanceof String) {
+    /*if (typeof localStorage.getItem('gps') === 'string' || localStorage.getItem('gps') instanceof String) {
         if (localStorage.getItem('gps') !== 'PL') localStorage.setItem('gps', 'UK');
         fetch('../json/' + localStorage.getItem('gps') + '.json').then(function (response) {
             return response.json();
@@ -112,8 +112,17 @@ function serverStart(indexMenu,
                         langChange(set);
                     })
             })
-    }
-
+    }*/
+fetch('../json/PL.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (set) {
+            return set;
+        })
+        .then(function (set) {
+            langChange(set);
+        })
 function langChange(init) {
     var boldCookie = cookieContainer.querySelector('b');
     var mainCookie = cookieContainer.querySelector('span');
