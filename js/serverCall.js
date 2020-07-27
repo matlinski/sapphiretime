@@ -180,7 +180,7 @@ function chooseLang(e) {
         if(isInPage(i)) i.style.display = 'none';
     })
     if(isInPage(aboutUsInfoRes)) aboutUsInfoRes.style.display = 'block';
-    fetch('../json/' + /*localStorage.getItem('gps')*/ 'PL' + '.json').then(function (response) {
+    fetch('../json/' + /*localStorage.getItem('gps')*/ e.target.alt + '.json').then(function (response) {
         return response.json();
     })
         .then(function (set) {
